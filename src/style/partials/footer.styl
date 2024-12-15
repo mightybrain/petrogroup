@@ -1,0 +1,74 @@
+.footer
+  &__outer
+    padding 80px 16px
+    background-color $green
+    border-radius 16px
+
+  &__inner
+    display flex
+    justify-content space-between
+    max-width 1600px
+    margin 0 auto
+    gap 24px
+
+  &__credits
+    display flex
+    flex-direction column
+    gap 12px
+
+  &__logo
+    &-image
+      display block
+      width 177px
+
+  &__slogan
+    max-width 222px
+    color $white
+
+  &__contacts
+    display flex
+    flex-direction column
+    gap 24px
+
+    &-label
+      color $white
+
+    &-group
+      display flex
+      flex-direction column
+      gap 16px
+
+    &-list
+      display flex
+      flex-direction column
+      gap 8px
+
+    &-link
+      font-size 16px
+      line-height 24px
+      font-weight 400
+      color $white
+      text-decoration none
+
+  &__nav
+    display flex
+    justify-content space-between
+    width calc(50% - 12px)
+    gap 24px
+
+    &-list,
+    &-sublist
+      display flex
+      flex-direction column
+      gap 16px
+      max-width 200px
+
+    &-sublist
+      margin 16px 0 0
+
+    &-link
+      font-size 16px
+      line-height 24px
+      font-weight 400
+      color $white
+      text-decoration none

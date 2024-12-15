@@ -1,0 +1,44 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.index
+				.index__intro
+					.container
+						//= partials/index-intro.pug
+
+				.index__catalogue-preview
+					.container.index__catalogue-preview-container
+						//= partials/catalogue-preview.pug
+
+				.index__shipping
+					.container.index__shipping-container
+						//= partials/shipping.pug
+
+				.index__benefits
+					.container
+						//= partials/benefits.pug
+
+				.index__partners
+					.container.index__partners-container
+						//= partials/partners.pug
+
+				.index__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")

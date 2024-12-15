@@ -1,0 +1,124 @@
+.header
+  &__container
+    max-width 1600px
+
+  &__inner
+    display flex
+    flex-wrap wrap
+    column-gap 24px
+    row-gap 18px
+
+  &__credits
+    display flex
+    align-items center
+    margin 0 auto 0 0
+    gap 24px
+
+  &__logo
+    transform translateY(-8%)
+    &-image
+      display block
+      width 170px
+
+  &__slogan
+    max-width 426px
+    color $gray-deep
+
+  &__contacts
+    &-list
+      display flex
+      align-items center
+      gap 40px
+
+    &-item
+      display flex
+      align-items center
+      gap 8px
+
+    &-icon
+      & svg
+        display block
+        width 24px
+        height 24px
+        stroke-width 2px
+        stroke $graphite
+
+    &-link
+      font-size 16px
+      line-height 24px
+      font-weight 400
+      color $graphite
+      text-decoration none
+
+  &__lang
+    position relative
+
+    &-current
+      display block
+      padding 10px 12px
+      font-size 16px
+      line-height 24px
+      font-weight 400
+      color $graphite
+      border-radius 22px
+      background-color $gray-soft
+
+    &-list
+      position absolute
+      top calc(100% + 3px)
+      right 0
+      padding 8px
+      border-radius 8px
+      background-color $white
+      opacity 0
+      visibility hidden
+      transition opacity .5s 0s ease, visibility 0s .5s linear
+
+      &::before
+        content ""
+        position absolute
+        bottom 100%
+        left 0
+        display block
+        width 100%
+        height 3px
+    
+    &-link
+      display block
+      padding 4px 12px
+      font-size 16px
+      line-height 24px
+      font-weight 400
+      color $graphite
+      border-radius 4px
+      text-decoration none
+      background-color $white
+      transition background-color .5s 0s ease, color .5s 0s ease
+
+      &:hover
+        color $green
+        background-color alpha($gray-soft, .6)
+
+  &__nav
+    width 100%
+
+    &-list
+      display flex
+      gap 12px
+
+    &-link
+      display block
+      padding 4px 16px
+      font-size 16px
+      line-height 24px
+      font-weight 400
+      color $graphite
+      background-color $white
+      border-radius 16px
+      text-decoration none
+
+.header__lang:hover
+  & .header__lang-list
+    opacity 1
+    visibility visible
+    transition opacity .5s 0s ease, visibility 0s 0s linear

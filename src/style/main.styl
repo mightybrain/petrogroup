@@ -1,0 +1,66 @@
+@font-face
+	font-family: "Stolzl"
+	src: url("../fonts/Stolzl-Regular.woff2") format("woff2")
+	font-weight: 400
+	font-style: normal
+
+@font-face
+	font-family: "MabryPro"
+	src: url("../fonts/MabryPro-Regular.woff2") format("woff2")
+	font-weight: 400
+	font-style: normal
+
+@import "helpers/vars.styl"
+@import "partials/common.styl"
+
+*
+	box-sizing border-box
+
+html
+	font-family $mbp
+
+body
+	display flex
+	flex-direction column
+	min-height 100vh
+	padding 26px 0 16px
+	background-color $gray
+
+ul,
+ol
+	margin 0
+	padding 0
+	list-style-type none
+
+li
+	margin 0
+	padding 0
+
+button
+	padding 0
+	border none
+	background none
+
+.main
+	flex-grow 1
+	overflow hidden
+
+.container
+	width calc(100% - 32px)
+	max-width 1888px
+	margin 0 auto
+
+@import "partials/header.styl"
+@import "partials/footer.styl"
+@import "partials/index-intro.styl"
+@import "partials/catalogue-preview.styl"
+@import "partials/shipping.styl"
+@import "partials/benefits.styl"
+@import "partials/partners.styl"
+@import "partials/faq.styl"
+@import "views/index.styl"
+
+
+
+
+

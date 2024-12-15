@@ -1,0 +1,43 @@
+.shipping
+  position relative
+  display flex
+  flex-direction column
+
+  &__map
+    position absolute
+    top -244px
+    left -378px
+    display block
+    width 1684px
+
+  &__heading
+    position relative
+    max-width 406px
+
+  &__countries
+    &-list
+      position relative
+      align-self flex-end
+      display grid
+      grid-template-columns repeat(2, 1fr)
+      margin -34px 0 0
+      gap 8px
+
+    &-btn
+      display flex
+      flex-direction row-reverse
+      justify-content flex-end
+      align-items center
+      min-width 187px
+      padding 8px
+      gap 12px
+      font-size 13px
+      line-height 16px
+      font-weight 400
+      color $graphite
+      border-radius 8px
+      background-color $white
+
+    &-flag
+      display block
+      width 49px
