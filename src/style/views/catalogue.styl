@@ -1,0 +1,32 @@
+.catalogue
+  display flex
+  flex-direction column
+  padding 112px 0 8px
+  gap 112px
+
+  &__intro-container,
+  &__container
+    max-width 1600px
+
+  &__inner
+    display flex
+    flex-direction column
+    gap 112px
+
+  &__groups
+    display flex
+    flex-direction column
+    gap 80px
+
+  &__group
+    display flex
+    flex-direction column
+    gap 40px
+
+    &-heading
+      color $graphite
+
+  &__list
+    display grid
+    grid-template-columns repeat(2, 1fr)
+    gap 12px

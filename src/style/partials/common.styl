@@ -9,8 +9,8 @@
     color $green
 
   &__h1
-    font-size 100px
-    line-height 95px
+    font-size 80px
+    line-height 80px
 
   &__h2
     font-size 60px
@@ -46,6 +46,9 @@
     & p:not([class])
       margin 0
 
+    & p:not([class]) + p:not([class])
+      margin 24px 0 0
+
   &__btn
     padding 10px 24px
     font-size 16px
@@ -54,3 +57,12 @@
     color $white
     border-radius 22px
     background-color $orange
+
+  &__tag
+    padding 4px 8px
+    font-size 13px
+    line-height 16px
+    font-weight 400
+    color $green-deep
+    border-radius 4px
+    background-color alpha($green-toxic, .3)

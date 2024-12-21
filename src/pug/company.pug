@@ -1,0 +1,49 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.company
+				.company__intro
+					.container.company__intro-container
+						.intro
+							.intro__inner
+								h1.common__h1.intro__heading Соки и&nbsp;концентрированные соки
+
+								.common__text.common__text_large
+									p ООО «Петрогрупп» — производитель и поставщик высокотехнологичных натуральных ингредиентов и комплексных решений для малого, среднего и крупного бизнеса в индустрии продуктов питания и напитков
+
+				.company__achieves
+					.container
+						//= partials/achieves.pug
+
+				.company__features
+					.container
+						//= partials/features.pug
+														
+				.company__benefits
+					.container
+						//= partials/benefits.pug
+
+				.company__partners
+					.container
+						//= partials/partners.pug
+
+				.company__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")

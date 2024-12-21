@@ -38,6 +38,20 @@
     &-description
       color $white
 
+    &-heading
+      display flex
+      justify-content space-between
+      width 100%
+      gap 16px
+
+    &-icon
+      & svg
+        display block
+        width 40px
+        height 40px
+        stroke-width 2px
+        stroke $green-poison
+
   &__questions
     display flex
     flex-direction column
@@ -84,6 +98,8 @@
   &__description-wrapper
     height 0
     overflow hidden
+    transition height .5s 0s ease
 
   &__description
     padding 16px 0 0
+    color $asphalt

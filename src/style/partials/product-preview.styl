@@ -1,0 +1,80 @@
+.product-preview
+  display flex
+  justify-content space-between
+  height 100%
+  padding 4px
+  background-color $white
+  border-radius 16px
+
+  &__info
+    display flex
+    flex-direction column
+    width 52%
+    padding 24px
+    gap 24px
+
+  &__tags
+    display flex
+    flex-wrap wrap
+    margin -20px 0 0
+    gap 4px
+
+  &__details
+    display flex
+    flex-direction column
+    gap 12px
+
+  &__detail
+    display flex
+    justify-content space-between
+    align-items baseline
+
+    &::after
+      content ""
+      display block
+      width 100%
+      height 1px
+      margin 0 16px
+      background-color $gray-light
+
+    &-label,
+    &-value
+      font-size 16px
+      line-height 24px
+      font-weight 400
+      color $graphite
+
+    &-value
+      order 1
+      min-width 208px
+
+  &__countries
+    display grid
+    grid-template-columns repeat(2, 1fr)
+    gap 8px
+
+  &__country
+    display flex
+    flex-direction row-reverse
+    justify-content flex-end
+    align-items center
+    padding 4px
+    gap 8px
+    font-size 13px
+    line-height 16px
+    font-weight 400
+    color $black
+    background-color $gray
+    border-radius 8px
+
+    &-flag
+      display block
+      width 50px
+
+  &__image
+    display block
+    width 48%
+    height 100%
+    border-radius 12px
+    object-fit cover
+    object-position center

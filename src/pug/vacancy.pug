@@ -1,0 +1,88 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.vacancy
+				.vacancy__intro
+					.container.vacancy__intro-container
+						.intro
+							.intro__inner
+								h1.common__h1.intro__heading Карьера
+
+								.common__text.common__text_large
+									p Узнайте больше о наших рабочих направлениях, чтобы понять, какая из них вам больше всего подходит
+
+				.vacancy__container
+					.vacancy__inner
+						nav.vacancy__nav
+							ul.vacancy__nav-list
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Управление заводом
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Производство
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Разработка новых продуктов
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Контроль качества продукции
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Закупки
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Продажи
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Маркетинг
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Логистика
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Контроль и аналитика
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Бухгалтерия
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Информационные технологии
+
+								li.vacancy__nav-item
+									button.vacancy__nav-btn Кадровые ресурсы
+
+						ul.vacancy__list
+							li.vacancy__item 
+								
+														
+				.vacancy__benefits
+					.container
+						//= partials/benefits.pug
+
+				.vacancy__review
+					.container
+						.review-slider
+
+				.vacancy__employer
+					.container
+
+				.vacancy__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")

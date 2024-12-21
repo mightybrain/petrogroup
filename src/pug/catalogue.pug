@@ -1,0 +1,58 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.catalogue
+				.catalogue__intro
+					.container.catalogue__intro-container
+						.intro
+							h1.common__h1.intro__heading Соки и&nbsp;концентрированные соки
+
+				.container.catalogue__container
+					.catalogue__inner
+
+						.catalogue__tabs
+							.tabs.js-tabs
+								ul.tabs__list
+									li.tabs__item
+										button.tabs__button.js-tab-button(data-key="fruit") Фруктовые
+											.tabs__button-icon
+												include ../../build/images/icons/icon-fruit-40.svg
+
+									li.tabs__item
+										button.tabs__button.js-tab-button(data-key="berry") Ягодные
+											.tabs__button-icon
+												include ../../build/images/icons/icon-berry-40.svg
+
+								.tabs__content.js-tab-content
+									.tabs__content-item.catalogue__groups.tabs__content_active.js-tab-content-item(data-key="fruit")
+										.catalogue__group
+											h3.common__h3.catalogue__group-heading Фруктовые концентрированные соки
+
+											ul.catalogue__list
+												li.catalogue__item
+													//= partials/product-preview.pug
+														
+				.catalogue__benefits
+					.container
+						//= partials/benefits.pug
+
+				.catalogue__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")
