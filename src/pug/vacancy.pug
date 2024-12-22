@@ -16,18 +16,20 @@ html(lang="ru")
 				.vacancy__intro
 					.container.vacancy__intro-container
 						.intro
+							img.intro__image(src="images/decor-06.jpg" alt="")
+
 							.intro__inner
 								h1.common__h1.intro__heading Карьера
 
-								.common__text.common__text_large
+								.common__text.common__text_large.intro__description
 									p Узнайте больше о наших рабочих направлениях, чтобы понять, какая из них вам больше всего подходит
 
-				.vacancy__container
+				.container.vacancy__container
 					.vacancy__inner
 						nav.vacancy__nav
 							ul.vacancy__nav-list
 								li.vacancy__nav-item
-									button.vacancy__nav-btn Управление заводом
+									button.vacancy__nav-btn.vacancy__nav-btn_active Управление заводом
 
 								li.vacancy__nav-item
 									button.vacancy__nav-btn Производство
@@ -64,18 +66,124 @@ html(lang="ru")
 
 						ul.vacancy__list
 							li.vacancy__item 
-								
+								//= partials/vacancy-preview.pug
 														
 				.vacancy__benefits
 					.container
-						//= partials/benefits.pug
+						section.benefits.benefits_no-bg
+							.benefits__inner
+								h2.common__h2.benefits__heading Что вас ждет&nbsp;в&nbsp;ООО&nbsp;«Петрогрупп»
+
+								ul.benefits__list
+									li.benefits__item
+										.benefits__icon
+											include ../../build/images/icons/icon-quality-40.svg
+
+										span.common__text.common__text_mediumn.benefits__label Белая зарплата
+
+										p.common__text.benefits__description Точная сумма зависит от ваших навыков и ожиданий — обсудим их на собеседовании. Официальное трудоустройство по ТК РФ
+
+									li.benefits__item
+										.benefits__icon
+											include ../../build/images/icons/icon-availability-40.svg
+
+										span.common__text.common__text_mediumn.benefits__label Бесплатная страховка
+
+										p.common__text.benefits__description Здоровье превыше всего. Вам будет доступна бесплатная страховка здоровья и корпоративный психолог
+
+									li.benefits__item
+										.benefits__icon
+											// include ../../build/images/icons/icon-microscope-40.svg
+
+										span.common__text.common__text_mediumn.benefits__label График работы 5/2
+
+										p.common__text.benefits__description Пятидневная рабочая неделя с  гибким началом и окончанием дня (по согласованию)
+
+									li.benefits__item
+										.benefits__icon
+											include ../../build/images/icons/icon-payment-40.svg
+
+										span.common__text.common__text_mediumn.benefits__label Бесплатное обучение
+
+										p.common__text.benefits__description Вам будет доступно корпоративное обучение, также вы сможете посещать профессиональные конференции за счет компании
+
+									li.benefits__item
+										.benefits__icon
+											include ../../build/images/icons/icon-signature-40.svg
+
+										span.common__text.common__text_mediumn.benefits__label Возможность подработки
+
+										p.common__text.benefits__description Ваша зарплата зависит от количества смен, всегда есть возможность согласовать дополнительные подработки
+
+									li.benefits__item
+										.benefits__icon
+											include ../../build/images/icons/icon-production-40.svg
+
+										span.common__text.common__text_mediumn.benefits__label Корпоративная жизнь
+
+										p.common__text.benefits__description Мы постоянно проводим различные мероприятия: спортивные тренинги, гастрономические вечера и грандиозные корпоративы
+
+									li.benefits__item
+										.benefits__icon
+											include ../../build/images/icons/icon-timer-40.svg
+
+										span.common__text.common__text_mediumn.benefits__label Оплачиваемый отпуск
+
+										p.common__text.benefits__description После шести месяцев работы с момента трудоустройства вам будет доступен оплачиваемый отпуск
+
+									li.benefits__item
+										.benefits__icon
+											// include ../../build/images/icons/icon-truck-40.svg
+
+										span.common__text.common__text_mediumn.benefits__label Совмещение с учебой
+
+										p.common__text.benefits__description Мы особо ценим наших молодых сотрудников, именно поэтому позволяем совмещать работу с учебой
 
 				.vacancy__review
-					.container
-						.review-slider
+					.container.vacancy__review-container
+						.review
+							h2.common__h2.review__heading Опыт наших сотрудников
+
+							.common__text.common__text_large.review__description Вам интересно, каково это — работать в Петрогрупп? Узнайте, что наши сотрудники говорят о своей работе и культуре нашей компании!
+
+							.review__slider
+								ul.review__slider-list
+									li.review__slider-item
+										.review-preview
+											img.review-preview__image(src="images/review/review-01.jpg" alt="")
+
+											.review-preview__info
+												h5.common__h5.review-preview__author Илья Васильев
+
+												span.common__text.common__text_small.review-preview__position Менеджер продаж
+
+												.common__text.review-preview__description
+													p «У нас достаточно слаженный и ответственный коллектив. Отношение к сотрудникам, условия отдыха и питания, организация работы на производстве на высоком уровне, все делается строго по регламменту.#[br]Доставка сотрудников к месту работы также является большим плюсом, т.к. это способствует формированию слаженного коллектива, поскольку обеспечивает комфортные условия труда и позволяет сотрудникам экономить время и деньги на дорогу»
 
 				.vacancy__employer
-					.container
+					.container.vacancy__employer-container
+						.cards
+							ul.cards__list
+								li.cards__item
+									.cards__item-info
+										h3.common__h3.cards__item-heading Воплощение лучших знаний и технологий в каждом нашем продукте
+
+										.common__text.common__text_medium.cards__item-description
+											ul
+												li Мы являемся одним из крупнейших поставщиков высококачественных ингредиентов для продуктов питания и напитков.
+
+												li Являемся членом Российского союза Производителей соков.
+
+												li Удовлетворяем требования наших клиентов к качеству посредством постоянного и последовательного мониторинга и дальнейшего развития нашей продукции.
+
+												li Чтобы соответствовать высоким стандартам качества наших клиентов и партнеров мы регулярно проводим аудиты наших поставщиков.
+
+												li Нивелируем дефицит сырья на рынке. С 2015 г. по настоящее время реализовали более 1 305 254 тонн сырья.
+
+												li Локализуем производство сырья в РФ. Стремимся не зависеть от зарубежных поставок.
+
+								li.cards__item
+									img.cards__item-image(src="images/decor-07.jpg" alt="")
 
 				.vacancy__faq
 					.container

@@ -15,7 +15,7 @@ html(lang="ru")
 			.catalogue
 				.catalogue__intro
 					.container.catalogue__intro-container
-						.intro
+						.intro.intro_no-bg
 							h1.common__h1.intro__heading Соки и&nbsp;концентрированные соки
 
 				.container.catalogue__container
@@ -25,13 +25,13 @@ html(lang="ru")
 							.tabs.js-tabs
 								ul.tabs__list
 									li.tabs__item
-										button.tabs__button.js-tab-button(data-key="fruit") Фруктовые
-											.tabs__button-icon
+										button.tabs__btn.tabs__btn_active.js-tab-btn(data-key="fruit") Фруктовые
+											.tabs__btn-icon
 												include ../../build/images/icons/icon-fruit-40.svg
 
 									li.tabs__item
-										button.tabs__button.js-tab-button(data-key="berry") Ягодные
-											.tabs__button-icon
+										button.tabs__btn.js-tab-btn(data-key="berry") Ягодные
+											.tabs__btn-icon
 												include ../../build/images/icons/icon-berry-40.svg
 
 								.tabs__content.js-tab-content
@@ -42,10 +42,16 @@ html(lang="ru")
 											ul.catalogue__list
 												li.catalogue__item
 													//= partials/product-preview.pug
+
+												li.catalogue__item
+													//= partials/product-preview.pug
+
+												li.catalogue__item
+													//= partials/product-preview.pug
 														
 				.catalogue__benefits
 					.container
-						//= partials/benefits.pug
+						//= partials/benefits-no-bg.pug
 
 				.catalogue__faq
 					.container

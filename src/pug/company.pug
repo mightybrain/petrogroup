@@ -16,14 +16,16 @@ html(lang="ru")
 				.company__intro
 					.container.company__intro-container
 						.intro
-							.intro__inner
-								h1.common__h1.intro__heading Соки и&nbsp;концентрированные соки
+							img.intro__image(src="images/decor-05.jpg" alt="")
 
-								.common__text.common__text_large
-									p ООО «Петрогрупп» — производитель и поставщик высокотехнологичных натуральных ингредиентов и комплексных решений для малого, среднего и крупного бизнеса в индустрии продуктов питания и напитков
+							.intro__inner
+								h1.common__h1.intro__heading О&nbsp;компании
+
+								.common__text.common__text_large.intro__description
+									p ООО&nbsp;«Петрогрупп» — производитель и&nbsp;поставщик высокотехнологичных натуральных ингредиентов и&nbsp;комплексных решений для малого, среднего и&nbsp;крупного бизнеса в&nbsp;индустрии продуктов питания и&nbsp;напитков
 
 				.company__achieves
-					.container
+					.container.company__achieves-container
 						//= partials/achieves.pug
 
 				.company__features
@@ -32,7 +34,7 @@ html(lang="ru")
 														
 				.company__benefits
 					.container
-						//= partials/benefits.pug
+						//= partials/benefits-no-bg.pug
 
 				.company__partners
 					.container

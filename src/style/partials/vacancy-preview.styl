@@ -1,0 +1,74 @@
+.vacancy-preview
+  display flex
+  padding 4px
+  gap 40px
+  background-color $white
+  border-radius 16px
+
+  &__info
+    display flex
+    flex-direction column
+    padding 24px
+    gap 16px
+
+  &__heading
+    color $graphite
+
+  &__description
+    margin 8px 0 0
+
+  &__details
+    display flex
+    flex-direction column
+    gap 16px
+
+    &-group
+      display flex
+      flex-direction column
+      gap 16px
+
+      &-heading
+        color $graphite
+
+    &-item
+      position relative
+      display flex
+      padding 0 0 0 24px
+      font-size 16px
+      line-height 24px
+      font-weight 400
+      color $graphite
+
+      &::before
+        content ""
+        position absolute
+        top 11px
+        left 11px
+        display block
+        width 2px
+        height 2px
+        background-color $graphite
+
+  &__actions
+    display flex
+    flex-direction column
+    gap 4px
+
+  &__image
+    display block
+    width 377px
+    border-radius 12px
+
+  &__salary-and-cv-btn
+    display flex
+    flex-direction column
+    padding 24px
+    gap 12px
+    border-radius 12px
+    background-color alpha($gray-soft, .6)
+
+  &__salary
+    font-size 32px
+    line-height 42px
+    font-weight 400
+    color $graphite
