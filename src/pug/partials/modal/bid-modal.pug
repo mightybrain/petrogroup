@@ -1,0 +1,129 @@
+#bid-modal.modal(hidden)
+	.modal__overlay.js-modal-overlay
+
+	.modal__inner
+		button.modal__close-btn.js-modal-close-btn
+			include ../../build/images/icons/icon-cross-16.svg
+
+		.modal__bid
+			.bid
+				.bid__info
+					h3.common__h3.bid__heading Оставьте заявку
+
+					.common__text.common__text_medium.bid__description
+						p Наш менеджер свяжется с вами и ответит на все вопросы
+
+				.bid__form
+					form.form
+						.form__inner
+							.form__section
+								h4.common__h4.form__section-heading Что вас интересует?
+									span.asterisk *
+
+								.form__cols-2
+									label.checkbox
+										input.checkbox__default(type='checkbox')
+
+										.checkbox__custom
+
+										span.checkbox__label Закупка соков/пюре
+
+									label.checkbox
+										input.checkbox__default(type='checkbox')
+
+										.checkbox__custom
+
+										span.checkbox__label Ингредиенты
+
+									label.checkbox
+										input.checkbox__default(type='checkbox')
+
+										.checkbox__custom
+
+										span.checkbox__label Продажа соков/пюре
+
+									label.checkbox
+										input.checkbox__default(type='checkbox')
+
+										.checkbox__custom
+
+										span.checkbox__label Упаковка
+
+									label.checkbox
+										input.checkbox__default(type='checkbox')
+
+										.checkbox__custom
+
+										span.checkbox__label Применение продукта
+
+									label.checkbox
+										input.checkbox__default(type='checkbox')
+
+										.checkbox__custom
+
+										span.checkbox__label Контрактное производство
+
+									label.checkbox
+										input.checkbox__default(type='checkbox')
+
+										.checkbox__custom
+
+										span.checkbox__label Логистические решения
+
+									label.checkbox
+										input.checkbox__default(type='checkbox')
+
+										.checkbox__custom
+
+										span.checkbox__label Другое
+
+							.form__section
+								h4.common__h4.form__section-heading Представьтесь, пожалуйста
+
+								.form__cols-2
+									.form__item
+										label.label Имя
+											span.asterisk *
+										input.input(type='text')
+
+									.form__item
+										label.label Телефон
+											span.asterisk *
+										input.input(type='text')
+
+									.form__item
+										label.label Email
+										input.input(type='text')
+
+									.form__item
+										label.label Город
+										input.input(type='text')
+
+								.form__item
+									label.label Название компании
+									input.input(type='text')
+
+							.form__section
+								h4.common__h4.form__section-heading Комментарий
+
+								textarea.textarea
+
+							.form__section
+								h4.common__h4.form__section-heading Прикрепите файл
+
+								label.file-uploader
+									input.file-uploader__default(type='file')
+
+									span.common__btn.common__btn_gray.common__btn_small.file-uploader__custom Выберите файл
+
+									span.file-uploader__file-label Файл не выбран
+
+							.form__actions
+								label.checkbox
+									input.checkbox__default(type='checkbox')
+
+									.checkbox__custom
+
+									span.checkbox__label Я согласен с #[a.checkbox__link(href='' target='_blank') обработкой персональных данных]
+
+								button.common__btn.form__submit-btn Оставить заявку

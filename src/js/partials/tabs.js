@@ -2,7 +2,7 @@ class Tabs {
   constructor(tabsContainer) {
     this.tabsContainer = tabsContainer;
 
-    this.buttons = tabsContainer.querySelectorAll('.js-tab-button');
+    this.buttons = tabsContainer.querySelectorAll('.js-tab-btn');
 
     this.content = tabsContainer.querySelector('.js-tab-content');
 
@@ -11,10 +11,10 @@ class Tabs {
     this.keyAttributeName = 'data-key';
     this.inTransitionModifierClassName = 'tabs__content_in-transition';
     this.hiddenContentModifierClassName = 'tabs__content_hidden';
-    this.activeTabModifierClassName = 'tabs__item-button_active';
+    this.activeTabModifierClassName = 'tabs__btn_active';
     this.activeContentModifierClassName = 'tabs__content-item_active';
 
-    this.activeTabButton = null;
+    this.activeTabBtn = null;
 
     this.init();
   }
@@ -60,7 +60,7 @@ class Tabs {
 
     tab.classList.add(this.activeTabModifierClassName);
 
-    this.activeTabButton = tab;
+    this.activeTabBtn = tab;
 
     this.hideContent();
   }
@@ -72,7 +72,7 @@ class Tabs {
       return;
     }
 
-    const key = this.activeTabButton.getAttribute(this.keyAttributeName);
+    const key = this.activeTabBtn.getAttribute(this.keyAttributeName);
 
     this.contentItems.forEach((item) => {
       const itemKey = item.getAttribute(this.keyAttributeName);

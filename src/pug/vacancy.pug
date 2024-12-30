@@ -19,60 +19,75 @@ html(lang="ru")
 							img.intro__image(src="images/decor-06.jpg" alt="")
 
 							.intro__inner
-								h1.common__h1.intro__heading Карьера
+								h1.common__h1.common__h1_accent.intro__heading Карьера
 
 								.common__text.common__text_large.intro__description
 									p Узнайте больше о наших рабочих направлениях, чтобы понять, какая из них вам больше всего подходит
 
 				.container.vacancy__container
 					.vacancy__inner
-						nav.vacancy__nav
-							ul.vacancy__nav-list
-								li.vacancy__nav-item
-									button.vacancy__nav-btn.vacancy__nav-btn_active Управление заводом
+						.vacancy__tabs
+							.tabs.tabs_sidebar.js-tabs
+								ul.tabs__list
+									li.tabs__item
+										button.tabs__btn.tabs__btn_active.js-tab-btn(data-key="management") Управление заводом
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Производство
+									li.tabs__item
+										button.tabs__btn.js-tab-btn(data-key="production") Производство
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Разработка новых продуктов
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="innovation") Разработка новых продуктов
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Контроль качества продукции
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="quality") Контроль качества продукции
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Закупки
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="purchase") Закупки
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Продажи
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="sales") Продажи
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Маркетинг
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="merketing") Маркетинг
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Логистика
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="logostic") Логистика
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Контроль и аналитика
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="analytics") Контроль и аналитика
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Бухгалтерия
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="accounting") Бухгалтерия
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Информационные технологии
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="it") Информационные технологии
 
-								li.vacancy__nav-item
-									button.vacancy__nav-btn Кадровые ресурсы
+									//- li.tabs__item
+									//- 	button.tabs__btn.js-tab-btn(data-key="hr") Кадровые ресурсы
 
-						ul.vacancy__list
-							li.vacancy__item 
-								//= partials/vacancy-preview.pug
+								.tabs__content.js-tab-content
+									ul.tabs__content-item.tabs__content_active.vacancy__list.js-tab-content-item(data-key="management")
+										li.vacancy__item 
+											//= partials/vacancy-preview.pug
+
+										li.vacancy__item 
+											//= partials/vacancy-preview.pug
+
+										li.vacancy__item 
+											//= partials/vacancy-preview.pug
+
+									ul.tabs__content-item.tabs__content_active.vacancy__list.js-tab-content-item(data-key="production")
+										li.vacancy__item 
+											//= partials/vacancy-preview.pug
+
+										li.vacancy__item 
+											//= partials/vacancy-preview.pug
 														
 				.vacancy__benefits
 					.container
 						section.benefits.benefits_no-bg
 							.benefits__inner
-								h2.common__h2.benefits__heading Что вас ждет&nbsp;в&nbsp;ООО&nbsp;«Петрогрупп»
+								h2.common__h2.benefits__heading Что вас ждет в&nbsp;ООО&nbsp;«Петрогрупп»
 
 								ul.benefits__list
 									li.benefits__item
@@ -146,9 +161,16 @@ html(lang="ru")
 
 							.common__text.common__text_large.review__description Вам интересно, каково это — работать в Петрогрупп? Узнайте, что наши сотрудники говорят о своей работе и культуре нашей компании!
 
-							.review__slider
-								ul.review__slider-list
-									li.review__slider-item
+							.review__pagination
+								button.review__pagination-btn.js-review-swiper-btn-prev
+									include ../../build/images/icons/icon-arrow-left-16.svg
+
+								button.review__pagination-btn.js-review-swiper-btn-next
+									include ../../build/images/icons/icon-arrow-right-16.svg
+
+							.review__slider.swiper-container.js-review-swiper
+								ul.review__slider-list.swiper-wrapper
+									li.review__slider-item.swiper-slide
 										.review-preview
 											img.review-preview__image(src="images/review/review-01.jpg" alt="")
 
@@ -159,6 +181,30 @@ html(lang="ru")
 
 												.common__text.review-preview__description
 													p «У нас достаточно слаженный и ответственный коллектив. Отношение к сотрудникам, условия отдыха и питания, организация работы на производстве на высоком уровне, все делается строго по регламменту.#[br]Доставка сотрудников к месту работы также является большим плюсом, т.к. это способствует формированию слаженного коллектива, поскольку обеспечивает комфортные условия труда и позволяет сотрудникам экономить время и деньги на дорогу»
+
+									li.review__slider-item.swiper-slide
+										.review-preview
+											img.review-preview__image(src="images/review/review-02.jpg" alt="")
+
+											.review-preview__info
+												h5.common__h5.review-preview__author Алексей Петров
+
+												span.common__text.common__text_small.review-preview__position Технический директор
+
+												.common__text.review-preview__description
+													p «Качество нашей продукции - наш главный приоритет. Мы постоянно работаем над улучшением технологий и процессов, чтобы обеспечить нашим клиентам только лучшее»
+
+									li.review__slider-item.swiper-slide
+										.review-preview
+											img.review-preview__image(src="images/review/review-03.jpg" alt="")
+
+											.review-preview__info
+												h5.common__h5.review-preview__author Игнат Петрович
+
+												span.common__text.common__text_small.review-preview__position Отдел кадров
+
+												.common__text.review-preview__description
+													p «Эффективное взаимодействие между отделами и командами является ключом к успеху компании. Мы стараемся создавать поддерживающую атмосферу и способствовать развитию каждого сотрудника.#[br]Проведение обучающих мероприятий и мастер-классов помогает нашим сотрудникам быть в курсе последних тенденций и улучшать свои профессиональные навыки»
 
 				.vacancy__employer
 					.container.vacancy__employer-container
@@ -190,6 +236,8 @@ html(lang="ru")
 						//= partials/faq.pug
 
 		//= partials/footer.pug
+
+		//= partials/modal/bid-modal.pug
 
 		script(src="script/vendor.js" type="text/javascript")
 

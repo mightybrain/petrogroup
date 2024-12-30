@@ -2,7 +2,9 @@
 	display flex
 	flex-wrap wrap
 	column-gap 24px
-	row-gap 122px
+	row-gap 40px
+	padding 116px 0 0
+	border-top 1px solid $gray-light
 
 	&__heading
 		width calc(50% - 12px)
@@ -11,3 +13,34 @@
 	&__description
 		width calc(50% - 12px)
 		color $green
+
+	&__pagination
+		display flex
+		justify-content flex-end
+		width 100%
+		gap 40px
+
+		&-btn
+			display flex
+			justify-content center
+			align-items center
+			width 42px
+			height 42px
+			border-radius 50%
+			background-color alpha($gray-soft, .6)
+			cursor pointer
+
+			& svg
+				display block
+				width 16px
+				height 16px
+				stroke-width 2px
+				stroke $asphalt
+
+	&__slider
+		width 100%
+		max-width 1452px
+		overflow visible
+
+		&-list
+			height auto

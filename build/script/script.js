@@ -80,7 +80,7 @@ class Tabs {
   constructor(tabsContainer) {
     this.tabsContainer = tabsContainer;
 
-    this.buttons = tabsContainer.querySelectorAll('.js-tab-button');
+    this.buttons = tabsContainer.querySelectorAll('.js-tab-btn');
 
     this.content = tabsContainer.querySelector('.js-tab-content');
 
@@ -89,10 +89,10 @@ class Tabs {
     this.keyAttributeName = 'data-key';
     this.inTransitionModifierClassName = 'tabs__content_in-transition';
     this.hiddenContentModifierClassName = 'tabs__content_hidden';
-    this.activeTabModifierClassName = 'tabs__item-button_active';
+    this.activeTabModifierClassName = 'tabs__btn_active';
     this.activeContentModifierClassName = 'tabs__content-item_active';
 
-    this.activeTabButton = null;
+    this.activeTabBtn = null;
 
     this.init();
   }
@@ -138,7 +138,7 @@ class Tabs {
 
     tab.classList.add(this.activeTabModifierClassName);
 
-    this.activeTabButton = tab;
+    this.activeTabBtn = tab;
 
     this.hideContent();
   }
@@ -150,7 +150,7 @@ class Tabs {
       return;
     }
 
-    const key = this.activeTabButton.getAttribute(this.keyAttributeName);
+    const key = this.activeTabBtn.getAttribute(this.keyAttributeName);
 
     this.contentItems.forEach((item) => {
       const itemKey = item.getAttribute(this.keyAttributeName);
@@ -180,6 +180,169 @@ class Tabs {
   }
 }
 
+function initReviewSwiper(selector) {
+  if (!selector || !document.querySelector(selector)) {
+    return;
+  }
+
+  new Swiper(selector, {
+    speed: 1200,
+    // slidesPerView: 1,
+    slidesPerView: 2,
+    spaceBetween: 16,
+    loop: false,
+    // autoHeight: true,
+    direction: 'horizontal',
+    // breakpoints: {
+    //   1480: {
+    //     slidesPerView: 2,
+    //   },
+    // },
+    navigation: {
+      nextEl: '.js-review-swiper-btn-next',
+      prevEl: '.js-review-swiper-btn-prev',
+    },
+  })
+}
+
+class ModalManager {
+  static instance = null;
+
+  constructor() {
+    if (!ModalManager.instance) {
+      this.init();
+
+      ModalManager.instance = this;
+    }
+
+    return ModalManager.instance;
+  }
+
+  init() {
+    this.modals = {};
+  }
+
+  addModal(key, modal) {
+    if (!key || !modal) {
+      throw new Error('Не указан ключ или элемент модального окна');
+    }
+
+    if (this.modals[key]) {
+      throw new Error(`Модальное окно с ключом ${key} уже существует`);
+    }
+
+    this.modals[key] = modal;
+
+    modal.setModalManager(this);
+
+    return this;
+  }
+
+  openModal(key) {
+    this.modals[key]?.openModal();
+  }
+
+  closeModal(key) {
+    this.modals[key]?.closeModal();
+  }
+
+  hasOpenedModals() {
+    const modals = Object.values(this.modals);
+
+    return modals.some((modal) => modal.isOpened());
+  }
+
+  closeAnyModal() {
+    const modals = Object.values(this.modals);
+
+    modals.forEach((modal) => {
+      if (modal.isOpened()) {
+        modal.closeModal();
+      }
+    })
+  }
+
+  getParentModal(element) {
+    const modals = Object.values(this.modals);
+
+    return modals.find((modal) => modal.hasNestedElement(element));
+  }
+}
+
+class Modal {
+  constructor(element, openModalBtns = []) {
+    this.element = element;
+    this.openModalBtns = openModalBtns;
+    this.modalOverlay = element.querySelector('.js-modal-overlay');
+    this.closeModalBtns = element.querySelectorAll('.js-modal-close-btn');
+
+    this.modalManager = null;
+    this.nestedForm = null;
+
+    this.initHandlers();
+  }
+
+  isOpened() {
+    return !this.element.hasAttribute('hidden');
+  }
+
+  openModal() {
+    document.body.classList.add('modal-opened');
+
+    this.element.removeAttribute('hidden');
+  };
+
+  closeModal() {
+    this.element.setAttribute('hidden', '');
+
+    if (!this.modalManager || !this.modalManager.hasOpenedModals()) {
+      document.body.classList.remove('modal-opened');
+    }
+
+    if (this.nestedForm) {
+      this.nestedForm.handleParentModalClosed();
+    }
+  };
+
+  hasNestedElement(nestedElement) {
+    return this.element.contains(nestedElement);
+  }
+
+  setNestedForm(form) {
+    this.nestedForm = form;
+  }
+
+  setModalManager(manager) {
+    this.modalManager = manager;
+  }
+
+  initHandlers() {
+    this.openModalBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        this.openModal();
+      });
+    });
+
+    this.closeModalBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        this.closeModal();
+      });
+    });
+
+    this.modalOverlay?.addEventListener('click', (event) => {
+      if (event.target === this.modalOverlay) {
+        this.closeModal();
+      }
+    });
+  
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !this.element.hasAttribute('hidden')) {
+        this.closeModal();
+      }
+    });
+  }
+}
+
 // Faq
 function initFaq() {
   const faqManager = new FaqManager();
@@ -198,8 +361,55 @@ function initTabs() {
   })
 }
 
+// Свайпер
+function initSwiper() {
+  initReviewSwiper('.js-review-swiper');
+}
+
+// Модальные окна
+function initModals() {
+  const bidModal = new Modal(
+    document.getElementById('bid-modal'),
+    document.querySelectorAll('.js-bid-modal-btn'),
+  );
+
+  // const successModal = new Modal(document.getElementById('success-modal'));
+
+  // const errorModal = new Modal(document.getElementById('error-modal'));
+
+  new ModalManager()
+    .addModal('bid-modal', bidModal)
+    // .addModal('success-modal', successModal)
+    // .addModal('error-modal', errorModal);
+}
+
+// // Формы
+// function initForms() {
+//   ['contact-us-form', 'contact-us-form-modal', 'get-demo-form-modal'].forEach((selector) => {
+//     const element = document.getElementById(selector);
+
+//     if (!element) {
+//       return;
+//     }
+
+//     const modalManager = new ModalManager();
+
+//     const form = initForm(element, modalManager, 'success-modal', 'error-modal');
+
+//     const parentModal = modalManager.getParentModal(element);
+
+//     if (parentModal) {
+//       parentModal.setNestedForm(form);
+//     }
+//   })
+// }
+
 document.addEventListener('DOMContentLoaded', () => {
   initFaq();
 
   initTabs();
+
+  initSwiper();
+
+  initModals();
 });

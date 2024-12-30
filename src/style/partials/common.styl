@@ -13,6 +13,10 @@
     font-size 80px
     line-height 80px
 
+    &_accent
+      font-size 100px
+      line-height 95px
+
   &__h2
     font-size 60px
     line-height 66px
@@ -52,9 +56,30 @@
       margin 0
 
     & p:not([class]) + p:not([class])
-      margin 24px 0 0
+      margin 29px 0 0
+
+    & ul:not([class])
+      display flex
+      flex-direction column
+      gap 24px
+
+      & li:not([class])
+        position relative
+        padding 0 0 0 40px
+
+        &::before
+          content ''
+          position absolute
+          top 12px
+          left 1px
+          display block
+          width 22px
+          height 2px
+          border-radius 1px
+          background-color $green-poison
 
   &__btn
+    display inline-block
     padding 10px 24px
     font-size 16px
     line-height 24px
@@ -62,9 +87,18 @@
     color $white
     border-radius 22px
     background-color $orange
+    cursor pointer
 
     &_green
       background-color $green
+
+    &_gray
+      color $asphalt
+      background-color alpha($gray-soft, .6)
+
+    &_small
+      padding 4px 16px
+      border-radius 16px
 
   &__tag
     padding 4px 8px

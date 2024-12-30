@@ -20,6 +20,9 @@
     min-width 388px
     padding 12px
     gap 12px
+    font-size 22px
+    line-height 29px
+    font-weight 400
     color $graphite
     border-radius 12px
     background-color $gray-soft
@@ -38,6 +41,24 @@
         height 40px
         stroke-width 2px
         stroke $graphite
+
+.tabs_sidebar
+  position relative
+  flex-direction row
+  gap 24px
+
+  & .tabs__list
+    position sticky
+    top 0
+    left 0
+    flex-direction column
+    flex-shrink 0
+    width 382px
+
+  & .tabs__btn
+    justify-content flex-end
+    width 100%
+    min-width auto
 
 .tabs__btn
   &:hover,

@@ -1,0 +1,107 @@
+.form
+  position relative
+
+  &__inner
+    display flex
+    flex-direction column
+
+  &__section + &__section
+    margin 32px 0 0
+
+  &__section
+    display flex
+    flex-direction column
+    gap 16px
+
+    &-heading
+      color $graphite
+
+  &__cols-2
+    display grid
+    grid-template-columns repeat(2, 1fr)
+    row-gap 12px
+    column-gap 24px
+
+  &__item
+    display flex
+    flex-direction column
+    gap 4px
+
+  &__actions
+    display flex
+    align-items center
+    justify-content space-between
+    margin 40px 0 0
+
+.label
+  font-size 16px
+  line-height 24px
+  font-weight 400
+  color $asphalt
+
+.asterisk
+  margin 0 0 0 4px
+  font inherit
+  color $red
+
+.checkbox
+  display flex
+  gap 8px
+
+  &__default
+    position absolute
+    width 0
+    height 0
+    opacity 0
+    pointer-events none
+
+  &__custom
+    width 24px
+    height 24px
+    border-radius 4px
+    border 1px solid $gray-light
+
+  &__label
+    font-size 16px
+    line-height 24px
+    font-weight 400
+    color $graphite
+
+  &__link
+    font inherit
+    color $orange
+    text-decoration none
+
+.input,
+.textarea
+  padding 10px 12px
+  font-size 16px
+  line-height 24px
+  font-weight 400
+  color $graphite
+  border 1px solid $gray-light
+  border-radius 8px
+
+  &:focus
+    outline none
+
+.textarea
+  height 100px
+  resize none
+
+.file-uploader
+  display flex
+  align-items center
+  gap 16px
+
+  &__default
+    position absolute
+    opacity 0
+    pointer-events none
+
+  &__file-label
+    font-size 16px
+    line-height 24px
+    font-weight 400
+    color $gray-deep
+    pointer-events none
