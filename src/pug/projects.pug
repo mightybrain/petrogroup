@@ -1,0 +1,100 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.projects
+				.projects__intro
+					.container.projects__intro-container
+						.intro.intro_no-bg
+							h1.common__h1.intro__heading Проекты
+
+				.container.projects__container
+					.projects__inner
+
+						.projects__tabs
+							.tabs.js-tabs
+								ul.tabs__list
+									li.tabs__item
+										button.tabs__btn.tabs__btn_active.js-tab-btn(data-key="all") Все
+
+									li.tabs__item
+										button.tabs__btn.js-tab-btn(data-key="storage") Хранение
+
+									li.tabs__item
+										button.tabs__btn.js-tab-btn(data-key="logistics") Логистические решения
+
+									li.tabs__item
+										button.tabs__btn.js-tab-btn(data-key="packaging") Упаковка
+
+									li.tabs__item
+										button.tabs__btn.js-tab-btn(data-key="production") Контрактное производство
+
+									li.tabs__item
+										button.tabs__btn.js-tab-btn(data-key="sertification") Сертификация
+
+								.tabs__content.js-tab-content
+									.tabs__content-item.tabs__content_active.projects__group.js-tab-content-item(data-key="all")
+										ul.projects__list
+											li.projects__item
+												a.project-preview(href='')
+													img.project-preview__image(src='' alt='')
+
+													ul.project-preview__tags
+														li.common__tag.project-preview__tag Хранение
+
+													h5.common__h5.project-preview__heading Организация стабильных поставок апельсинов из Марокко для производства соков и пюре
+
+										button.common__btn.common__btn_gray.projects__show-all-btn Показать еще
+
+				.projects__about-production
+					.container.projects__about-production-container
+						.cards
+							ul.cards__list
+								li.cards__item
+									.cards__item-info
+										h3.common__h3.cards__item-heading Использование производственных площадок компании для организации полного цикла производства продукта под брендом клиента
+
+										.common__text.common__text_medium.cards__item-description
+											ul
+												li #[em Подбор сырья]#[br] Профессиональный подбор сырья под требования клиента
+
+												li #[em Подбор упаковки]#[br] Выберем лучший вариант для готового продукта клиента от проверенных производителей
+
+												li #[em Производство]#[br] Асептическое производство и фасовка
+
+												li #[em Собственная пищевая лаборатория]#[br] Услуги лаборатории для купажирования и блендирования продуктов. Разработка и адаптация рецептур для блендов сырья
+
+												li #[em Сертификация]#[br] Сертификация продукции и проверка на требования всех действующих стандартов на территории РФ
+
+												li #[em Хранение]#[br] Создание стока продукции и хранение в удобном для клиента регионе
+
+												li #[em Доставка]#[br] Решение всех логистических вопросов (в том числе таможенное оформление)
+
+								li.cards__item
+									img.cards__item-image(src="images/decor-07.jpg" alt="")
+
+				.projects__benefits
+					.container
+						//= partials/benefits-no-bg.pug
+
+				.projects__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		//= partials/modal/bid-modal.pug
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")

@@ -1,0 +1,127 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.production
+				.production__intro
+					.container.production__intro-container
+						.intro
+							img.intro__image(src="images/decor-08.jpg" alt="")
+
+							.intro__inner
+								h1.common__h1.common__h1_accent.intro__heading Производство
+
+				.container.production__container
+					.production__inner
+
+				.production__about
+					.container.production__about-container
+						.cards
+							ul.cards__list
+								li.cards__item
+									.cards__item-info
+										h3.common__h3.cards__item-heading Использование производственных площадок компании для организации полного цикла производства продукта под брендом клиента
+
+										.common__text.common__text_medium.cards__item-description
+											ul
+												li #[em Подбор сырья]#[br] Профессиональный подбор сырья под требования клиента
+
+												li #[em Подбор упаковки]#[br] Выберем лучший вариант для готового продукта клиента от проверенных производителей
+
+												li #[em Производство]#[br] Асептическое производство и фасовка
+
+												li #[em Собственная пищевая лаборатория]#[br] Услуги лаборатории для купажирования и блендирования продуктов. Разработка и адаптация рецептур для блендов сырья
+
+												li #[em Сертификация]#[br] Сертификация продукции и проверка на требования всех действующих стандартов на территории РФ
+
+												li #[em Хранение]#[br] Создание стока продукции и хранение в удобном для клиента регионе
+
+												li #[em Доставка]#[br] Решение всех логистических вопросов (в том числе таможенное оформление)
+
+								li.cards__item
+									img.cards__item-image(src="images/decor-07.jpg" alt="")
+
+				.production__achieve
+					.container
+						.card
+							img.card__image(src='images/decor-09.jpg' alt='')
+
+							.card__info
+								h1.common__h1.common_accent 1&nbsp;305&nbsp;254
+
+								.common__text.common__text_large
+									p С 2015 г. по настоящее время мы реализовали более 1 305 254 тонн сырья
+
+				.production__features
+					.container
+						section.features
+							h2.common__h2.features__heading Высокие стандарты качества и безопасности продукта
+
+							ul.features__list
+								li.features__item
+									.features__item-info
+										h3.common__h3.features__item-heading Качество сырья
+
+										.common__text.common__text_medium.features__item-description
+											p Регулярный аудит садов и фермерских хоз-в на контроль уровня пестицидов и нитратов, а так же выявление других факторов влияющих на качество сырья, которое поступает на производство для переработки
+
+								li.features__item
+									img.features__item-image(src="images/features/feature-04.jpg" alt="")
+
+								li.features__item
+									img.features__item-image(src="images/features/feature-05.jpg" alt="")
+
+								li.features__item
+									.features__item-info
+										h3.common__h3.features__item-heading Безопасность продукта
+
+										.common__text.common__text_medium.features__item-description
+											p На каждой площадке имеются сертифицированные микробиологические производственные лаборатории, которые отслеживают качество производимого сырья и проводят другие анализы, гарантирующие безопасность продукта
+
+								li.features__item
+									.features__item-info
+										h3.common__h3.features__item-heading Автоматизация производства
+
+										.common__text.common__text_medium.features__item-description
+											p Автоматизация производства позволяет добиться наибольшей эффективности и максимального контроля качества на всех этапах производства
+
+								li.features__item
+									img.features__item-image(src="images/features/feature-06.jpg" alt="")
+
+								li.features__item
+									img.features__item-image(src="images/features/feature-07.jpg" alt="")
+
+								li.features__item
+									.features__item-info
+										h3.common__h3.features__item-heading Хранение продукции
+
+										.common__text.common__text_medium.features__item-description
+											p На территории всех заводов, имеется большая площадь организованная под хранение продукции, отвечающая следующим критериям:
+											
+											ul
+												li обеспечение подходящим техническим оснащением,
+												li соблюдение условий  хранения,
+												li контроль состояния товара, его упаковки и тары,
+												li выявление и утилизация некачественного сырья.
+
+				.production__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		//= partials/modal/bid-modal.pug
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")

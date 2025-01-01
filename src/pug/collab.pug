@@ -1,0 +1,232 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.collab
+				.collab__intro
+					.container.collab__intro-container
+						.intro
+							img.intro__image(src="images/decor-10.jpg" alt="")
+
+							.intro__inner
+								h1.common__h1.common__h1_accent.intro__heading Сотрудничество
+
+				.collab__benefits
+					.container
+						section.benefits.benefits_no-bg
+							.benefits__inner
+								ul.benefits__list
+									li.benefits__item
+										.benefits__icon
+											include ../../build/images/icons/icon-quality-40.svg
+
+										h5.common__h5.benefits__label Премиальное качество
+
+										p.common__text.benefits__description Асептическое производство и фасовка. Более 50 наименований товаров, прошедших проверку на требования всех действующих стандартов на территории РФ
+
+									li.benefits__item
+										.benefits__icon
+											include ../../build/images/icons/icon-availability-40.svg
+
+										h5.common__h5.benefits__label Постоянное наличие
+
+										p.common__text.benefits__description На основании прогнозирования происходят плановые закупки, чтобы сырье всегда было в наличии (в том числе и импортное сырье)
+
+									li.benefits__item
+										.benefits__icon
+											// include ../../build/images/icons/icon-microscope-40.svg
+
+										h5.common__h5.benefits__label Контроль качества
+
+										p.common__text.benefits__description Собственные испытательные лаборатории и многолетнее сотрудничество со сторонними аккредитованными лабораториями по всей России
+
+									li.benefits__item
+										.benefits__icon
+											include ../../build/images/icons/icon-payment-40.svg
+
+										h5.common__h5.benefits__label Комфортные условия оплаты
+
+										p.common__text.benefits__description Гибкая ценовая политика для наших клиентов (предоплата, отсрочка, товарный кредит)
+
+				.collab__about-production
+					.container.collab__about-production-container
+						.cards
+							ul.cards__list
+								li.cards__item
+									.cards__item-info
+										h3.common__h3.cards__item-heading Использование производственных площадок компании для организации полного цикла производства продукта под брендом клиента
+
+										.common__text.common__text_medium.cards__item-description
+											ul
+												li #[em Подбор сырья]#[br] Профессиональный подбор сырья под требования клиента
+
+												li #[em Подбор упаковки]#[br] Выберем лучший вариант для готового продукта клиента от проверенных производителей
+
+												li #[em Производство]#[br] Асептическое производство и фасовка
+
+												li #[em Собственная пищевая лаборатория]#[br] Услуги лаборатории для купажирования и блендирования продуктов. Разработка и адаптация рецептур для блендов сырья
+
+												li #[em Сертификация]#[br] Сертификация продукции и проверка на требования всех действующих стандартов на территории РФ
+
+												li #[em Хранение]#[br] Создание стока продукции и хранение в удобном для клиента регионе
+
+												li #[em Доставка]#[br] Решение всех логистических вопросов (в том числе таможенное оформление)
+
+								li.cards__item
+									img.cards__item-image(src="images/decor-07.jpg" alt="")
+
+				.collab__contact-us
+					.container
+						section.contact-us
+							.contact-us__info
+								h2.common__h2.contact-us__heading Подай заявку на сотрудничество
+
+								.common__text.common__text_large
+									p Партнерство между компаниями — ключевой элемент успешной бизнес-деятельности в современном мире
+									
+									p Мы заинтересованы в долгосрочном взаимовыгодном сотрудничестве и открыты к различным предложениям для совместной работы
+
+							.contact-us__bid
+								.bid
+									.bid__info
+										h3.common__h3.bid__heading Оставьте заявку
+
+										.common__text.common__text_medium.bid__description
+											p Наш менеджер свяжется с вами и ответит на все вопросы
+
+									.bid__form
+										form.form
+											.form__inner
+												.form__section
+													h4.common__h4.form__section-heading Что вас интересует?
+														span.asterisk *
+
+													.form__cols-2
+														label.checkbox
+															input.checkbox__default(type='checkbox')
+
+															.checkbox__custom
+
+															span.checkbox__label Закупка соков/пюре
+
+														label.checkbox
+															input.checkbox__default(type='checkbox')
+
+															.checkbox__custom
+
+															span.checkbox__label Ингредиенты
+
+														label.checkbox
+															input.checkbox__default(type='checkbox')
+
+															.checkbox__custom
+
+															span.checkbox__label Продажа соков/пюре
+
+														label.checkbox
+															input.checkbox__default(type='checkbox')
+
+															.checkbox__custom
+
+															span.checkbox__label Упаковка
+
+														label.checkbox
+															input.checkbox__default(type='checkbox')
+
+															.checkbox__custom
+
+															span.checkbox__label Применение продукта
+
+														label.checkbox
+															input.checkbox__default(type='checkbox')
+
+															.checkbox__custom
+
+															span.checkbox__label Контрактное производство
+
+														label.checkbox
+															input.checkbox__default(type='checkbox')
+
+															.checkbox__custom
+
+															span.checkbox__label Логистические решения
+
+														label.checkbox
+															input.checkbox__default(type='checkbox')
+
+															.checkbox__custom
+
+															span.checkbox__label Другое
+
+												.form__section
+													h4.common__h4.form__section-heading Представьтесь, пожалуйста
+
+													.form__cols-2
+														.form__item
+															label.label Имя
+																span.asterisk *
+															input.input(type='text')
+
+														.form__item
+															label.label Телефон
+																span.asterisk *
+															input.input(type='text')
+
+														.form__item
+															label.label Email
+															input.input(type='text')
+
+														.form__item
+															label.label Город
+															input.input(type='text')
+
+													.form__item
+														label.label Название компании
+														input.input(type='text')
+
+												.form__section
+													h4.common__h4.form__section-heading Комментарий
+
+													textarea.textarea
+
+												.form__section
+													h4.common__h4.form__section-heading Прикрепите файл
+
+													label.file-uploader
+														input.file-uploader__default(type='file')
+
+														span.common__btn.common__btn_gray.common__btn_small.file-uploader__custom Выберите файл
+
+														span.file-uploader__file-label Файл не выбран
+
+												.form__actions
+													label.checkbox
+														input.checkbox__default(type='checkbox')
+
+														.checkbox__custom
+
+														span.checkbox__label Я согласен с #[a.checkbox__link(href='' target='_blank') обработкой персональных данных]
+
+													button.common__btn.form__submit-btn Оставить заявку
+
+				.collab__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		//= partials/modal/bid-modal.pug
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")
