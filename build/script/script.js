@@ -404,6 +404,13 @@ function initModals() {
 //   })
 // }
 
+// Бургер
+function initBurger() {
+  document.querySelector('.js-burger-btn').addEventListener('click', () => {
+    document.body.classList.toggle('burger-opened');
+  })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initFaq();
 
@@ -412,4 +419,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSwiper();
 
   initModals();
+
+  initBurger();
 });

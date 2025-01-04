@@ -10,19 +10,27 @@
     max-width 1600px
     margin 0 auto
 
-  &__heading
-    font-size 100px
-    line-height 95px
-
   &__description
     display flex
     align-items center
     gap 150px
 
+    @media $tablet-landscape-large
+      gap 50px
+
+    @media $tablet-landscape-medium
+      flex-direction column
+      align-items flex-start
+      gap 24px
+
   &__decor-image
     display block
     width 256px
     margin 5px 0 0
+
+    @media $tablet-landscape-medium
+      width 156px
+      margin 0
 
   &__demo
     position relative

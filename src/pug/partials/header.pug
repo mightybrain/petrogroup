@@ -1,25 +1,40 @@
 header.header
-	div.container.header__container
-		div.header__inner
+	.container.header__container
+		.header__inner.header__inner_short
+			.header__logo
+				a.header__logo-link(href="/")
+					img.header__logo-image(src="images/logo-petrogroup-body.svg" alt="")
 
+			.header__contact-us
+				ul.header__contact-us-list
+					li.header__contact-us-item
+						a.header__contact-us-link(href="tel:+78123201650")
+							include ../../build/images/icons/icon-phone-24.svg
+
+					li.header__contact-us-links-item
+						a.header__contact-us-link(href="mailto:pgrp@mail.ru" target="_blank")
+							include ../../build/images/icons/icon-mail-24.svg
+
+			button.header__burger.js-burger-btn
+				.header__burger-line
+
+		.header__inner.header__inner_full
 			.header__credits
 				.header__logo
 					a.header__logo-link(href="/")
-						img.header__logo-image(src="images/logo-petrogroup.svg" alt="")
+						img.header__logo-image(src="images/logo-petrogroup-body.svg" alt="")
 
 				span.common__text.common__text_small.header__slogan Поставщик высокотехнологичных овощных и&nbsp;фруктовых ингредиентов для малого, среднего и&nbsp;крупного бизнеса
 
 			.header__contacts
 				ul.header__contacts-list
 					li.header__contacts-item
-						.header__contacts-icon
-							include ../../build/images/icons/icon-phone-24.svg
+						include ../../build/images/icons/icon-phone-24.svg
 
 						a.header__contacts-link(href="tel:+78123201650") +7&nbsp;(812)&nbsp;320-16-50
 
 					li.header__contacts-item
-						.header__contacts-icon
-							include ../../build/images/icons/icon-mail-24.svg
+						include ../../build/images/icons/icon-mail-24.svg
 
 						a.header__contacts-link(href="mailto:pgrp@mail.ru" target="_blank") pgrp@mail.ru
 
@@ -28,16 +43,17 @@ header.header
 
 			span.header__lang
 				span.header__lang-current Ru
+				
+				.header__lang-list-wrapper
+					ul.header__lang-list
+						li.header__lang-item
+							a.header__lang-link(href="") Ru
 
-				ul.header__lang-list
-					li.header__lang-item
-						a.header__lang-link(href="") Ru
+						li.header__lang-item
+							a.header__lang-link(href="") En
 
-					li.header__lang-item
-						a.header__lang-link(href="") En
-
-					li.header__lang-item
-						a.header__lang-link(href="") Cn
+						li.header__lang-item
+							a.header__lang-link(href="") Cn
 
 			nav.header__nav
 				ul.header__nav-list

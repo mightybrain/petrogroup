@@ -13,21 +13,41 @@
     font-size 80px
     line-height 80px
 
+    @media $tablet-landscape-large
+      font-size 70px
+      line-height 70px
+
     &_accent
       font-size 100px
       line-height 95px
+
+      @media $tablet-landscape-large
+        font-size 80px
+        line-height 76px
 
   &__h2
     font-size 60px
     line-height 66px
 
+    @media $tablet-landscape-large
+      font-size 50px
+      line-height 55px
+
   &__h3
     font-size 40px
     line-height 44px
 
+    @media $tablet-landscape-large
+      font-size 32px
+      line-height 35px
+
   &__h4
     font-size 26px
     line-height 31px
+
+    @media $tablet-landscape-large
+      font-size 24px
+      line-height 29px
 
   &__h5
     font-size 22px
@@ -40,6 +60,10 @@
     font-weight 400
     color $graphite
 
+    @media $tablet-landscape-large
+      font-size 15px
+      line-height 23px
+
     &_small
       font-size 13px
       line-height 16px
@@ -48,9 +72,17 @@
       font-size 22px
       line-height 29px
 
+      @media $tablet-landscape-large
+        font-size 20px
+        line-height 26px
+
     &_large
       font-size 32px
       line-height 42px
+
+      @media $tablet-landscape-large
+        font-size 28px
+        line-height 36px
 
     & p:not([class])
       margin 0
@@ -85,9 +117,21 @@
     line-height 24px
     font-weight 400
     color $white
+    text-align center
     border-radius 22px
     background-color $orange
     cursor pointer
+
+    @media $tablet-landscape-large
+      padding 9px 24px 8px
+      font-size 15px
+      line-height 23px
+      border-radius 20px
+
+    @media $tablet-landscape-medium
+      font-size 14px
+      line-height 21px
+      padding 10px 24px 9px
 
     &_green
       background-color $green

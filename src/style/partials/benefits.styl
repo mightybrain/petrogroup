@@ -5,6 +5,9 @@
   background-image url("../images/decor-02.jpg")
   background-size cover
 
+  @media $tablet-landscape-medium
+    overflow hidden
+
   &_no-bg
     padding 0
     background none
@@ -20,10 +23,24 @@
     width calc(50% - 4px)
     color $white
 
+  &__list-wrapper
+    width 100%
+
+    @media $tablet-landscape-medium
+      overflow-x auto
+      -ms-overflow-style none
+      scrollbar-width none
+
+      &::-webkit-scrollbar
+        display none
+
   &__list
     display grid
     grid-template-columns repeat(4, 1fr)
     gap 8px
+
+    @media $tablet-landscape-medium
+      display flex
 
   &__item
     display flex
@@ -33,6 +50,11 @@
     gap 12px
     border-radius 16px
     background-color rgba(255, 255, 255, .9)
+
+    @media $tablet-landscape-medium
+      flex-shrink 0
+      min-width auto
+      width 296px
 
   &__icon
     & svg

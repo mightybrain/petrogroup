@@ -1,10 +1,16 @@
 .footer
   &__outer
     position relative
-    padding 80px 16px
+    padding 80px 40px
     background-color $green
     border-radius 16px
     overflow hidden
+
+    @media $tablet-landscape-medium
+      padding 32px
+
+    @media $phone
+      padding 32px 24px
 
     &::before
       content ""
@@ -25,11 +31,24 @@
     margin 0 auto
     gap 24px
 
+    @media $tablet-landscape-medium
+      flex-direction column
+      gap 36px
+
   &__credits
     display flex
     flex-direction column
-    margin -9px 0 0
     gap 12px
+
+    @media $tablet-landscape-medium
+      flex-direction row
+      align-items center
+      gap 32px
+
+    @media $phone
+      flex-direction column
+      align-items flex-start
+      gap 12px
 
   &__logo
     &-image
@@ -38,15 +57,44 @@
 
   &__slogan
     max-width 222px
+    font-size 13px
+    line-height 16px
+    font-weight 400
     color $white
+
+    @media $tablet-landscape-medium
+      max-width 322px
+      font-size 12px
+      line-height 14px
+
+    @media $phone
+      max-width 296px
 
   &__contacts
     display flex
     flex-direction column
     gap 24px
 
+    @media $tablet-landscape-medium
+      order 1
+      display grid
+      grid-template-columns repeat(2, 1fr)
+      padding 36px 0 0
+      gap 32px
+      border-top 1px solid $gray-light
+
+    @media $phone
+      grid-template-columns 100%
+
     &-label
+      font-size 22px
+      line-height 29px
+      font-weight 400
       color $white
+
+      @media $tablet-landscape-large
+        font-size 20px
+        line-height 26px
 
     &-group
       display flex
@@ -58,6 +106,18 @@
       flex-direction column
       gap 8px
 
+    &-item
+      display flex
+      align-items center
+      gap 8px
+
+      & svg
+        display block
+        width 24px
+        height 24px
+        stroke-width 2px
+        stroke $green-poison
+
     &-link
       font-size 16px
       line-height 24px
@@ -65,11 +125,26 @@
       color $white
       text-decoration none
 
+      @media $tablet-landscape-large
+        font-size 15px
+        line-height 23px
+
   &__nav
     display flex
     justify-content space-between
     width calc(50% - 12px)
     gap 24px
+
+    @media $tablet-landscape-medium
+      display grid
+      grid-template-columns repeat(2, 1fr)
+      width 100%
+      padding 36px 0 0
+      gap 32px
+      border-top 1px solid $gray-light
+
+    @media $phone
+      grid-template-columns 100%
 
     &-list,
     &-sublist
@@ -87,3 +162,23 @@
       font-weight 400
       color $white
       text-decoration none
+
+      @media $tablet-landscape-large
+        font-size 15px
+        line-height 23px
+
+.footer__nav-sublist
+  & .footer__nav-item
+    position relative
+    padding 0 0 0 12px
+
+    &::before
+      content ''
+      position absolute
+      top 10px
+      left 0
+      display block
+      width 4px
+      height 4px
+      border-radius 50%
+      background-color $green-poison
