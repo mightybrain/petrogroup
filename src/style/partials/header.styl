@@ -140,7 +140,10 @@
     height 40px
     border-radius 50%
     background-color alpha($gray-soft, .6)
+    opacity 1
+    pointer-events all
     cursor pointer
+    transition opacity .5s 0s ease
 
     &::before,
     &::after
@@ -212,7 +215,6 @@
         align-items flex-end
         width 100%
         height 100%
-        background-color alpha($black, .3)
 
       &::before
         content ""
@@ -226,15 +228,45 @@
         @media $tablet-landscape-medium
           display none
 
+    &-list-overlay
+      display none
+
+      @media $tablet-landscape-medium
+        position absolute
+        top 0
+        left 0
+        display block
+        width 100%
+        height 100%
+        background-color alpha($black, .3)
+
     &-list
       padding 8px
       border-radius 8px
       background-color $white
 
       @media $tablet-landscape-medium
+        position relative
+        transform translateY(100%)
         width 100%
         padding 34px 40px 32px
         border-radius 16px 16px 0 0
+        transition transform .5s 0s ease
+
+      &::before
+        content ''
+        display none
+
+        @media $tablet-landscape-medium
+          position absolute
+          top 16px
+          left 50%
+          transform translateX(-50%)
+          display block
+          width 36px
+          height 2px
+          border-radius 1px
+          background-color $gray-light
     
     &-link
       display block
@@ -259,9 +291,13 @@
         line-height 23px
         border-radius 8px
 
+      &_active,
       &:hover
         color $green
         background-color alpha($gray-soft, .6)
+
+      &_active
+        pointer-events none
 
   &__bid-btn
     white-space nowrap
@@ -322,7 +358,8 @@
       transition opacity .5s 0s ease, visibility 0s 0s linear
 
 body.burger-opened
-  overflow hidden
+  @media $tablet-landscape-medium
+    overflow hidden
 
   & .header__burger
     &::before,
@@ -343,3 +380,22 @@ body.burger-opened
     &_full
       @media $tablet-landscape-medium
         height 100%
+
+body.lang-opened
+  @media $tablet-landscape-medium
+    overflow hidden
+
+  & .header__lang-list-wrapper
+    @media $tablet-landscape-medium
+      opacity 1
+      visibility visible
+      transition opacity .5s 0s ease, visibility 0s 0s linear
+
+  & .header__lang-list
+    @media $tablet-landscape-medium
+      transform translateY(0)
+
+  & .header__burger
+    @media $tablet-landscape-medium
+      opacity 0
+      pointer-events none

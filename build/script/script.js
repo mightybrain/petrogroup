@@ -411,6 +411,16 @@ function initBurger() {
   })
 }
 
+function initLangMenu() {
+  document.querySelector('.js-lang-btn').addEventListener('click', () => {
+    document.body.classList.toggle('lang-opened');
+  })
+
+  document.querySelector('.js-lang-overlay').addEventListener('click', () => {
+    document.body.classList.remove('lang-opened');
+  })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initFaq();
 
@@ -421,4 +431,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
 
   initBurger();
+
+  initLangMenu();
 });

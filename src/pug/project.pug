@@ -1,0 +1,135 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.project
+				.project__intro
+					.container.project__intro-container
+						.intro.intro_vertical
+							img.intro__image(src="images/decor-11.jpg" alt="")
+
+							.intro__inner
+								h1.common__h1.common__h1_accent.intro__heading Потребность заказчика
+
+								.common__text.common__text_large.intro__description
+									p У клиента есть потребность в продукте на основе концентрированного сока, а также фруктового и овощного пюре, но нет производственных мощностей для этого. В этом случае он обращается за контратным производством в ООО «Петрогрупп»
+
+				.project__steps
+					.container.project__steps-container
+						section.steps
+							h2.common__h2.steps__heading Этапы взаимодействия с клиентом
+
+							ul.steps__list
+								li.steps__item
+									span.steps__index 1
+
+									h5.common__h5.steps__heading Контракт
+
+									.common__text.steps__description
+										p Заключение контракта с указанием объёма производимого товара, сроками, вариантами доставок сырья на производство и отгрузок клиенту, вид упаковки и прочее
+
+								li.steps__item
+									span.steps__index 2
+
+									h5.common__h5.steps__heading Производство
+
+									.common__text.steps__description
+										p Составление плана производства, подготовка производственных мощностей и запуск, согласно условий контракта
+
+								li.steps__item
+									span.steps__index 3
+
+									h5.common__h5.steps__heading Поставки
+
+									.common__text.steps__description
+										p Ежемесячная отгрузка готового продукта на точки хранения клиента или склады распределительных центров торговых сетей России
+
+								li.steps__item
+									span.steps__index 4
+
+									h5.common__h5.steps__heading Поддержка
+
+									.common__text.steps__description
+										p Сопровождение от момента поступления сырья и материалов (упаковка) до момента отгрузки продукции конечному потребителю. Разработка рецептуры, подбор спецификаций, сертификация готовой продукции
+
+				.project__features
+					.container
+						section.features
+							h2.common__h2.features__heading Ценности контрактного производства для клиента
+
+							ul.features__list
+								li.features__item
+									.features__item-info
+										h3.common__h3.features__item-heading Качество сырья
+
+										.common__text.common__text_medium.features__item-description
+											p Регулярный аудит садов и фермерских хоз-в на контроль уровня пестицидов и нитратов, а так же выявление других факторов влияющих на качество сырья, которое поступает на производство для переработки
+
+								li.features__item
+									img.features__item-image(src="images/features/feature-04.jpg" alt="")
+
+								li.features__item
+									img.features__item-image(src="images/features/feature-05.jpg" alt="")
+
+								li.features__item
+									.features__item-info
+										h3.common__h3.features__item-heading Безопасность продукта
+
+										.common__text.common__text_medium.features__item-description
+											p На каждой площадке имеются сертифицированные микробиологические производственные лаборатории, которые отслеживают качество производимого сырья и проводят другие анализы, гарантирующие безопасность продукта
+
+								li.features__item
+									.features__item-info
+										h3.common__h3.features__item-heading Автоматизация производства
+
+										.common__text.common__text_medium.features__item-description
+											p Автоматизация производства позволяет добиться наибольшей эффективности и максимального контроля качества на всех этапах производства
+
+								li.features__item
+									img.features__item-image(src="images/features/feature-06.jpg" alt="")
+
+								li.features__item
+									img.features__item-image(src="images/features/feature-07.jpg" alt="")
+
+								li.features__item
+									.features__item-info
+										h3.common__h3.features__item-heading Хранение продукции
+
+										.common__text.common__text_medium.features__item-description
+											p На территории всех заводов, имеется большая площадь организованная под хранение продукции, отвечающая следующим критериям:
+											
+											ul
+												li обеспечение подходящим техническим оснащением,
+												li соблюдение условий  хранения,
+												li контроль состояния товара, его упаковки и тары,
+												li выявление и утилизация некачественного сырья.
+
+				.project__benefits
+					.container
+						//= partials/benefits-no-bg.pug
+
+				.project__partners
+					.container
+						//= partials/partners.pug
+
+				.project__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		//= partials/modal/bid-modal.pug
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")

@@ -17,6 +17,9 @@
     @media $tablet-landscape-medium
       grid-template-columns repeat(3, 1fr)
 
+    @media $phone
+      grid-template-columns repeat(2, 1fr)
+
   &__item
     display flex
     justify-content center
@@ -26,4 +29,5 @@
 
   &__logo
     display block
+    width 100%
     max-width 180px
