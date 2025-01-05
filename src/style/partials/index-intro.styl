@@ -1,9 +1,21 @@
 .index-intro
+  position relative
   display flex
   flex-direction column
   gap 42px
 
+  & > svg
+    position absolute
+    top -97px
+    right -413px
+    display block
+    width 1093px
+    height 1170px
+    opacity .5
+    stroke $green-ease
+
   &__info
+    position relative
     display flex
     flex-direction column
     width 100%
@@ -14,6 +26,7 @@
   &__description
     display flex
     align-items center
+    max-width 1220px
     gap 150px
 
     @media $tablet-landscape-large

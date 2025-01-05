@@ -42,13 +42,25 @@
       flex-direction column
       align-items flex-start
       margin -79px 0 0
-      padding 24px
-      gap 12px
+      padding 29px 24px 24px
+      gap 11px
       background-color $green
       border-radius 16px
+      overflow hidden
+
+      & > svg
+        position absolute
+        top -205px
+        right -186px
+        display block
+        width 455px
+        height 487px
+        opacity .1
+        stroke $green-ease
 
     &-heading,
     &-description
+      position relative
       color $white
 
     &-heading
@@ -57,16 +69,17 @@
       width 100%
       gap 16px
 
-    &-icon
       & svg
         display block
         width 40px
         height 40px
+        margin -5px 0 0
         stroke-width 2px
         stroke $green-poison
 
     &-btn
-      margin 8px 0 0
+      position relative
+      margin 10px 0 0
 
   &__questions
     display flex
