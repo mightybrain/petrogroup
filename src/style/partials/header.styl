@@ -3,7 +3,11 @@
   z-index 1
 
   &__container
+    width calc(100% - 80px)
     max-width 1600px
+
+    @media $tablet-landscape-medium
+      width calc(100% - 16px)
 
   &__inner
     display grid

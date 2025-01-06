@@ -1,8 +1,15 @@
 .faq
-  padding 80px 16px
+  padding 80px 40px
   border-radius 16px
   background-image url("../images/decor-03.jpg")
   background-size cover
+  background-position center
+
+  @media $tablet-landscape-large
+    padding 80px 40px 82px
+
+  @media $tablet-portrait-large
+    padding 32px
 
   &__inner
     display flex
@@ -36,6 +43,9 @@
       @media $tablet-landscape-medium
         margin 0 auto
 
+      @media $tablet-portrait-large
+        max-width 310px
+
     &-inner
       position relative
       display flex
@@ -47,6 +57,11 @@
       background-color $green
       border-radius 16px
       overflow hidden
+
+      @media $tablet-portrait-large
+        margin -42px 0 0
+        padding 24px 16px 17px
+        gap 7px
 
       & > svg
         position absolute
@@ -77,9 +92,16 @@
         stroke-width 2px
         stroke $green-poison
 
+        @media $tablet-portrait-large
+          margin -8px 0 0
+
     &-btn
       position relative
       margin 10px 0 0
+
+      @media $tablet-portrait-large
+        width 100%
+        margin 14px 0 0
 
   &__questions
     display flex
@@ -89,6 +111,9 @@
 
     @media $tablet-landscape-medium
       width 100%
+
+    @media $tablet-portrait-large
+      gap 24px
 
   &__heading
     color $white
@@ -102,6 +127,9 @@
   padding 16px 24px 20px
   background-color $white
   border-radius 8px
+
+  @media $tablet-portrait-large
+    padding 12px 10px
 
   &__summary
     display flex
@@ -122,10 +150,19 @@
       background-size contain
       background-repeat no-repeat
 
+      @media $tablet-portrait-large
+        width 40px
+        height 40px
+        background-size 44px 44px
+        background-position center
+
   &__heading
     display inline-flex
     align-items center
     min-height 44px
+
+    @media $tablet-portrait-large
+      min-height 40px
 
   &__description-wrapper
     height 0
@@ -135,3 +172,6 @@
   &__description
     padding 16px 0 0
     color $asphalt
+
+    @media $tablet-portrait-large
+      padding 12px 0 0

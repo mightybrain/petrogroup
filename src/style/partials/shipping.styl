@@ -14,6 +14,9 @@
     position relative
     max-width 406px
 
+    @media $tablet-portrait-large
+      max-width 240px
+
   &__countries
     @media $tablet-landscape-medium
       display none
@@ -25,6 +28,9 @@
       grid-template-columns repeat(2, 1fr)
       margin -34px 0 0
       gap 8px
+
+      @media $tablet-landscape-large
+        margin -1px 0 0
 
     &-btn
       display flex

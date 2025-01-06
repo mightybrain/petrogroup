@@ -10,7 +10,7 @@
       padding 32px
 
     @media $phone
-      padding 32px 24px
+      padding 32px 32px 42px
 
     & > svg
       position absolute
@@ -32,7 +32,7 @@
 
     @media $tablet-landscape-medium
       flex-direction column
-      gap 36px
+      gap 35px
 
   &__credits
     display flex
@@ -96,6 +96,10 @@
         font-size 20px
         line-height 26px
 
+      @media $tablet-portrait-large
+        font-size 18px
+        line-height 23px
+
     &-group
       display flex
       flex-direction column
@@ -129,6 +133,10 @@
         font-size 15px
         line-height 23px
 
+      @media $tablet-portrait-large
+        font-size 14px
+        line-height 21px
+
   &__nav
     display flex
     justify-content space-between
@@ -139,7 +147,7 @@
       display grid
       grid-template-columns repeat(2, 1fr)
       width 100%
-      padding 36px 0 0
+      padding 35px 0 0
       gap 32px
       border-top 1px solid $gray-light
 
@@ -166,6 +174,10 @@
       @media $tablet-landscape-large
         font-size 15px
         line-height 23px
+
+      @media $tablet-portrait-large
+        font-size 14px
+        line-height 21px
 
 .footer__nav-sublist
   & .footer__nav-item

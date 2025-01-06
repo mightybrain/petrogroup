@@ -3,11 +3,23 @@
   flex-direction column
   gap 40px
 
+  @media $tablet-landscape-large
+    gap 39px
+
+  @media $tablet-portrait-large
+    gap 31px
+
   &__heading
     width 100%
-    max-width 1600px
+    max-width 1648px
     margin 0 auto
+    padding 0 24px
     color $graphite
+
+    @media $tablet-portrait-large
+      padding 0
+      font-size 32px
+      line-height 35px
 
   &__list
     display grid
@@ -26,6 +38,12 @@
     padding 24px
     border-radius 12px
     background-color $gray-soft
+
+    @media $tablet-landscape-large
+      padding 24px 10px
+
+    @media $tablet-portrait-large
+      padding 19px 40px
 
   &__logo
     display block

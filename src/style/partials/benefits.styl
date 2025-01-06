@@ -1,12 +1,16 @@
 .benefits
   position relative
-  padding 80px 16px
+  padding 80px 24px
   border-radius 16px
   background-image url("../images/decor-02.jpg")
   background-size cover
+  background-position center
 
   @media $tablet-landscape-medium
     overflow hidden
+
+  @media $tablet-portrait-large
+    padding 80px 32px 32px
 
   &_no-bg
     padding 0
@@ -19,20 +23,29 @@
     margin 0 auto
     gap 80px
 
+    @media $tablet-portrait-large
+      gap 32px
+
   &__heading
     width calc(50% - 4px)
     color $white
 
   &__list-wrapper
     width 100%
+    overflow-x auto
+    -ms-overflow-style none
+    scrollbar-width none
+
+    &::-webkit-scrollbar
+      display none
 
     @media $tablet-landscape-medium
-      overflow-x auto
-      -ms-overflow-style none
-      scrollbar-width none
+      width calc(100% + 48px)
+      margin 0 0 0 -24px
 
-      &::-webkit-scrollbar
-        display none
+    @media $tablet-portrait-large
+      width calc(100% + 64px)
+      margin 0 0 0 -32px
 
   &__list
     display grid
@@ -41,6 +54,22 @@
 
     @media $tablet-landscape-medium
       display flex
+      padding 0 0 0 24px
+    
+    @media $tablet-portrait-large
+      padding 0 0 0 32px
+
+    &::after
+      content ''
+      display none
+
+      @media $tablet-landscape-medium
+        flex-shrink 0
+        display block
+        width 16px
+
+      @media $tablet-portrait-large
+        width 24px
 
   &__item
     display flex
@@ -51,10 +80,17 @@
     border-radius 16px
     background-color rgba(255, 255, 255, .9)
 
+    @media $tablet-landscape-large
+      padding 24px 24px 25px
+      gap 11px
+
     @media $tablet-landscape-medium
       flex-shrink 0
       min-width auto
       width 296px
+
+    @media $tablet-portrait-large
+      padding 16px
 
   &__icon
     & svg
@@ -66,6 +102,10 @@
 
   &__label
     color $green
+
+  &__description
+    @media $tablet-landscape-large
+      margin 1px 0 0
 
 .benefits_no-bg
   & .benefits__inner

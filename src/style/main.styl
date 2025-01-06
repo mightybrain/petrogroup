@@ -26,6 +26,9 @@ body
 	padding 24px 0 16px
 	background-color $gray
 
+	@media $tablet-landscape-medium
+		padding 8px 0 16px
+
 ul,
 ol
 	margin 0
@@ -48,6 +51,9 @@ button
 	width calc(100% - 32px)
 	max-width 1888px
 	margin 0 auto
+
+	@media $tablet-portrait-large
+		width calc(100% - 16px)
 
 @import "partials/header.styl"
 @import "partials/footer.styl"

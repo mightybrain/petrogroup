@@ -7,6 +7,9 @@
   @media $tablet-landscape-medium
     flex-direction column
 
+  @media $tablet-portrait-large
+    row-gap 23px
+
   &__heading,
   &__description
     width calc(50% - 12px)
@@ -17,8 +20,15 @@
   &__description
     margin -3px 0 0
 
+    @media $tablet-landscape-large
+      margin -2px 0 0
+
     @media $tablet-landscape-medium
       margin 0
+
+    @media $tablet-portrait-large
+      font-size 18px
+      line-height 23px
 
   &__description-accent
     color $green
@@ -30,6 +40,9 @@
 
     @media $tablet-landscape-large
       grid-template-columns repeat(2, 1fr)
+
+    @media $tablet-portrait-large
+      margin 10px 0 0
 
     @media $phone
       grid-template-columns 100%
@@ -47,6 +60,11 @@
 
     @media $tablet-landscape-large
       min-height 387px
+      padding 25px 24px 24px
+
+    @media $tablet-portrait-large
+      min-height 240px
+      padding 16px
 
     &::after
       content ""
@@ -91,3 +109,9 @@
       background-color $green
       border-radius 22px
       text-decoration none
+
+      @media $tablet-landscape-large
+        padding 7px 24px 10px
+        font-size 15px
+        line-height 23px
+        border-radius 20px
