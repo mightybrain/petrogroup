@@ -6,6 +6,9 @@
   background-color $white
   border-radius 16px
 
+  @media $tablet-landscape-medium
+    flex-direction column-reverse
+
   &__info
     display flex
     flex-direction column
@@ -13,11 +16,23 @@
     padding 21px 24px 24px
     gap 24px
 
+    @media $tablet-landscape-large
+      width 65%
+      padding 14px 16px 16px
+      gap 16px
+
+    @media $tablet-landscape-medium
+      width 100%
+      padding 10px 12px 12px
+
   &__tags
     display flex
     flex-wrap wrap
     margin -17px 0 0
     gap 4px
+
+    @media $tablet-landscape-large
+      margin -10px 0 0
 
   &__details
     display flex
@@ -78,3 +93,10 @@
     border-radius 12px
     object-fit cover
     object-position center
+
+    @media $tablet-landscape-large
+      width 35%
+
+    @media $tablet-landscape-medium
+      width 100%
+      height 200px

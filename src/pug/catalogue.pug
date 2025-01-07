@@ -26,13 +26,11 @@ html(lang="ru")
 								ul.tabs__list
 									li.tabs__item
 										button.tabs__btn.tabs__btn_active.js-tab-btn(data-key="fruit") Фруктовые
-											.tabs__btn-icon
-												include ../../build/images/icons/icon-fruit-40.svg
+											include ../../build/images/icons/icon-fruit-40.svg
 
 									li.tabs__item
 										button.tabs__btn.js-tab-btn(data-key="berry") Ягодные
-											.tabs__btn-icon
-												include ../../build/images/icons/icon-berry-40.svg
+											include ../../build/images/icons/icon-berry-40.svg
 
 								.tabs__content.js-tab-content
 									.tabs__content-item.tabs__content_active.catalogue__groups.js-tab-content-item(data-key="fruit")
@@ -50,7 +48,7 @@ html(lang="ru")
 													//= partials/product-preview.pug
 														
 				.catalogue__benefits
-					.container
+					.container.catalogue__benefits-container
 						//= partials/benefits-no-bg.pug
 
 				.catalogue__faq

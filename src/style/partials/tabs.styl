@@ -4,6 +4,9 @@
   align-items flex-start
   gap 80px
 
+  @media $tablet-landscape-medium
+    gap 40px
+
   &__list
     display flex
     padding 2px
@@ -17,7 +20,7 @@
     flex-direction row-reverse
     justify-content center
     align-items center
-    min-width 388px
+    // min-width 388px
     padding 12px
     gap 12px
     font-size 22px
@@ -29,18 +32,29 @@
     cursor pointer
     transition background-color .5s 0s ease, color .5s 0s ease
 
+    @media $tablet-landscape-medium
+      padding 8px
+      font-size 18px
+      line-height 23px
+
     &:hover,
     &_active
       color $green
       background-color $white
 
-    &-icon
-      & svg
-        display block
-        width 40px
-        height 40px
-        stroke-width 2px
-        stroke $graphite
+    & svg
+      display block
+      width 40px
+      height 40px
+      stroke-width 2px
+      stroke $graphite
+
+      @media $tablet-landscape-medium
+        width 32px
+        height 32px
+
+  &__content
+    width 100%
 
 .tabs_sidebar
   position relative

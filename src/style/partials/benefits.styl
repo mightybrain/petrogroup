@@ -12,6 +12,9 @@
   @media $tablet-portrait-large
     padding 80px 32px 32px
 
+  @media $phone
+    padding 80px 16px 32px
+
   &_no-bg
     padding 0
     background none
@@ -47,6 +50,10 @@
       width calc(100% + 64px)
       margin 0 0 0 -32px
 
+    @media $phone
+      width calc(100% + 32px)
+      margin 0 0 0 -16px
+
   &__list
     display grid
     grid-template-columns repeat(4, 1fr)
@@ -59,6 +66,9 @@
     @media $tablet-portrait-large
       padding 0 0 0 32px
 
+    @media $phone
+      padding 0 0 0 16px
+
     &::after
       content ''
       display none
@@ -70,6 +80,9 @@
 
       @media $tablet-portrait-large
         width 24px
+
+      @media $phone
+        width 8px
 
   &__item
     display flex

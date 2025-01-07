@@ -1,6 +1,6 @@
 .header
   position relative
-  z-index 1
+  z-index 2
 
   &__container
     width calc(100% - 80px)
@@ -42,14 +42,22 @@
         background-color $gray-soft
         transition height .5s 0s ease
 
-        &::before,
-        &::after
+      @media $phone
+        padding 0 16px
+
+      &::before,
+      &::after
+        @media $tablet-landscape-medium
           content ''
           flex-shrink 0
           display block
           height 72px
 
-        &::before
+        @media $phone
+          height 88px
+
+      &::before
+        @media $tablet-landscape-medium
           order -2
 
   &__credits
@@ -260,6 +268,9 @@
         padding 34px 40px 32px
         border-radius 16px 16px 0 0
         transition transform .5s 0s ease
+
+      @media $phone
+        padding 34px 16px 32px
 
       &::before
         content ''

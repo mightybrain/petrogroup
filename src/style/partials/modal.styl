@@ -15,6 +15,9 @@
   -ms-overflow-style none
   scrollbar-width none
 
+  @media $tablet-portrait-large
+    padding 0
+
   &::-webkit-scrollbar
     display none
 
@@ -41,6 +44,13 @@
     border-radius 16px
     box-shadow 0 16px 32px -4px alpha($black, .1)
 
+    @media $tablet-portrait-large
+      padding 56px 40px 80px
+      border-radius 0
+
+    @media $phone
+      padding 56px 16px 80px
+
   &__close-btn
     position absolute
     top 32px
@@ -53,6 +63,10 @@
     border-radius 50%
     background-color alpha($gray-soft, .6)
     cursor pointer
+
+    @media $tablet-portrait-large
+      top 16px
+      right 16px
 
     & svg
       display block

@@ -4,9 +4,14 @@
   padding 112px 0 8px
   gap 112px
 
+  @media $tablet-landscape-medium
+    padding 56px 0 8px
+    gap 56px
+
   &__intro-container,
   &__container
     max-width 1600px
+    width calc(100% - 80px)
 
   &__inner
     display flex
@@ -23,6 +28,9 @@
     flex-direction column
     gap 40px
 
+    @media $tablet-landscape-medium
+      gap 32px
+
     &-heading
       color $graphite
 
@@ -33,3 +41,10 @@
 
   &__benefits
     margin 4px 0 0
+
+    &-container
+      width calc(100% - 80px)
+
+  &__faq
+    @media $tablet-landscape-large
+      margin 32px 0 0

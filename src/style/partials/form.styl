@@ -22,6 +22,9 @@
     row-gap 12px
     column-gap 24px
 
+    @media $tablet-portrait-large
+      grid-template-columns 100%
+
   &__item
     display flex
     flex-direction column
@@ -33,11 +36,25 @@
     justify-content space-between
     margin 40px 0 0
 
+    @media $tablet-portrait-large
+      flex-direction column
+      align-items flex-start
+      margin 32px 0 0
+      gap 32px
+
+  &__submit-btn
+    @media $tablet-portrait-large
+      width 100%
+
 .label
   font-size 16px
   line-height 24px
   font-weight 400
   color $asphalt
+
+  @media $tablet-portrait-large
+    font-size 14px
+    line-height 21px
 
 .asterisk
   margin 0 0 0 4px
@@ -46,7 +63,12 @@
 
 .checkbox
   display flex
+  align-items center
   gap 8px
+
+  @media $tablet-portrait-large
+    justify-content space-between
+    width 100%
 
   &__default
     position absolute
@@ -56,10 +78,28 @@
     pointer-events none
 
   &__custom
+    position relative
     width 24px
     height 24px
     border-radius 4px
     border 1px solid $gray-light
+    background-color $white
+    transition background-color .5s 0s ease, border .5s 0s ease
+
+    &::after
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+      display block
+      width 11px
+      height 9px
+      background-image url("data:image/svg+xml,%3Csvg viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.56372 0L11 1.5071L3.85922 9L0 4.95048L1.43628 3.44338L3.85922 5.9858L9.56372 0Z' fill='white'/%3E%3C/svg%3E")
+      background-repeat no-repeat
+      background-size contain
+      opacity 0
+      transition opacity .5s 0s ease
 
   &__label
     font-size 16px
@@ -67,10 +107,22 @@
     font-weight 400
     color $graphite
 
+    @media $tablet-portrait-large
+      order -1
+      font-size 14px
+      line-height 21px
+
   &__link
     font inherit
     color $orange
     text-decoration none
+
+.checkbox__default:checked + .checkbox__custom
+  background-color $green
+  border 1px solid $green
+
+  &::after
+    opacity 1
 
 .input,
 .textarea
@@ -105,3 +157,7 @@
     font-weight 400
     color $gray-deep
     pointer-events none
+
+    @media $tablet-portrait-large
+      font-size 15px
+      line-height 23px

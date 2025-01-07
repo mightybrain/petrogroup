@@ -9,8 +9,11 @@
     @media $tablet-landscape-medium
       padding 32px
 
-    @media $phone
+    @media $tablet-portrait-large
       padding 32px 32px 42px
+
+    @media $phone
+      padding 32px 24px 42px
 
     & > svg
       position absolute
@@ -85,6 +88,7 @@
 
     @media $phone
       grid-template-columns 100%
+      gap 24px
 
     &-label
       font-size 22px
