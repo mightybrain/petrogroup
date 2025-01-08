@@ -1,6 +1,7 @@
 .product-preview
   display flex
   justify-content space-between
+  width 100%
   height 100%
   padding 4px
   background-color $white
@@ -59,9 +60,16 @@
       font-weight 400
       color $graphite
 
+      @media $tablet-landscape-medium
+        font-size 14px
+        line-height 21px
+
     &-value
       order 1
       min-width 208px
+
+      @media $tablet-landscape-medium
+        min-width 158px
 
   &__countries
     display grid
@@ -82,9 +90,16 @@
     background-color $gray
     border-radius 8px
 
+    @media $tablet-landscape-medium
+      font-size 12px
+      line-height 14px
+
     &-flag
       display block
       width 50px
+
+      @media $tablet-landscape-medium
+        width 30px
 
   &__image
     display block

@@ -13,6 +13,9 @@
     max-width 1600px
     width calc(100% - 80px)
 
+    @media $phone
+      width calc(100% - 32px)
+
   &__inner
     display flex
     flex-direction column
@@ -37,14 +40,32 @@
   &__list
     display grid
     grid-template-columns repeat(2, 1fr)
+    width 100%
     gap 12px
+
+    @media $phone
+      grid-template-columns 100%
 
   &__benefits
     margin 4px 0 0
 
     &-container
-      width calc(100% - 80px)
+      width 100%
 
   &__faq
     @media $tablet-landscape-large
       margin 32px 0 0
+
+    @media $tablet-landscape-medium
+      margin 16px 0 0
+
+.catalogue
+  & .tabs__list
+    width 100%
+
+  & .tabs__item
+    flex-grow 1
+
+  & .tabs__btn
+    width 100%
+    min-width auto
