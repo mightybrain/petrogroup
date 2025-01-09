@@ -3,6 +3,9 @@
   flex-direction column
   gap 80px
 
+  @media $tablet-landscape-large
+    gap 82px
+
   &__heading
     color $graphite
 
@@ -18,10 +21,14 @@
     display flex
     flex-direction column
     min-height 340px
-    padding 24px
-    gap 12px
+    padding 16px 24px 24px
+    gap 17px
     background-color $white
     border-radius 16px
+
+    @media $tablet-landscape-large
+      padding 17px 24px 24px
+      gap 25px
 
     &:nth-child(2)
       margin 40px 0 0
@@ -32,8 +39,18 @@
     &:nth-child(4)
       margin 120px 0 0
 
+    &-description
+      margin -5px 0 0
+
+      @media $tablet-landscape-large
+        margin -13px 0 0
+
   &__index
     font-size 100px
     line-height 90px
     font-weight 400
     color $green
+
+    @media $tablet-landscape-large
+      font-size 90px
+      line-height 81px

@@ -1,30 +1,82 @@
 .features
+  display flex
+  flex-direction column
+  gap 80px
+
+  &__heading
+    max-width 1600px
+    margin 0 auto
+    color $graphite
+
   &__list
-    display grid
-    grid-template-columns repeat(2, 1fr)
+    display flex
+    flex-direction column
     gap 8px
 
+    @media $phone
+      gap 32px
+
   &__item
+    display flex
+    justify-content space-between
+
+    @media $tablet-landscape-medium
+      flex-direction column-reverse
+      gap 8px
+
+    @media $phone
+      gap 4px
+
+    &:nth-child(even)
+      flex-direction row-reverse
+
+      @media $tablet-landscape-medium
+        flex-direction column-reverse
+
     &-image
       display block
-      width 100%
-      height 100%
+      width calc(50% - 4px)
+      height auto
       min-height 688px
       object-fit cover
       object-position center
       border-radius 16px
 
+      @media $tablet-landscape-large
+        min-height 600px
+
+      @media $tablet-landscape-medium
+        width 100%
+        height 320px
+        min-height auto
+
     &-info
       display flex
       flex-direction column
       align-items center
-      height 100%
+      width calc(50% - 4px)
+      height auto
       padding 80px 24px
       gap 39px
       border-radius 16px
       background-color alpha($gray-soft, .6)
 
+      @media $tablet-landscape-large
+        padding 81px 24px 80px
+        gap 38px
+
+      @media $tablet-landscape-medium
+        width 100%
+        padding 24px
+        gap 15px
+
     &-heading,
     &-description
       width 100%
       max-width 652px
+
+      @media $tablet-landscape-large
+        max-width 460px
+
+      @media $tablet-landscape-medium
+        max-width none

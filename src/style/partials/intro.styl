@@ -1,9 +1,18 @@
 .intro
 	position relative
-	padding 200px 16px 265px
+	padding 200px 32px 265px
 	border-radius 16px
 	overflow hidden
 	background-color $black
+
+	@media $tablet-landscape-medium
+		padding 40px 32px 41px
+
+	@media $phone
+		padding 40px 24px 41px
+
+	&_vertical
+		padding 200px 40px 163px
 
 	&_no-bg
 		padding 0
@@ -30,6 +39,10 @@
 		margin 0 auto
 		gap 24px
 
+		@media $phone
+			flex-direction column
+			gap 40px
+
 	&__heading
 		color $white
 
@@ -40,6 +53,14 @@
 		margin 3px 0 0
 		gap 8px
 		color $white
+
+		@media $tablet-landscape-medium
+			gap 10px
+			font-size 18px
+			line-height 23px
+
+		@media $phone
+			width 100%
 
 		&::before
 			content ""
@@ -56,7 +77,10 @@
 .intro_vertical
 	& .intro__inner
 		flex-direction column
-		gap 84px
+		gap 82px
+
+		@media $tablet-landscape-large
+			gap 84px
 
 	& .intro__description
 		width 100%

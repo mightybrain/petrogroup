@@ -1,20 +1,63 @@
 .achieves
+  overflow-x auto
+  -ms-overflow-style none
+  scrollbar-width none
+
+  &::-webkit-scrollbar
+    display none
+
   &__list
     display grid
     grid-template-columns repeat(4, 1fr)
     gap 8px
 
+    @media $tablet-landscape-medium
+      display flex
+      padding 0 0 0 40px
+
+    @media $phone
+      padding 0 0 0 16px
+
+    &::after
+      content ''
+      display none
+
+      @media $tablet-landscape-medium
+        flex-shrink 0
+        display block
+        width 32px
+
+      @media $phone
+        width 8px
+
   &__item
     display flex
     flex-direction column
-    min-height 210px
     padding 13px 24px 24px
     gap 10px
     border-radius 16px
     background-color $white
+
+    @media $tablet-landscape-large
+      padding 21px 24px 25px
+      gap 14px
+
+    @media $tablet-landscape-medium
+      flex-shrink 0
+      width 296px
+      padding 14px 16px 17px
+      gap 13px
 
   &__item-value
     font-size 56px
     line-height 62px
     font-weight 400
     color $green
+
+    @media $tablet-landscape-large
+      font-size 48px
+      line-height 53px
+
+    @media $tablet-landscape-medium
+      font-size 36px
+      line-height 32px
