@@ -29,41 +29,42 @@ html(lang="ru")
 						section.steps
 							h2.common__h2.steps__heading Этапы взаимодействия с клиентом
 
-							ul.steps__list.steps__list_cols-4
-								li.steps__item
-									span.steps__index 1
+							.steps__list-wrapper
+								ul.steps__list.steps__list_cols-4
+									li.steps__item
+										span.steps__index 1
 
-									h5.common__h5.steps__item-heading Контракт
+										h5.common__h5.steps__item-heading Контракт
 
-									.common__text.steps__item-description
-										p Заключение контракта с указанием объёма производимого товара, сроками, вариантами доставок сырья на производство и отгрузок клиенту, вид упаковки и прочее
+										.common__text.steps__item-description
+											p Заключение контракта с указанием объёма производимого товара, сроками, вариантами доставок сырья на производство и отгрузок клиенту, вид упаковки и прочее
 
-								li.steps__item
-									span.steps__index 2
+									li.steps__item
+										span.steps__index 2
 
-									h5.common__h5.steps__item-heading Производство
+										h5.common__h5.steps__item-heading Производство
 
-									.common__text.steps__item-description
-										p Составление плана производства, подготовка производственных мощностей и запуск, согласно условий контракта
+										.common__text.steps__item-description
+											p Составление плана производства, подготовка производственных мощностей и запуск, согласно условий контракта
 
-								li.steps__item
-									span.steps__index 3
+									li.steps__item
+										span.steps__index 3
 
-									h5.common__h5.steps__item-heading Поставки
+										h5.common__h5.steps__item-heading Поставки
 
-									.common__text.steps__item-description
-										p Ежемесячная отгрузка готового продукта на точки хранения клиента или склады распределительных центров торговых сетей России
+										.common__text.steps__item-description
+											p Ежемесячная отгрузка готового продукта на точки хранения клиента или склады распределительных центров торговых сетей России
 
-								li.steps__item
-									span.steps__index 4
+									li.steps__item
+										span.steps__index 4
 
-									h5.common__h5.steps__item-heading Поддержка
+										h5.common__h5.steps__item-heading Поддержка
 
-									.common__text.steps__item-description
-										p Сопровождение от момента поступления сырья и материалов (упаковка) до момента отгрузки продукции конечному потребителю. Разработка рецептуры, подбор спецификаций, сертификация готовой продукции
+										.common__text.steps__item-description
+											p Сопровождение от момента поступления сырья и материалов (упаковка) до момента отгрузки продукции конечному потребителю. Разработка рецептуры, подбор спецификаций, сертификация готовой продукции
 
 				.project__features
-					.container
+					.container.project__features-container
 						section.features
 							h2.common__h2.features__heading Ценности контрактного производства для клиента
 
@@ -111,11 +112,11 @@ html(lang="ru")
 									img.features__item-image(src="images/features/feature-07.jpg" alt="")
 
 				.project__benefits
-					.container
+					.container.project__benefits-container
 						//= partials/benefits-no-bg.pug
 
 				.project__partners
-					.container
+					.container.project__partners-container
 						//= partials/partners.pug
 
 				.project__faq

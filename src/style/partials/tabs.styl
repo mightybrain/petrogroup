@@ -20,8 +20,7 @@
     flex-direction row-reverse
     justify-content center
     align-items center
-    min-width 388px
-    padding 12px
+    padding 12px 40px
     gap 12px
     font-size 22px
     line-height 29px
@@ -32,8 +31,11 @@
     cursor pointer
     transition background-color .5s 0s ease, color .5s 0s ease
 
+    @media $tablet-landscape-large
+      padding 10px 24px
+
     @media $tablet-landscape-medium
-      padding 8px
+      padding 8px 24px
       font-size 18px
       line-height 23px
 

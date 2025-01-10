@@ -61,11 +61,16 @@
 
 .catalogue
   & .tabs__list
-    width 100%
+    @media $tablet-landscape-medium
+      width 100%
 
   & .tabs__item
-    flex-grow 1
+    @media $tablet-landscape-medium
+      flex-grow 1
 
   & .tabs__btn
-    width 100%
-    min-width auto
+    min-width 388px
+
+    @media $tablet-landscape-medium
+      width 100%
+      min-width auto

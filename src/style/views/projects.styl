@@ -1,0 +1,56 @@
+.projects
+  display flex
+  flex-direction column
+  padding 112px 0 8px
+  gap 112px
+
+  @media $tablet-landscape-medium
+    padding 56px 0 8px
+    gap 56px
+
+  &__intro-container,
+  &__container
+    max-width 1600px
+    width calc(100% - 80px)
+
+    @media $phone
+      width calc(100% - 32px)
+
+  &__inner
+    display flex
+    flex-direction column
+    gap 112px
+
+  &__group
+    display flex
+    flex-direction column
+    gap 48px
+
+  &__list
+    display grid
+    grid-template-columns repeat(3, 1fr)
+    width 100%
+    gap 12px
+
+    @media $tablet-landscape-medium
+      grid-template-columns repeat(2, 1fr)
+
+    @media $phone
+      grid-template-columns 100%
+
+  &__about-production
+    &-container
+      max-width 1600px
+
+  &__benefits
+    margin 4px 0 0
+
+    &-container
+      width 100%
+
+  &__faq
+    @media $tablet-landscape-large
+      margin 32px 0 0
+
+    @media $tablet-landscape-medium
+      margin 16px 0 0
