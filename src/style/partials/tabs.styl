@@ -7,6 +7,15 @@
   @media $tablet-landscape-medium
     gap 40px
 
+  &_sidebar
+    position relative
+    flex-direction row
+    gap 24px
+
+    @media $tablet-landscape-medium
+      flex-direction column
+      gap 56px
+
   &__list
     display flex
     padding 2px
@@ -59,10 +68,6 @@
     width 100%
 
 .tabs_sidebar
-  position relative
-  flex-direction row
-  gap 24px
-
   & .tabs__list
     position sticky
     top 0
@@ -71,15 +76,23 @@
     flex-shrink 0
     width 382px
 
+    @media $tablet-landscape-large
+      width 282px
+
+    @media $tablet-landscape-medium
+      position static
+      flex-direction row
+      width auto
+
   & .tabs__btn
     justify-content flex-end
     width 100%
     min-width auto
 
-.tabs__btn
-  &:hover,
-  &_active
+    @media $tablet-landscape-medium
+      width auto
 
+.tabs__btn
   & .tabs__btn-icon
     & svg
       stroke $green

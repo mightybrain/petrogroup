@@ -1,0 +1,33 @@
+.contact-us
+  padding 80px 40px
+  background linear-gradient(302.9deg, #056C45 27.11%, #099F67 90.69%)
+  border-radius 16px
+
+  &__inner
+    display grid
+    grid-template-columns repeat(2, 1fr)
+    max-width 1600px
+    margin 0 auto
+    gap 24px
+
+  &__info
+    display flex
+    flex-direction column
+    padding 16px 0 0
+    gap 40px
+
+    & svg
+      display block
+      width 160px
+      height 160px
+      stroke-width 8px
+      stroke $green-poison
+
+  &__heading,
+  &__description
+    color $white
+
+  &__bid
+    padding 80px
+    border-radius 16px
+    background-color $white

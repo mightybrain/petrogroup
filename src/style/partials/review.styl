@@ -1,24 +1,40 @@
 .review
 	display flex
 	flex-wrap wrap
+	padding 116px 0 0
 	column-gap 24px
 	row-gap 40px
-	padding 116px 0 0
 	border-top 1px solid $gray-light
+
+	@media $tablet-landscape-medium
+		flex-direction column
+		padding 60px 0 0
+		row-gap 24px
 
 	&__heading
 		width calc(50% - 12px)
 		color $graphite
 
+		@media $tablet-landscape-medium
+			width 100%
+
 	&__description
 		width calc(50% - 12px)
 		color $green
+
+		@media $tablet-landscape-medium
+			width 100%
+			font-size 18px
+			line-height 23px
 
 	&__pagination
 		display flex
 		justify-content flex-end
 		width 100%
 		gap 40px
+
+		@media $tablet-landscape-medium
+			justify-content center
 
 		&-btn
 			display flex

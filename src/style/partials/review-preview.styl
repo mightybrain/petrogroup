@@ -6,15 +6,23 @@
 	background-color $white
 	border-radius 16px
 
+	@media $tablet-landscape-medium
+		flex-direction column
+		padding 16px
+		gap 12px
+
 	&__image
 		display block
 		width 240px
 		border-radius 12px
 
+		@media $tablet-landscape-medium
+			width 80px
+
 	&__info
 		display flex
 		flex-direction column
-		padding 16px 12px 16px 0
+		padding 15px 12px 16px 0
 		gap 12px
 
 	&__heading

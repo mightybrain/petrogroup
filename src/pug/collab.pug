@@ -22,45 +22,51 @@ html(lang="ru")
 								h1.common__h1.common__h1_accent.intro__heading Сотрудничество
 
 				.collab__benefits
-					.container
+					.container.collab__benefits-container
 						section.benefits.benefits_no-bg
 							.benefits__inner
-								ul.benefits__list
-									li.benefits__item
-										.benefits__icon
-											include ../../build/images/icons/icon-quality-40.svg
+								.benefits__list-wrapper
+									ul.benefits__list
+										li.benefits__item
+											.benefits__icon
+												include ../../build/images/icons/icon-quality-40.svg
 
-										h5.common__h5.benefits__label Премиальное качество
+											h5.common__h5.benefits__label Премиальное качество
 
-										p.common__text.benefits__description Асептическое производство и фасовка. Более 50 наименований товаров, прошедших проверку на требования всех действующих стандартов на территории РФ
+											p.common__text.benefits__description Асептическое производство и фасовка. Более 50 наименований товаров, прошедших проверку на требования всех действующих стандартов на территории РФ
 
-									li.benefits__item
-										.benefits__icon
-											include ../../build/images/icons/icon-availability-40.svg
+										li.benefits__item
+											.benefits__icon
+												include ../../build/images/icons/icon-availability-40.svg
 
-										h5.common__h5.benefits__label Постоянное наличие
+											h5.common__h5.benefits__label Постоянное наличие
 
-										p.common__text.benefits__description На основании прогнозирования происходят плановые закупки, чтобы сырье всегда было в наличии (в том числе и импортное сырье)
+											p.common__text.benefits__description На основании прогнозирования происходят плановые закупки, чтобы сырье всегда было в наличии (в том числе и импортное сырье)
 
-									li.benefits__item
-										.benefits__icon
-											// include ../../build/images/icons/icon-microscope-40.svg
+										li.benefits__item
+											.benefits__icon
+												// include ../../build/images/icons/icon-microscope-40.svg
 
-										h5.common__h5.benefits__label Контроль качества
+											h5.common__h5.benefits__label Контроль качества
 
-										p.common__text.benefits__description Собственные испытательные лаборатории и многолетнее сотрудничество со сторонними аккредитованными лабораториями по всей России
+											p.common__text.benefits__description Собственные испытательные лаборатории и многолетнее сотрудничество со сторонними аккредитованными лабораториями по всей России
 
-									li.benefits__item
-										.benefits__icon
-											include ../../build/images/icons/icon-payment-40.svg
+										li.benefits__item
+											.benefits__icon
+												include ../../build/images/icons/icon-payment-40.svg
 
-										h5.common__h5.benefits__label Комфортные условия оплаты
+											h5.common__h5.benefits__label Комфортные условия оплаты
 
-										p.common__text.benefits__description Гибкая ценовая политика для наших клиентов (предоплата, отсрочка, товарный кредит)
+											p.common__text.benefits__description Гибкая ценовая политика для наших клиентов (предоплата, отсрочка, товарный кредит)
 
 				.collab__about-production
 					.container.collab__about-production-container
 						.cards
+							h2.common__h2.cards__heading Контрактное производство
+
+							.common__text.common__text_large.cards__description
+								p От сырья и упаковки до конечного продукта
+
 							ul.cards__list
 								li.cards__item
 									.cards__item-info
@@ -82,142 +88,185 @@ html(lang="ru")
 
 												li #[em Доставка]#[br] Решение всех логистических вопросов (в том числе таможенное оформление)
 
-								li.cards__item
 									img.cards__item-image(src="images/decor-07.jpg" alt="")
+
+				.collab__process
+					.container.collab__process-container
+						section.steps
+							h2.common__h2.steps__heading Как мы работаем
+
+							.steps__list-wrapper
+								ul.steps__list.steps__list_cols-4
+									li.steps__item
+										span.steps__index 1
+
+										h5.common__h5.steps__item-heading Отдел продаж
+
+										.common__text.steps__item-description
+											ul
+												li Обработка запроса от потенциального клиента.
+
+												li Проверка на складах/заводах доступной продукции. В случаях наличия сырья — составление КП, участие в тендере.
+
+												li Отправка образца продукции, согласование цен и условий поставки.
+	
+												li Подписание договора, оплата.
+
+									li.steps__item
+										span.steps__index 2
+
+										h5.common__h5.steps__item-heading Логистический отдел
+
+										.common__text.steps__item-description
+											ul
+												li Отгрузка со складов (7 по РФ), либо с завода, либо осуществляется прямая поставка от производителя с других стран (например, доставка апельсинов из Бразилии).
+
+												li Доставка с использованием автотранспорта (20 тонн) или Ж/Д контейнеров.
+
+									li.steps__item
+										span.steps__index 3
+
+										h5.common__h5.steps__item-heading Отдел контроля качества
+
+										.common__text.steps__item-description
+											p Оперативная и объективная работа с рекламациями. Каждая претензия по качеству ведет за собой тщательный анализ по всей цепочке жизнедеятельности продукта совместно с производителем этого сырья.
 
 				.collab__contact-us
 					.container
 						section.contact-us
-							.contact-us__info
-								h2.common__h2.contact-us__heading Подай заявку на сотрудничество
+							.contact-us__inner
+								.contact-us__info
+									include ../../build/images/icons/icon-message-160.svg
 
-								.common__text.common__text_large
-									p Партнерство между компаниями — ключевой элемент успешной бизнес-деятельности в современном мире
-									
-									p Мы заинтересованы в долгосрочном взаимовыгодном сотрудничестве и открыты к различным предложениям для совместной работы
+									h2.common__h2.contact-us__heading Подай заявку на сотрудничество
 
-							.contact-us__bid
-								.bid
-									.bid__info
-										h3.common__h3.bid__heading Оставьте заявку
+									.common__text.common__text_large.contact-us__description
+										p Партнерство между компаниями — ключевой элемент успешной бизнес-деятельности в&nbsp;современном мире
+										
+										p Мы&nbsp;заинтересованы в&nbsp;долгосрочном взаимовыгодном сотрудничестве и&nbsp;открыты к&nbsp;различным предложениям для совместной работы
 
-										.common__text.common__text_medium.bid__description
-											p Наш менеджер свяжется с вами и ответит на все вопросы
+								.contact-us__bid
+									.bid
+										.bid__info
+											h3.common__h3.bid__heading Оставьте заявку
 
-									.bid__form
-										form.form
-											.form__inner
-												.form__section
-													h4.common__h4.form__section-heading Что вас интересует?
-														span.asterisk *
+											.common__text.common__text_medium.bid__description
+												p Наш менеджер свяжется с вами и ответит на все вопросы
 
-													.form__cols-2
-														label.checkbox
-															input.checkbox__default(type='checkbox')
+										.bid__form
+											form.form
+												.form__inner
+													.form__section
+														h4.common__h4.form__section-heading Что вас интересует?
+															span.asterisk *
 
-															.checkbox__custom
+														.form__cols-2
+															label.checkbox
+																input.checkbox__default(type='checkbox')
 
-															span.checkbox__label Закупка соков/пюре
+																.checkbox__custom
 
-														label.checkbox
-															input.checkbox__default(type='checkbox')
+																span.checkbox__label Закупка соков/пюре
 
-															.checkbox__custom
+															label.checkbox
+																input.checkbox__default(type='checkbox')
 
-															span.checkbox__label Ингредиенты
+																.checkbox__custom
 
-														label.checkbox
-															input.checkbox__default(type='checkbox')
+																span.checkbox__label Ингредиенты
 
-															.checkbox__custom
+															label.checkbox
+																input.checkbox__default(type='checkbox')
 
-															span.checkbox__label Продажа соков/пюре
+																.checkbox__custom
 
-														label.checkbox
-															input.checkbox__default(type='checkbox')
+																span.checkbox__label Продажа соков/пюре
 
-															.checkbox__custom
+															label.checkbox
+																input.checkbox__default(type='checkbox')
 
-															span.checkbox__label Упаковка
+																.checkbox__custom
 
-														label.checkbox
-															input.checkbox__default(type='checkbox')
+																span.checkbox__label Упаковка
 
-															.checkbox__custom
+															label.checkbox
+																input.checkbox__default(type='checkbox')
 
-															span.checkbox__label Применение продукта
+																.checkbox__custom
 
-														label.checkbox
-															input.checkbox__default(type='checkbox')
+																span.checkbox__label Применение продукта
 
-															.checkbox__custom
+															label.checkbox
+																input.checkbox__default(type='checkbox')
 
-															span.checkbox__label Контрактное производство
+																.checkbox__custom
 
-														label.checkbox
-															input.checkbox__default(type='checkbox')
+																span.checkbox__label Контрактное производство
 
-															.checkbox__custom
+															label.checkbox
+																input.checkbox__default(type='checkbox')
 
-															span.checkbox__label Логистические решения
+																.checkbox__custom
 
-														label.checkbox
-															input.checkbox__default(type='checkbox')
+																span.checkbox__label Логистические решения
 
-															.checkbox__custom
+															label.checkbox
+																input.checkbox__default(type='checkbox')
 
-															span.checkbox__label Другое
+																.checkbox__custom
 
-												.form__section
-													h4.common__h4.form__section-heading Представьтесь, пожалуйста
+																span.checkbox__label Другое
 
-													.form__cols-2
+													.form__section
+														h4.common__h4.form__section-heading Представьтесь, пожалуйста
+
+														.form__cols-2
+															.form__item
+																label.label Имя
+																	span.asterisk *
+																input.input(type='text')
+
+															.form__item
+																label.label Телефон
+																	span.asterisk *
+																input.input(type='text')
+
+															.form__item
+																label.label Email
+																input.input(type='text')
+
+															.form__item
+																label.label Город
+																input.input(type='text')
+
 														.form__item
-															label.label Имя
-																span.asterisk *
+															label.label Название компании
 															input.input(type='text')
 
-														.form__item
-															label.label Телефон
-																span.asterisk *
-															input.input(type='text')
+													.form__section
+														h4.common__h4.form__section-heading Комментарий
 
-														.form__item
-															label.label Email
-															input.input(type='text')
+														textarea.textarea
 
-														.form__item
-															label.label Город
-															input.input(type='text')
+													.form__section
+														h4.common__h4.form__section-heading Прикрепите файл
 
-													.form__item
-														label.label Название компании
-														input.input(type='text')
+														label.file-uploader
+															input.file-uploader__default(type='file')
 
-												.form__section
-													h4.common__h4.form__section-heading Комментарий
+															span.common__btn.common__btn_gray.common__btn_small.file-uploader__custom Выберите файл
 
-													textarea.textarea
+															span.file-uploader__file-label Файл не выбран
 
-												.form__section
-													h4.common__h4.form__section-heading Прикрепите файл
+													.form__actions
+														label.checkbox
+															input.checkbox__default(type='checkbox')
 
-													label.file-uploader
-														input.file-uploader__default(type='file')
+															.checkbox__custom
 
-														span.common__btn.common__btn_gray.common__btn_small.file-uploader__custom Выберите файл
+															span.checkbox__label Я согласен с #[a.checkbox__link(href='' target='_blank') обработкой персональных данных]
 
-														span.file-uploader__file-label Файл не выбран
-
-												.form__actions
-													label.checkbox
-														input.checkbox__default(type='checkbox')
-
-														.checkbox__custom
-
-														span.checkbox__label Я согласен с #[a.checkbox__link(href='' target='_blank') обработкой персональных данных]
-
-													button.common__btn.form__submit-btn Оставить заявку
+														button.common__btn.form__submit-btn Оставить заявку
 
 				.collab__faq
 					.container

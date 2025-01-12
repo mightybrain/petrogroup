@@ -5,11 +5,16 @@
   background-color $white
   border-radius 16px
 
+  @media $tablet-landscape-medium
+    position relative
+    flex-direction column
+    padding 244px 4px 4px
+
   &__info
     display flex
     flex-direction column
-    padding 24px
-    gap 16px
+    padding 25px 24px 24px
+    gap 14px
 
   &__heading
     color $graphite
@@ -20,6 +25,7 @@
   &__details
     display flex
     flex-direction column
+    margin 2px 0 0
     gap 16px
 
     &-group
@@ -38,6 +44,10 @@
       line-height 24px
       font-weight 400
       color $graphite
+
+      @media $tablet-landscape-large
+        font-size 15px
+        line-height 23px
 
       &::before
         content ""
@@ -59,9 +69,19 @@
     width 377px
     border-radius 12px
 
+    @media $tablet-landscape-medium
+      position absolute
+      top 4px
+      left 4px
+      width calc(100% - 8px)
+      height 240px
+      object-fit cover
+      object-position center
+
   &__salary-and-cv-btn
     display flex
     flex-direction column
+    align-items center
     padding 21px 24px 24px
     gap 15px
     border-radius 12px
@@ -72,3 +92,11 @@
     line-height 42px
     font-weight 400
     color $graphite
+    text-align center
+
+    @media $tablet-landscape-large
+      font-size 28px
+      line-height 36px
+
+  &__cv-btn
+    width 100%
