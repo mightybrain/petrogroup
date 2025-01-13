@@ -6,6 +6,8 @@
 
 //= partials/modal.js
 
+//= partials/yandex-map.js
+
 // Faq
 function initFaq() {
   const faqManager = new FaqManager();
@@ -82,6 +84,12 @@ function initLangMenu() {
   document.querySelector('.js-lang-overlay').addEventListener('click', () => {
     document.body.classList.remove('lang-opened');
   })
+}
+
+if(document.getElementById('map')){
+  ymaps.ready(() => {
+    initYandexMap('map')
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {

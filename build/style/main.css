@@ -3834,6 +3834,87 @@ body.modal-opened {
   border-radius: 16px;
   background-color: #fff;
 }
+.counter {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 480px;
+  padding: 80px 40px;
+  background-color: #000;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.counter__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  opacity: 0.6;
+}
+.counter__info {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  gap: 24px;
+}
+.counter__heading {
+  color: #fff;
+}
+.counter__description {
+  color: #fff;
+}
+.announcement {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+  padding: 40px;
+  gap: 24px;
+  background-color: #056c45;
+  border-radius: 16px;
+}
+.announcement__heading {
+  color: #fff;
+}
+.announcement__heading-accent {
+  display: block;
+  color: #03eb93;
+}
+.announcement__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 11px;
+  color: #fff;
+}
+.announcement__description::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #03eb93;
+}
 .index {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4197,6 +4278,81 @@ body.modal-opened {
 .collab__benefits-container {
   width: 100%;
 }
+.production {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 80px 0 8px;
+  gap: 144px;
+}
+.production__container {
+  position: relative;
+  width: calc(100% - 80px);
+  max-width: 1600px;
+  margin: -338px auto 0;
+}
+.production__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 24px;
+}
+.production__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.production__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 4px;
+  gap: 4px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+.production__item-image {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+.production__item-info {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px 12px 12px 68px;
+  gap: 4px;
+}
+.production__item-index {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 56px;
+  line-height: 50px;
+  font-weight: 400;
+  color: #056c45;
+}
+.production__about-container {
+  width: calc(100% - 80px);
+  max-width: 1600px;
+}
 .projects {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4341,4 +4497,28 @@ body.modal-opened {
   .project__partners-container {
     width: calc(100% - 32px);
   }
+}
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 112px 0 8px;
+  gap: 112px;
+}
+.contacts__container {
+  max-width: 1600px;
+  width: calc(100% - 80px);
+}
+.contacts__inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.contacts__info {
+  padding: 80px;
+  background-color: #fff;
 }

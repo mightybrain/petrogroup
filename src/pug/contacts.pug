@@ -1,0 +1,80 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.contacts
+				.contacts__intro
+					.container.contacts__intro-container
+						.intro.intro_no-bg
+
+							.intro__inner
+								h1.common__h1.intro__heading Контакты
+
+								.common__text.common__text_large.intro__description
+									p Команда Петрогрупп всегда готова ответить на ваши вопросы или обсудить возможное сотрудничество
+
+				.container.contacts__container
+					.contacts__inner
+
+						.contacts__info
+							.footer__contacts-group
+								span.footer__contacts-label Производство
+
+								ul.footer__contacts-list
+									li.footer__contacts-item
+										include ../../build/images/icons/icon-phone-24.svg
+
+										a.footer__contacts-link(href="tel:+78123201650") +7&nbsp;(812)&nbsp;320-16-50
+
+									li.footer__contacts-item
+										include ../../build/images/icons/icon-mail-24.svg
+
+										a.footer__contacts-link(href="mailto:pgrp@mail.ru" target="_blank") pgrp@mail.ru
+
+							.footer__contacts-group
+								span.footer__contacts-label Отдел продаж
+
+								ul.footer__contacts-list
+									li.footer__contacts-item
+										include ../../build/images/icons/icon-phone-24.svg
+
+										a.footer__contacts-link(href="+79214158341") +7&nbsp;(921)&nbsp;415-83-41
+
+									li.footer__contacts-item
+										include ../../build/images/icons/icon-mail-24.svg
+
+										a.footer__contacts-link(href="k.uss@pgrp.spb.ru" target="_blank") k.uss@pgrp.spb.ru
+
+							.footer__contacts-group
+								span.footer__contacts-label Адрес
+
+								p.footer__contacts-description
+									include ../../build/images/icons/icon-map-40.svg
+
+									197022 г. Санкт-Петербург ул. Академика Павлова д.8 к.1 стр. 1, пом. 16H
+
+						#map.contacts__map
+
+				.contacts__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		//= partials/modal/bid-modal.pug
+
+		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")

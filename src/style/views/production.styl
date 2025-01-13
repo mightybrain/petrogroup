@@ -1,0 +1,55 @@
+.production
+  display flex
+  flex-direction column
+  padding 80px 0 8px
+  gap 144px
+
+  &__container
+    position relative
+    width calc(100% - 80px)
+    max-width 1600px
+    margin -338px auto 0
+
+  &__inner
+    display flex
+    flex-direction column
+    gap 24px
+
+  &__list
+    display grid
+    grid-template-columns repeat(2, 1fr)
+    gap 8px
+
+  &__item
+    display flex
+    flex-direction column
+    padding 4px
+    gap 4px
+    background-color $white
+    border-radius 16px
+
+    &-image
+      display block
+      width 100%
+      border-radius 12px
+
+    &-info
+      position relative
+      display flex
+      flex-direction column
+      padding 12px 12px 12px 68px
+      gap 4px
+
+    &-index
+      position absolute
+      top 12px
+      left 12px
+      font-size 56px
+      line-height 50px
+      font-weight 400
+      color $green
+
+  &__about
+    &-container
+      width calc(100% - 80px)
+      max-width 1600px

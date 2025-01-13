@@ -23,6 +23,19 @@ html(lang="ru")
 
 				.container.production__container
 					.production__inner
+						.production__announcement
+							//= partials/announcement.pug
+
+						ul.production__list
+							li.production__item
+								img.production__item-image(src='images/production/production-01.jpg' alt='')
+
+								.production__item-info
+									span.production__item-index 1
+
+									span.common__text.common__text_large.production__item-heading Завод в Астраханской области
+
+									p.common__text.common__text_medium.production__item-description Полный цикл производства томатной пасты от выращивания рассады до производства готовой продукции
 
 				.production__about
 					.container.production__about-container
@@ -52,13 +65,13 @@ html(lang="ru")
 
 				.production__achieve
 					.container
-						.card
-							img.card__image(src='images/decor-09.jpg' alt='')
+						.counter
+							img.counter__image(src='images/decor-09.jpg' alt='')
 
-							.card__info
-								h1.common__h1.common_accent 1&nbsp;305&nbsp;254
+							.counter__info
+								h1.common__h1.common_accent.counter__heading 1&nbsp;305&nbsp;254
 
-								.common__text.common__text_large
+								.common__text.common__text_large.counter__description
 									p С 2015 г. по настоящее время мы реализовали более 1 305 254 тонн сырья
 
 				.production__features

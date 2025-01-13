@@ -1,0 +1,29 @@
+.announcement
+  display grid
+  grid-template-columns repeat(2, 1fr)
+  align-items end
+  padding 40px
+  gap 24px
+  background-color $green
+  border-radius 16px
+
+  &__heading
+    color $white
+
+    &-accent
+      display block
+      color $green-poison
+
+  &__description
+    display flex
+    flex-direction column
+    gap 11px
+    color $white
+
+    &::before
+      content ''
+      display block
+      width 50px
+      height 2px
+      border-radius 1px
+      background-color $green-poison
