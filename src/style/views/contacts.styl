@@ -4,15 +4,131 @@
   padding 112px 0 8px
   gap 112px
 
+  @media $tablet-landscape-large
+    padding 121px 0 8px
+    gap 120px
+
+  @media $tablet-landscape-medium
+    padding 56px 0 8px
+    gap 56px
+
+  &__intro-container,
   &__container
     max-width 1600px
     width calc(100% - 80px)
+
+    @media $phone
+      width calc(100% - 32px)
 
   &__inner
     display grid
     grid-template-columns repeat(2, 1fr)
     gap 8px
 
+    @media $tablet-landscape-medium
+      grid-template-columns 100%
+
   &__info
-    padding 80px
+    display grid
+    grid-template-columns repeat(2, 1fr)
+    padding 79px 80px 139px
+    column-gap 24px
+    row-gap 80px
     background-color $white
+    border-radius 16px
+
+    @media $tablet-landscape-large
+      padding 79px 80px 151px
+
+    @media $tablet-landscape-medium
+      padding 23px 24px 24px
+      column-gap 16px
+      row-gap 32px
+
+    @media $phone
+      grid-template-columns 100%
+
+  &__group
+    display flex
+    flex-direction column
+    height min-content
+    gap 16px
+
+    &_wide
+      grid-column-start 1
+      grid-column-end 3
+
+      @media $phone
+        grid-column-end 2
+
+  &__list
+    display flex
+    flex-direction column
+    gap 12px
+
+  &__item
+    display flex
+    align-items center
+    gap 16px
+    font-size 16px
+    line-height 24px
+    font-weight 400
+    color $graphite
+
+    @media $tablet-landscape-large
+      font-size 15px
+      line-height 23px
+
+    @media $tablet-landscape-medium
+      font-size 18px
+
+    & svg
+      display block
+      width 24px
+      height 24px
+      stroke $green
+      stroke-width 2px
+
+  &__link
+    color inherit
+    text-decoration none
+
+  &__description
+    display flex
+    flex-direction column
+    gap 16px
+    color $green
+
+    @media $tablet-landscape-medium
+      flex-direction row
+      align-items baseline
+
+    & svg
+      display block
+      width 40px
+      height 40px
+      stroke $green
+      stroke-width 2px
+
+      @media $tablet-landscape-medium
+        position relative
+        top 4px
+        width 24px
+        height 24px
+        stroke-width 3px
+
+  &__map
+    border-radius 16px
+    overflow hidden
+
+    @media $tablet-landscape-medium
+      height 360px
+
+  &__faq
+    margin 32px 0 0
+
+    @media $tablet-landscape-large
+      margin 24px 0 0
+
+    @media $tablet-landscape-medium
+      margin 16px 0 0

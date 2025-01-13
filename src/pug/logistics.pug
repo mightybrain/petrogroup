@@ -1,0 +1,105 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+		link(rel="stylesheet" href="style/normalize.css" type="text/css")
+		link(rel="stylesheet" href="style/swiper.css" type="text/css")
+		link(rel="stylesheet" href="style/main.css" type="text/css")
+		title Петрогрупп
+
+	body
+		//= partials/header.pug
+					
+		main.main
+			.logistics
+				.logistics__intro
+					.container.logistics__intro-container
+						.intro.intro_no-bg
+
+							.intro__inner
+								h1.common__h1.intro__heading Логистические решения
+
+				.logistics__benefits
+					.container.logistics__benefits-container
+						section.benefits.benefits_no-bg
+							.benefits__inner
+								.benefits__list-wrapper
+									ul.benefits__list
+										li.benefits__item
+											.benefits__icon
+												include ../../build/images/icons/icon-quality-40.svg
+
+											span.common__text.common__text_mediumn.benefits__label Доставка по всей России
+
+											p.common__text.benefits__description Отгрузки осуществляются либо сразу с завода, либо с одного из 7 складов автотранспортом (20 тонн) или Ж/Д контейнерами
+
+										li.benefits__item
+											.benefits__icon
+												include ../../build/images/icons/icon-availability-40.svg
+
+											span.common__text.common__text_mediumn.benefits__label Поставки из других стран
+
+											p.common__text.benefits__description Возможны прямые поставки от производителей с других стран (например, доставка апельсинов из Бразилии)
+
+										li.benefits__item
+											.benefits__icon
+												// include ../../build/images/icons/icon-microscope-40.svg
+
+											span.common__text.common__text_mediumn.benefits__label Быстрые поставки
+
+											p.common__text.benefits__description Формирование складских резервов продукции для быстрого закрытия клиентских потребностей в удобном для него регионе
+
+										li.benefits__item
+											.benefits__icon
+												include ../../build/images/icons/icon-payment-40.svg
+
+											span.common__text.common__text_mediumn.benefits__label Таможенное оформление
+
+											p.common__text.benefits__description Наш логистический отдел возьмет на себя решение всех логистических вопросов (в том числе таможенное оформление) 
+
+				.container.logistics__container
+					.logistics__inner
+
+				.logistics__about-production
+					.container.logistics__about-production-container
+						.cards
+							h2.common__h2.cards__heading Контрактное производство
+
+							.common__text.common__text_large.cards__description
+								p От сырья и упаковки до конечного продукта
+
+							ul.cards__list
+								li.cards__item
+									.cards__item-info
+										h3.common__h3.cards__item-heading Использование производственных площадок компании для организации полного цикла производства продукта под брендом клиента
+
+										.common__text.common__text_medium.cards__item-description
+											ul
+												li #[em Подбор сырья]#[br] Профессиональный подбор сырья под требования клиента
+
+												li #[em Подбор упаковки]#[br] Выберем лучший вариант для готового продукта клиента от проверенных производителей
+
+												li #[em Производство]#[br] Асептическое производство и фасовка
+
+												li #[em Собственная пищевая лаборатория]#[br] Услуги лаборатории для купажирования и блендирования продуктов. Разработка и адаптация рецептур для блендов сырья
+
+												li #[em Сертификация]#[br] Сертификация продукции и проверка на требования всех действующих стандартов на территории РФ
+
+												li #[em Хранение]#[br] Создание стока продукции и хранение в удобном для клиента регионе
+
+												li #[em Доставка]#[br] Решение всех логистических вопросов (в том числе таможенное оформление)
+
+									img.cards__item-image(src="images/decor-07.jpg" alt="")
+
+				.logistics__faq
+					.container
+						//= partials/faq.pug
+
+		//= partials/footer.pug
+
+		//= partials/modal/bid-modal.pug
+
+		script(src="script/vendor.js" type="text/javascript")
+
+		script(src="script/script.js")

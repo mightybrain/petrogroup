@@ -74,8 +74,30 @@
 			border-radius 1px
 
 .intro_no-bg
+	& .intro__inner
+		@media $tablet-landscape-medium
+			flex-direction column
+
 	& .intro__heading
 		color $green
+
+	& .intro__description
+		font-size 26px
+		line-height 31px
+		color $graphite
+
+		@media $tablet-landscape-large
+			font-size 24px
+			line-height 29px
+
+		@media $tablet-landscape-medium
+			width 100%
+			margin 0
+			font-size 20px
+			line-height 24px
+
+		&::before
+			display none
 
 .intro_vertical
 	& .intro__inner

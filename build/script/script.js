@@ -344,21 +344,21 @@ class Modal {
 }
 
 function initYandexMap(id){ 
-  let locationMap = new ymaps.Map(id, {
-      center: [55.728829, 60.521423],
-      zoom: 13
+  const locationMap = new ymaps.Map(id, {
+    center: [59.977201, 30.314817],
+    zoom: 17,
   })
 
   locationMap.geoObjects.add(
-      new ymaps.Placemark([55.728829, 60.521423], {
-          hintContent:'',
-          balloonContent:''
-      }, {
-          iconLayout: 'default#image',
-          iconImageHref: '../images/pin.png',
-          iconImageSize: [27, 35],
-          iconImageOffset: [-14, -35]
-      })
+    new ymaps.Placemark([59.977201, 30.314817], {
+      hintContent:'',
+      balloonContent:'',
+    }, {
+      iconLayout: 'default#image',
+      iconImageHref: '../images/pin.png',
+      iconImageSize: [40, 47],
+      iconImageOffset: [-20, -23],
+    })
   )
 
   locationMap.behaviors.disable('scrollZoom');
