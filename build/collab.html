@@ -582,6 +582,70 @@
         </div>
       </div>
     </div>
+    <div class="modal" id="cv-modal" hidden>
+      <div class="modal__overlay js-modal-overlay"></div>
+      <div class="modal__inner">
+        <button class="modal__close-btn js-modal-close-btn"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 2L14 14M14 2L2 14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+        </button>
+        <div class="modal__cv">
+          <div class="cv">
+            <div class="cv__info">
+              <h3 class="common__h3 cv__heading">Отправьте резюме</h3>
+              <div class="common__text common__text_medium cv__description">
+                <p>Наш HR свяжется с вами</p>
+              </div>
+            </div>
+            <div class="cv__form">
+              <form class="form">
+                <div class="form__inner">
+                  <div class="form__section">
+                    <h4 class="common__h4 form__section-heading">Представьтесь, пожалуйста</h4>
+                    <div class="form__cols-2">
+                      <div class="form__item">
+                        <label class="label">Имя<span class="asterisk">*</span></label>
+                        <input class="input" type="text">
+                      </div>
+                      <div class="form__item">
+                        <label class="label">Телефон<span class="asterisk">*</span></label>
+                        <input class="input" type="text">
+                      </div>
+                      <div class="form__item">
+                        <label class="label">Email</label>
+                        <input class="input" type="text">
+                      </div>
+                      <div class="form__item">
+                        <label class="label">Город</label>
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__section">
+                    <h4 class="common__h4 form__section-heading">Сообщение</h4>
+                    <textarea class="textarea"></textarea>
+                  </div>
+                  <div class="form__section">
+                    <h4 class="common__h4 form__section-heading">Прикрепите резюме</h4>
+                    <label class="file-uploader">
+                      <input class="file-uploader__default" type="file"><span class="common__btn common__btn_gray common__btn_small file-uploader__custom">Выберите файл</span><span class="file-uploader__file-label">Файл не выбран</span>
+                    </label>
+                  </div>
+                  <div class="form__actions">
+                    <label class="checkbox">
+                      <input class="checkbox__default" type="checkbox">
+                      <div class="checkbox__custom"></div><span class="checkbox__label">Я согласен с <a class="checkbox__link" href="" target="_blank">обработкой персональных данных</a></span>
+                    </label>
+                    <button class="common__btn form__submit-btn">Отправить резюме</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script/vendor.js" type="text/javascript"></script>
     <script src="script/script.js"></script>
   </body>

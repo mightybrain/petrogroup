@@ -3,8 +3,172 @@
   flex-direction column
   padding 112px 0 8px
   gap 112px
+  overflow hidden
+
+  @media $tablet-landscape-large
+    padding 113px 0 8px
 
   &__intro-container,
   &__container
     max-width 1600px
     width calc(100% - 80px)
+
+  &__benefits,
+  &__intro
+    position relative
+    z-index 1
+
+  &__benefits
+    &-container
+      width 100%
+
+  &__inner
+    display grid
+    grid-template-columns repeat(4, 1fr)
+    column-gap 8px
+    row-gap 80px
+
+  &__heading
+    position relative
+    z-index 1
+    grid-column-start 1
+    grid-column-end 5
+    color $graphite
+
+  &__map
+    position relative
+    z-index 0
+    min-height 220px
+    grid-column-start 1
+    grid-column-end 4
+
+    & > svg
+      position absolute
+      left -592px
+      bottom -1473px
+      z-index -1
+      display block
+      width 2860px
+      height 2817px
+      pointer-events none
+
+  &__pins
+    &-item
+      position absolute
+      padding 3px 9px 5px 8px
+      font-size 13px
+      line-height 16px
+      font-weight 400
+      color $green
+      background-color $white
+      border-radius 4px
+      box-shadow 0 16px 32px -4px alpha($black, .1)
+
+      @media $tablet-landscape-large
+        padding 3px 7px
+        font-size 12px
+        line-height 14px
+
+      &::before
+        content ''
+        position absolute
+        left -9px
+        bottom -12px
+        z-index -1
+        display block
+        width 15px
+        height 16px
+        background-image url("data:image/svg+xml,%3Csvg viewBox='0 0 15 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.65877 0.512085L3.74566 1.6L1.83829 2.68933C1.26787 2.99294 0.794143 3.44661 0.469828 3.99982C0.14551 4.55304 -0.0166654 5.18409 0.00135366 5.82275V10.1772C-0.0166052 10.8161 0.145579 11.4473 0.469875 12.0008C0.794171 12.5542 1.26787 13.0081 1.83829 13.3121L3.7514 14.4L5.66452 15.4879C6.21674 15.8228 6.85238 16 7.50074 16C8.1491 16 8.78474 15.8228 9.33696 15.4879L11.2501 14.4L13.1618 13.3121C13.7322 13.0081 14.2059 12.5542 14.5302 12.0008C14.8545 11.4473 15.0166 10.8161 14.9986 10.1772V5.82275C15.0167 5.18409 14.8545 4.55304 14.5302 3.99982C14.2059 3.44661 13.7322 2.99294 13.1618 2.68933L11.2501 1.6L9.33696 0.512085C8.78474 0.177268 8.1491 0 7.50074 0C6.85238 0 6.21674 0.177268 5.66452 0.512085H5.65877Z' fill='%23056C45'/%3E%3C/svg%3E")
+        background-repeat no-repeat
+        background-size contain
+
+        @media $tablet-landscape-large
+          left -8px
+          bottom -10px
+          width 13px
+          height 14px
+
+      &_top-left
+        &::before
+          top -12px
+          bottom auto
+
+          @media $tablet-landscape-large
+            top -10px
+
+      &:nth-child(1)
+        left 93px
+        bottom 297px
+
+      &:nth-child(2)
+        left 157px
+        bottom 156px
+
+      &:nth-child(3)
+        left 208px
+        bottom 210px
+
+      &:nth-child(4)
+        left 264px
+        bottom 181px
+
+      &:nth-child(5)
+        left 338px
+        bottom 153px
+
+      &:nth-child(6)
+        left 433px
+        bottom 110px
+
+      &:nth-child(7)
+        left 504px
+        bottom 184px
+
+      &:nth-child(8)
+        left 802px
+        bottom 160px
+
+  &__info
+    position relative
+    display flex
+    flex-direction column
+    padding 24px
+    gap 23px
+    border-radius 16px
+    background-color $white
+    box-shadow 0 16px 32px -4px alpha($black, .1)
+
+    & svg
+      display block
+      width 40px
+      height 40px
+      stroke-width 2px
+      stroke $green
+
+  &__list
+    display flex
+    flex-direction column
+    gap 24px
+
+  &__item
+    display flex
+    flex-direction column
+    gap 4px
+
+    &-label
+      font-size 22px
+      line-height 29px
+      font-weight 400
+      color $green
+
+      @media $tablet-landscape-large
+        font-size 20px
+        line-height 26px
+
+  &__about-production
+    position relative
+    z-index 1
+
+    &-container
+      max-width 1600px
+      width calc(100% - 80px) 

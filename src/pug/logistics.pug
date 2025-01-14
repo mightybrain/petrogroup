@@ -61,6 +61,43 @@ html(lang="ru")
 				.container.logistics__container
 					.logistics__inner
 
+						h2.common__h2.logistics__heading Филиалы
+
+						.logistics__map
+							include ../../build/images/world.svg
+
+							ul.logistics__pins-list
+								li.logistics__pins-item.logistics__pins-item_accent г. Санкт-Петербург
+								li.logistics__pins-item.logistics__pins-item_top-left Москва
+								li.logistics__pins-item Ярославль
+								li.logistics__pins-item Нижний Новгород
+								li.logistics__pins-item Казань
+								li.logistics__pins-item Уфа
+								li.logistics__pins-item Екатеринбург
+								li.logistics__pins-item Новосибирск
+
+						.logistics__info
+							include ../../build/images/icons/icon-map-40.svg
+
+							ul.logistics__list
+								li.logistics__item
+									span.logistics__item-label Офис
+
+									.common__text.logistics__item-description
+										p г. Санкт-Петербург, ул. Академика Павлова д.8 к.1 стр. 1, пом. 16H
+
+								li.logistics__item
+									span.logistics__item-label Производство
+
+									.common__text.logistics__item-description
+										p г. Санкт-Петербург, Деловой центр Кварц​, Пискарёвский проспект, 63
+
+								li.logistics__item
+									span.logistics__item-label Склады
+
+									.common__text.logistics__item-description
+										p г. Санкт-Петербург#[br]г. Москва#[br]г. Казань#[br]г. Екатеринбург#[br]г. Новосибирск#[br]г. Нижний Новгород#[br]г. Уфа#[br]г. Ярославль
+
 				.logistics__about-production
 					.container.logistics__about-production-container
 						.cards
@@ -99,6 +136,7 @@ html(lang="ru")
 		//= partials/footer.pug
 
 		//= partials/modal/bid-modal.pug
+		//= partials/modal/cv-modal.pug
 
 		script(src="script/vendor.js" type="text/javascript")
 

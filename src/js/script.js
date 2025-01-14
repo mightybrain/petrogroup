@@ -38,12 +38,18 @@ function initModals() {
     document.querySelectorAll('.js-bid-modal-btn'),
   );
 
+  const cvModal = new Modal(
+    document.getElementById('cv-modal'),
+    document.querySelectorAll('.js-cv-modal-btn'),
+  );
+
   // const successModal = new Modal(document.getElementById('success-modal'));
 
   // const errorModal = new Modal(document.getElementById('error-modal'));
 
   new ModalManager()
     .addModal('bid-modal', bidModal)
+    .addModal('cv-modal', cvModal)
     // .addModal('success-modal', successModal)
     // .addModal('error-modal', errorModal);
 }
