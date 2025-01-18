@@ -4,11 +4,21 @@
   padding 80px 0 8px
   gap 144px
 
+  @media $tablet-landscape-medium
+    padding 40px 0 8px
+    gap 56px
+
   &__container
     position relative
     width calc(100% - 80px)
     max-width 1600px
     margin -338px auto 0
+
+    @media $tablet-landscape-medium
+      margin 0 auto
+
+    @media $phone
+      width calc(100% - 32px)
 
   &__inner
     display flex
@@ -19,6 +29,9 @@
     display grid
     grid-template-columns repeat(2, 1fr)
     gap 8px
+
+    @media $phone
+      grid-template-columns 100%
 
   &__item
     display flex
@@ -37,19 +50,61 @@
       position relative
       display flex
       flex-direction column
-      padding 12px 12px 12px 68px
-      gap 4px
+      padding 9px 12px 12px 68px
+      gap 6px
+
+      @media $tablet-landscape-medium
+        padding 10px 12px 12px
+        gap 7px
 
     &-index
       position absolute
-      top 12px
+      top 7px
       left 12px
       font-size 56px
       line-height 50px
       font-weight 400
       color $green
 
+      @media $tablet-landscape-large
+        top 9px
+        font-size 48px
+        line-height 53px
+
+      @media $tablet-landscape-medium
+        position static
+        font-size 36px
+        line-height 32px
+
   &__about
+    margin -27px 0 0
+
+    @media $tablet-landscape-large
+      margin -29px 0 0
+
+    @media $tablet-landscape-medium
+      margin 3px 0 0
+
     &-container
       width calc(100% - 80px)
       max-width 1600px
+
+      @media $phone
+        width calc(100% - 32px)
+
+  &__achieve
+    margin -29px 0 0
+
+    @media $tablet-landscape-medium
+      margin 5px 0 0
+
+  &__features
+    @media $phone
+      margin 16px 0 0
+
+    &-container
+      @media $tablet-landscape-medium
+        width calc(100% - 80px)
+
+      @media $phone
+        width calc(100% - 32px)

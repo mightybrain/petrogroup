@@ -10,7 +10,6 @@ class Tabs {
 
     this.keyAttributeName = 'data-key';
     this.inTransitionModifierClassName = 'tabs__content_in-transition';
-    this.hiddenContentModifierClassName = 'tabs__content_hidden';
     this.activeTabModifierClassName = 'tabs__btn_active';
     this.activeContentModifierClassName = 'tabs__content-item_active';
 
@@ -31,18 +30,20 @@ class Tabs {
     this.content.classList.remove(this.inTransitionModifierClassName);
   }
 
-  isContentHidden() {
-    return this.content.classList.contains(this.hiddenContentModifierClassName);
-  }
+  setActiveContent() {
+    const key = this.activeTabBtn.getAttribute(this.keyAttributeName);
 
-  hideContent() {
-    this.startTransition();
+    this.contentItems.forEach((item) => {
+      const itemKey = item.getAttribute(this.keyAttributeName);
 
-    this.content.classList.add(this.hiddenContentModifierClassName);
-  }
+      if (itemKey !== key) {
+        item.classList.remove(this.activeContentModifierClassName);
 
-  showContent() {
-    this.content.classList.remove(this.hiddenContentModifierClassName);
+        return;
+      }
+      
+      item.classList.add(this.activeContentModifierClassName);
+    })
   }
 
   setActiveTab(tab) {
@@ -62,31 +63,13 @@ class Tabs {
 
     this.activeTabBtn = tab;
 
-    this.hideContent();
-  }
+    this.startTransition();
 
-  setActiveContent() {
-    if (!this.isContentHidden()) {
+    setTimeout(() => {
+      this.setActiveContent();
+
       this.endTransition();
-
-      return;
-    }
-
-    const key = this.activeTabBtn.getAttribute(this.keyAttributeName);
-
-    this.contentItems.forEach((item) => {
-      const itemKey = item.getAttribute(this.keyAttributeName);
-
-      if (itemKey !== key) {
-        item.classList.remove(this.activeContentModifierClassName);
-
-        return;
-      }
-      
-      item.classList.add(this.activeContentModifierClassName);
-    })
-
-    this.showContent();
+    }, 300)
   }
 
   init() {
@@ -94,10 +77,6 @@ class Tabs {
       item.addEventListener('click', () => {
         this.setActiveTab(item);
       })
-    })
-
-    this.content.addEventListener('transitionend', () => {
-      this.setActiveContent();
     })
   }
 }

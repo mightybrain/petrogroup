@@ -1,51 +1,3 @@
-.form
-  position relative
-
-  &__inner
-    display flex
-    flex-direction column
-
-  &__section + &__section
-    margin 32px 0 0
-
-  &__section
-    display flex
-    flex-direction column
-    gap 16px
-
-    &-heading
-      color $graphite
-
-  &__cols-2
-    display grid
-    grid-template-columns repeat(2, 1fr)
-    row-gap 12px
-    column-gap 24px
-
-    @media $tablet-portrait-large
-      grid-template-columns 100%
-
-  &__item
-    display flex
-    flex-direction column
-    gap 4px
-
-  &__actions
-    display flex
-    align-items center
-    justify-content space-between
-    margin 40px 0 0
-
-    @media $tablet-portrait-large
-      flex-direction column
-      align-items flex-start
-      margin 32px 0 0
-      gap 32px
-
-  &__submit-btn
-    @media $tablet-portrait-large
-      width 100%
-
 .label
   font-size 16px
   line-height 24px
@@ -55,6 +7,12 @@
   @media $tablet-portrait-large
     font-size 14px
     line-height 21px
+
+.error
+  font-size 13px
+  line-height 16px
+  font-weight 400
+  color $red
 
 .asterisk
   margin 0 0 0 4px
@@ -133,6 +91,7 @@
   color $graphite
   border 1px solid $gray-light
   border-radius 8px
+  transition border .5s 0s ease
 
   &:focus
     outline none
@@ -161,3 +120,68 @@
     @media $tablet-portrait-large
       font-size 15px
       line-height 23px
+
+.form
+  position relative
+
+  &__inner
+    display flex
+    flex-direction column
+
+  &__section + &__section
+    margin 32px 0 0
+
+  &__section
+    display flex
+    flex-direction column
+    gap 16px
+
+    &-heading
+      color $graphite
+
+  &__cols-2
+    display grid
+    grid-template-columns repeat(2, 1fr)
+    row-gap 12px
+    column-gap 24px
+
+    @media $tablet-portrait-large
+      grid-template-columns 100%
+
+  &__item
+    display flex
+    flex-direction column
+    gap 4px
+
+  &__actions
+    display flex
+    align-items center
+    justify-content space-between
+    margin 40px 0 0
+
+    @media $tablet-portrait-large
+      flex-direction column
+      align-items flex-start
+      margin 32px 0 0
+      gap 32px
+
+  &__submit-btn
+    @media $tablet-portrait-large
+      width 100%
+
+.form__item
+  & .error
+    margin -20px 0 0
+    opacity 0
+    pointer-events none
+    transition margin .5s 0s ease, opacity .5s 0s ease
+
+.form__item_error
+  & .error
+    margin 0
+    opacity 1
+
+  & .input,
+  & .textarea,
+  & .checkbox__custom
+    border 1px solid $red

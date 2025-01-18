@@ -35,9 +35,23 @@ html(lang="ru")
 											include ../../build/images/icons/icon-berry-40.svg
 
 								.tabs__content.js-tab-content
-									.tabs__content-item.tabs__content_active.catalogue__groups.js-tab-content-item(data-key="fruit")
+									.tabs__content-item.tabs__content-item_active.js-tab-content-item(data-key="fruit")
 										.catalogue__group
 											h3.common__h3.catalogue__group-heading Фруктовые концентрированные соки
+
+											ul.catalogue__list
+												li.catalogue__item
+													//= partials/product-preview.pug
+
+												li.catalogue__item
+													//= partials/product-preview.pug
+
+												li.catalogue__item
+													//= partials/product-preview.pug
+
+									.tabs__content-item.js-tab-content-item(data-key="berry")
+										.catalogue__group
+											h3.common__h3.catalogue__group-heading Ягодные концентрированные соки
 
 											ul.catalogue__list
 												li.catalogue__item

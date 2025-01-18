@@ -8,6 +8,13 @@
   border-radius 16px
   overflow hidden
 
+  @media $tablet-landscape-medium
+    min-height 229px
+    padding 40px
+
+  @media $phone
+    padding 81px 24px
+
   &__image
     position absolute
     top 0
@@ -28,8 +35,20 @@
     margin 0 auto
     gap 24px
 
+    @media $phone
+      grid-template-columns 100%
+      gap 22px
+
   &__heading
     color $white
 
+    @media $tablet-landscape-medium
+      font-size 60px
+      line-height 57px
+
   &__description
     color $white
+
+    @media $tablet-landscape-medium
+      font-size 18px
+      line-height 23px

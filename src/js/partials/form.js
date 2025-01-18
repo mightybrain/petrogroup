@@ -1,229 +1,106 @@
-// import { postForm } from './telegram';
-// import { validateName, validateText, validateEmail, validatePhone, validatePersonalData } from './validators';
+class CustomForm {
+  constructor(form, validator, modalManager) {
+    this.form = form;
+    this.validator = validator;
+    this.modalManager = modalManager;
 
-// function formatPhoneNumber(value) {
-//   const numberLength = 11;
+    this.isLoading = false;
 
-//   let result = '+';
+    this.formItems = Array.from(form.querySelectorAll('.js-form-item'));
 
-//   if (value.length === 0) {
-//     return '';
-//   }
+    this.submitBtn = form.querySelector('.js-submit-btn');
 
-//   for (let i = 0; i < value.length && i < numberLength; i++) {
-//     switch (i) {
-//       case 0:
-//         result += '7 (';
-//         continue;
-//       case 4:
-//         result += ') ';
-//         break;
-//       case 7:
-//       case 9:
-//         result += '-';
-//         break;
-//       default:
-//         break;
-//     }
+    this.isLoadingModifierClassName = 'form_is-loading';
+    this.errorModifierClassName = 'form__item_error';
 
-//     result += value[i];
-//   }
+    this.initHandlers();
+  }
 
-//   return result;
-// };
+  resetError(item) {
+    item.classList.remove(this.errorModifierClassName);
+  }
 
-// export function initForm(form, modalManager, successModalKey, errorModalKey) {
-//   if (!form) {
-//     return;
-//   }
+  resetForm() {
+    this.form.reset();
+  }
 
-//   let formIsLoading = false;
+  handleParentModalClosed() {
+    this.resetForm();
+  }
 
-//   const nameInput = form.querySelector('.js-name-input');
-//   const phoneInput = form.querySelector('.js-phone-input');
-//   const emailInput = form.querySelector('.js-email-input');
-//   const companyInput = form.querySelector('.js-company-input');
-//   const personalDataCheckbox = form.querySelector('.js-personal-data-input');
-//   const submitBtn = form.querySelector('.js-submit-btn');
+  setError(item) {
+    item.classList.add(this.errorModifierClassName);
 
-//   const inputErrorClassName = 'common__input_error';
-//   const inputNotEmptyClassName = 'common__input_not-empty';
-//   const formIsLoadingClassName = 'common__form_is-loading';
+    const inputEl = item.querySelector('input');
 
-//   function disableSubmit() {
-//     submitBtn.setAttribute('disabled', '');
-//   }
+    inputEl.addEventListener('change', () => {
+      this.resetError(item);
+    }, { once: true });
+  }
 
-//   function enableSubmit() {
-//     submitBtn.removeAttribute('disabled');
-//   }
+  validateField(item) {
+    const validatorKey = item.getAttribute('data-type');
 
-//   function resetNotEmpty(element) {
-//     element.classList.remove(inputNotEmptyClassName);
-//   }
+    if (!validatorKey) {
+      return true;
+    }
 
-//   function setNotEmpty(element) {
-//     element.classList.add(inputNotEmptyClassName);
-//   }
+    const validator = this.validator.getValidator(validatorKey);
 
-//   function resetError(element) {
-//     element.classList.remove(inputErrorClassName);
-//   }
+    if (!validator) {
+      return false;
+    }
 
-//   function setError(element) {
-//     element.classList.add(inputErrorClassName);
+    const isRequired = item.hasAttribute('data-req');
 
-//     element.addEventListener('input', () => {
-//       resetError(element);
-//     }, { once: true });
-//   }
+    if (validatorKey === 'checkboxGroup') {
+      const inputElems = Array.from(item.querySelectorAll('input'));
 
-//   function resetFieldsMarks() {
-//     const errorFields = form.querySelectorAll(`.${inputErrorClassName}`);
+      return !isRequired || validator(inputElems);
+    }
 
-//     errorFields.forEach(resetError);
+    const inputEl = item.querySelector('input');
 
-//     const notEmptyFields = form.querySelectorAll(`.${inputNotEmptyClassName}`);
+    return (!isRequired && !inputEl.value) || validator(inputEl);
+  }
 
-//     notEmptyFields.forEach(resetNotEmpty);
-//   }
+  validateForm() {
+    const itemsWithError = this.formItems.filter((item) => !this.validateField(item));
 
-//   function handleFieldTouch(element) {
-//     if (element.value === '') {
-//       resetNotEmpty(element);
+    itemsWithError.forEach((item) => {
+      this.setError(item);
+    })
 
-//       return;
-//     }
+    const formIsValid = !itemsWithError.length;
 
-//     setNotEmpty(element);
-//   }
+    return formIsValid;
+  }
 
-//   function resetForm() {
-//     form.reset();
+  async handleSubmit(event) {
+    event.preventDefault();
 
-//     resetFieldsMarks();
+    const formIsValid = this.validateForm();
 
-//     enableSubmit();
-//   }
+    // if (!formIsValid || this.isLoading) {
+    //   return;
+    // }
 
-//   function handleParentModalClosed() {
-//     resetForm();
-//   }
+    // this.isLoading = true;
 
-//   function validateField(element, validator) {
-//     const isValid = validator(element);
+    // form.classList.add(this.isLoadingModifierClassName);
+  }
 
-//     if (!isValid) {
-//       setError(element);
-//     }
+  initHandlers() {
+    // phoneInput.addEventListener('input', () => {
+    //   const value = phoneInput.value.replace(/\D+/g, '');
 
-//     return isValid;
-//   }
+    //   phoneInput.value = formatPhoneNumber(value);
 
-//   function validateForm() {
-//     const isValidName = validateField(nameInput, validateName);
-//     const isValidEmail = validateField(emailInput, validateEmail);
-//     const isValidPhone = validateField(phoneInput, validatePhone);
-//     const isValidCompany = validateField(companyInput, validateText);
-//     const isValidPersonalData = validateField(personalDataCheckbox, validatePersonalData);
+    //   handleFieldTouch(phoneInput);
+    // });
 
-//     return [isValidName, isValidEmail, isValidPhone, isValidCompany, isValidPersonalData]
-//       .every(Boolean);
-//   }
-
-//   function generateSuccessMessage() {
-//     return `Привет!
-//       \nПоступила новая заявка с лэндинга SimpleConstruction.
-//       \nИмя: ${nameInput.value.trim()}
-//       \nТелефон: ${phoneInput.value}
-//       \nEmail: ${emailInput.value}
-//       \nКомпания: ${companyInput.value?.trim() || 'Не указано'}
-//     `;
-//   }
-
-//   async function onSubmit(event) {
-//     event.preventDefault();
-
-//     const formIsValid = validateForm();
-
-//     if (!formIsValid || formIsLoading) {
-//       return;
-//     }
-
-//     formIsLoading = true;
-
-//     form.classList.add(formIsLoadingClassName);
-
-//     try {
-//       const message = generateSuccessMessage();
-
-//       await postForm(message);
-
-//       resetForm();
-
-//       modalManager.closeAnyModal();
-
-//       modalManager.openModal(successModalKey);
-//     } catch (error) {
-//       console.error(error);
-
-//       modalManager.openModal(errorModalKey);
-//     } finally {
-//       formIsLoading = false;
-
-//       form.classList.remove(formIsLoadingClassName);
-//     }
-//   }
-
-//   function updateSubmitBtnState() {
-//     if (personalDataCheckbox.checked) {
-//       enableSubmit();
-
-//       return;
-//     }
-
-//     disableSubmit();
-//   }
-
-//   function initHandlers() {
-//     [nameInput, emailInput, companyInput].forEach((element) => {
-//       element.addEventListener('input', () => {
-//         handleFieldTouch(element);
-//       });
-//     })
-
-//     phoneInput.addEventListener('input', () => {
-//       const value = phoneInput.value.replace(/\D+/g, '');
-
-//       phoneInput.value = formatPhoneNumber(value);
-
-//       handleFieldTouch(phoneInput);
-//     });
-
-//     phoneInput.addEventListener('focus', () => {
-//       if (phoneInput.value === '') {
-//         phoneInput.value = '+7 (';
-//       }
-//     });
-
-//     phoneInput.addEventListener('blur', () => {
-//       if (phoneInput.value === '+7 (') {
-//         phoneInput.value = '';
-//       }
-
-//       handleFieldTouch(phoneInput);
-//     });
-
-//     personalDataCheckbox.addEventListener('change', () => {
-//       updateSubmitBtnState();
-//     });
-
-//     form.addEventListener('submit', onSubmit);
-//   }
-
-//   initHandlers();
-
-//   return {
-//     handleParentModalClosed,
-//   }
-// }
+    this.form.addEventListener('submit', (event) => {
+      this.handleSubmit(event);
+    });
+  }
+}

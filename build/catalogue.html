@@ -102,9 +102,61 @@
                   </li>
                 </ul>
                 <div class="tabs__content js-tab-content">
-                  <div class="tabs__content-item tabs__content_active catalogue__groups js-tab-content-item" data-key="fruit">
+                  <div class="tabs__content-item tabs__content-item_active js-tab-content-item" data-key="fruit">
                     <div class="catalogue__group">
                       <h3 class="common__h3 catalogue__group-heading">Фруктовые концентрированные соки</h3>
+                      <ul class="catalogue__list">
+                        <li class="catalogue__item">
+                          <div class="product-preview">
+                            <div class="product-preview__info"><span class="common__text common__text_large product-preview__heading">Яблочный сок</span>
+                              <ul class="product-preview__tags">
+                                <li class="common__tag product-preview__tag">Концентрированный</li>
+                              </ul>
+                              <ul class="product-preview__details">
+                                <li class="product-preview__detail"><span class="product-preview__detail-label">BRIX</span><span class="product-preview__detail-value">70 ± 1 °Bx</span></li>
+                              </ul>
+                              <ul class="product-preview__countries">
+                                <li class="product-preview__country">Иран<img class="product-preview__country-flag" src="images/flags/flag-04.svg" alt=""></li>
+                              </ul>
+                            </div><img class="product-preview__image" src="images/products/product-01.jpg" alt="">
+                          </div>
+                        </li>
+                        <li class="catalogue__item">
+                          <div class="product-preview">
+                            <div class="product-preview__info"><span class="common__text common__text_large product-preview__heading">Яблочный сок</span>
+                              <ul class="product-preview__tags">
+                                <li class="common__tag product-preview__tag">Концентрированный</li>
+                              </ul>
+                              <ul class="product-preview__details">
+                                <li class="product-preview__detail"><span class="product-preview__detail-label">BRIX</span><span class="product-preview__detail-value">70 ± 1 °Bx</span></li>
+                              </ul>
+                              <ul class="product-preview__countries">
+                                <li class="product-preview__country">Иран<img class="product-preview__country-flag" src="images/flags/flag-04.svg" alt=""></li>
+                              </ul>
+                            </div><img class="product-preview__image" src="images/products/product-01.jpg" alt="">
+                          </div>
+                        </li>
+                        <li class="catalogue__item">
+                          <div class="product-preview">
+                            <div class="product-preview__info"><span class="common__text common__text_large product-preview__heading">Яблочный сок</span>
+                              <ul class="product-preview__tags">
+                                <li class="common__tag product-preview__tag">Концентрированный</li>
+                              </ul>
+                              <ul class="product-preview__details">
+                                <li class="product-preview__detail"><span class="product-preview__detail-label">BRIX</span><span class="product-preview__detail-value">70 ± 1 °Bx</span></li>
+                              </ul>
+                              <ul class="product-preview__countries">
+                                <li class="product-preview__country">Иран<img class="product-preview__country-flag" src="images/flags/flag-04.svg" alt=""></li>
+                              </ul>
+                            </div><img class="product-preview__image" src="images/products/product-01.jpg" alt="">
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="tabs__content-item js-tab-content-item" data-key="berry">
+                    <div class="catalogue__group">
+                      <h3 class="common__h3 catalogue__group-heading">Ягодные концентрированные соки</h3>
                       <ul class="catalogue__list">
                         <li class="catalogue__item">
                           <div class="product-preview">
@@ -435,59 +487,61 @@
               </div>
             </div>
             <div class="bid__form">
-              <form class="form">
+              <form class="form js-form">
                 <div class="form__inner">
                   <div class="form__section">
                     <h4 class="common__h4 form__section-heading">Что вас интересует?<span class="asterisk">*</span></h4>
-                    <div class="form__cols-2">
-                      <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
-                        <div class="checkbox__custom"></div><span class="checkbox__label">Закупка соков/пюре</span>
-                      </label>
-                      <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
-                        <div class="checkbox__custom"></div><span class="checkbox__label">Ингредиенты</span>
-                      </label>
-                      <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
-                        <div class="checkbox__custom"></div><span class="checkbox__label">Продажа соков/пюре</span>
-                      </label>
-                      <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
-                        <div class="checkbox__custom"></div><span class="checkbox__label">Упаковка</span>
-                      </label>
-                      <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
-                        <div class="checkbox__custom"></div><span class="checkbox__label">Применение продукта</span>
-                      </label>
-                      <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
-                        <div class="checkbox__custom"></div><span class="checkbox__label">Контрактное производство</span>
-                      </label>
-                      <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
-                        <div class="checkbox__custom"></div><span class="checkbox__label">Логистические решения</span>
-                      </label>
-                      <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
-                        <div class="checkbox__custom"></div><span class="checkbox__label">Другое</span>
-                      </label>
+                    <div class="form__item js-form-item" data-req data-type="checkboxGroup">
+                      <div class="form__cols-2">
+                        <label class="checkbox">
+                          <input class="checkbox__default" type="checkbox">
+                          <div class="checkbox__custom"></div><span class="checkbox__label">Закупка соков/пюре</span>
+                        </label>
+                        <label class="checkbox">
+                          <input class="checkbox__default" type="checkbox">
+                          <div class="checkbox__custom"></div><span class="checkbox__label">Ингредиенты</span>
+                        </label>
+                        <label class="checkbox">
+                          <input class="checkbox__default" type="checkbox">
+                          <div class="checkbox__custom"></div><span class="checkbox__label">Продажа соков/пюре</span>
+                        </label>
+                        <label class="checkbox">
+                          <input class="checkbox__default" type="checkbox">
+                          <div class="checkbox__custom"></div><span class="checkbox__label">Упаковка</span>
+                        </label>
+                        <label class="checkbox">
+                          <input class="checkbox__default" type="checkbox">
+                          <div class="checkbox__custom"></div><span class="checkbox__label">Применение продукта</span>
+                        </label>
+                        <label class="checkbox">
+                          <input class="checkbox__default" type="checkbox">
+                          <div class="checkbox__custom"></div><span class="checkbox__label">Контрактное производство</span>
+                        </label>
+                        <label class="checkbox">
+                          <input class="checkbox__default" type="checkbox">
+                          <div class="checkbox__custom"></div><span class="checkbox__label">Логистические решения</span>
+                        </label>
+                        <label class="checkbox">
+                          <input class="checkbox__default" type="checkbox">
+                          <div class="checkbox__custom"></div><span class="checkbox__label">Другое</span>
+                        </label>
+                      </div>
                     </div>
                   </div>
                   <div class="form__section">
                     <h4 class="common__h4 form__section-heading">Представьтесь, пожалуйста</h4>
                     <div class="form__cols-2">
-                      <div class="form__item">
+                      <div class="form__item js-form-item" data-req data-type="name">
                         <label class="label">Имя<span class="asterisk">*</span></label>
-                        <input class="input" type="text">
+                        <input class="input" type="text"><span class="error">Обязательное поле</span>
                       </div>
-                      <div class="form__item">
+                      <div class="form__item js-form-item" data-req data-type="phone">
                         <label class="label">Телефон<span class="asterisk">*</span></label>
-                        <input class="input" type="text">
+                        <input class="input" type="text"><span class="error">Обязательное поле</span>
                       </div>
-                      <div class="form__item">
+                      <div class="form__item js-form-item" data-type="email">
                         <label class="label">Email</label>
-                        <input class="input" type="text">
+                        <input class="input" type="text"><span class="error">Ошибка</span>
                       </div>
                       <div class="form__item">
                         <label class="label">Город</label>
@@ -510,11 +564,13 @@
                     </label>
                   </div>
                   <div class="form__actions">
-                    <label class="checkbox">
-                      <input class="checkbox__default" type="checkbox">
-                      <div class="checkbox__custom"></div><span class="checkbox__label">Я согласен с <a class="checkbox__link" href="" target="_blank">обработкой персональных данных</a></span>
-                    </label>
-                    <button class="common__btn form__submit-btn">Оставить заявку</button>
+                    <div class="form__item js-form-item" data-req data-type="checkbox">
+                      <label class="checkbox">
+                        <input class="checkbox__default" type="checkbox">
+                        <div class="checkbox__custom"></div><span class="checkbox__label">Я согласен с <a class="checkbox__link" href="" target="_blank">обработкой персональных данных</a></span>
+                      </label>
+                    </div>
+                    <button class="common__btn form__submit-btn js-submit-btn" type="submit">Оставить заявку</button>
                   </div>
                 </div>
               </form>

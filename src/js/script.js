@@ -1,12 +1,18 @@
+//= partials/validator.js
+
 //= partials/faq.js
 
 //= partials/tabs.js
 
 //= partials/review-swiper.js
 
+//= partials/shipping-countries-swiper.js
+
 //= partials/modal.js
 
 //= partials/yandex-map.js
+
+//= partials/form.js
 
 // Faq
 function initFaq() {
@@ -29,6 +35,8 @@ function initTabs() {
 // Свайпер
 function initSwiper() {
   initReviewSwiper('.js-review-swiper');
+
+  initShippingCountriesSwiper('.js-shipping-countries-swiper');
 }
 
 // Модальные окна
@@ -54,26 +62,22 @@ function initModals() {
     // .addModal('error-modal', errorModal);
 }
 
-// // Формы
-// function initForms() {
-//   ['contact-us-form', 'contact-us-form-modal', 'get-demo-form-modal'].forEach((selector) => {
-//     const element = document.getElementById(selector);
+// Формы
+function initForms() {
+  const modalManager = new ModalManager();
 
-//     if (!element) {
-//       return;
-//     }
+  const validator = new Validator()
 
-//     const modalManager = new ModalManager();
+  document.querySelectorAll('.js-form').forEach((item) => {
+    const form = new CustomForm(item, validator, modalManager);
 
-//     const form = initForm(element, modalManager, 'success-modal', 'error-modal');
+    const parentModal = modalManager.getParentModal(item);
 
-//     const parentModal = modalManager.getParentModal(element);
-
-//     if (parentModal) {
-//       parentModal.setNestedForm(form);
-//     }
-//   })
-// }
+    if (parentModal) {
+      parentModal.setNestedForm(form);
+    }
+  })
+}
 
 // Бургер
 function initBurger() {
@@ -106,6 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSwiper();
 
   initModals();
+
+  initForms();
 
   initBurger();
 

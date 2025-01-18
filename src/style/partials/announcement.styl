@@ -1,24 +1,59 @@
 .announcement
+  position relative
   display grid
   grid-template-columns repeat(2, 1fr)
-  align-items end
-  padding 40px
+  padding 43px 40px
   gap 24px
   background-color $green
   border-radius 16px
+  overflow hidden
+
+  @media $tablet-landscape-medium
+    grid-template-columns 100%
+
+  @media $tablet-landscape-medium
+    padding 31px 25px 25px
+    gap 27px
+
+  & > svg
+    position absolute
+    top -259px
+    left -227px
+    display block
+    width 676px
+    height 722px
+    opacity .1
+    stroke $green-ease
 
   &__heading
+    position relative
+    margin 3px 0 0
     color $white
+
+    @media $tablet-landscape-medium
+      margin 0
 
     &-accent
       display block
+      font-size 140px
+      line-height 122px
       color $green-poison
 
+      @media $tablet-landscape-medium
+        font-size 100px
+        line-height 82px
+
   &__description
+    position relative
     display flex
     flex-direction column
-    gap 11px
+    gap 8px
     color $white
+
+    @media $tablet-landscape-medium
+      gap 10px
+      font-size 18px
+      line-height 23px
 
     &::before
       content ''

@@ -47,6 +47,7 @@
 
     @media $phone
       grid-template-columns 100%
+      gap 24px
 
   &__group
     display flex
@@ -103,7 +104,11 @@
       flex-direction row
       align-items baseline
 
+    @media $phone
+      color $graphite
+
     & svg
+      flex-shrink 0
       display block
       width 40px
       height 40px

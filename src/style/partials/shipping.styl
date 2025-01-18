@@ -21,16 +21,33 @@
     @media $tablet-landscape-medium
       display none
 
-    &-list
+    &-slider
       position relative
       align-self flex-end
-      display grid
-      grid-template-columns repeat(2, 1fr)
       margin -34px 0 0
-      gap 8px
 
       @media $tablet-landscape-large
         margin -1px 0 0
+
+      @media $tablet-landscape-medium
+        align-self center
+        width 160px
+        margin 0
+        overflow visible
+
+    &-list
+      display grid
+      grid-template-columns repeat(2, 1fr)
+      height auto
+      gap 8px
+
+      @media $tablet-landscape-medium
+        display flex
+        gap 0
+
+    &-item
+      @media $tablet-landscape-medium
+        padding 377px 0 0
 
     &-btn
       display flex
@@ -46,6 +63,10 @@
       color $graphite
       border-radius 8px
       background-color $white
+
+      @media $tablet-landscape-medium
+        width 100%
+        min-width auto
 
     &-flag
       display block

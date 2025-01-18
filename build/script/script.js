@@ -1,3 +1,57 @@
+class Validator {
+  static instance = null;
+
+  constructor() {
+    if (!Validator.instance) {
+      this.init();
+
+      Validator.instance = this;
+    }
+
+    return this;
+  }
+
+  validateName(inputEl) {
+    const reg = /^[a-zA-Zа-яА-Я- ]{1,}$/;
+  
+    return reg.test(inputEl.value.trim());
+  }
+  
+  validatePhone(inputEl) {
+    const phonePattern = /^\+?[\d\s\-()]+$/;
+    
+    return phonePattern.test(inputEl.value) && inputEl.value.length === 18; // с учетом маски 11 цифр + 7 элементов маски
+  }
+  
+  validateEmail(inputEl) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+    return emailPattern.test(inputEl.value);
+  }
+  
+  validateCheckbox(chekboxEl) {
+    return chekboxEl.checked;
+  }
+
+  validateCheckboxGroup(checkboxElems) {
+    return checkboxElems.some((item) => item.checked);
+  }
+
+  init() {
+    this.validators = {
+      name: this.validateName,
+      phone: this.validatePhone,
+      email: this.validateEmail,
+      checkbox: this.validateCheckbox,
+      checkboxGroup: this.validateCheckboxGroup,
+    }
+  }
+
+  getValidator(key) {
+    return this.validators[key];
+  }
+}
+
 class FaqItem {
   constructor(element) {
     this.element = element;
@@ -88,7 +142,6 @@ class Tabs {
 
     this.keyAttributeName = 'data-key';
     this.inTransitionModifierClassName = 'tabs__content_in-transition';
-    this.hiddenContentModifierClassName = 'tabs__content_hidden';
     this.activeTabModifierClassName = 'tabs__btn_active';
     this.activeContentModifierClassName = 'tabs__content-item_active';
 
@@ -109,18 +162,20 @@ class Tabs {
     this.content.classList.remove(this.inTransitionModifierClassName);
   }
 
-  isContentHidden() {
-    return this.content.classList.contains(this.hiddenContentModifierClassName);
-  }
+  setActiveContent() {
+    const key = this.activeTabBtn.getAttribute(this.keyAttributeName);
 
-  hideContent() {
-    this.startTransition();
+    this.contentItems.forEach((item) => {
+      const itemKey = item.getAttribute(this.keyAttributeName);
 
-    this.content.classList.add(this.hiddenContentModifierClassName);
-  }
+      if (itemKey !== key) {
+        item.classList.remove(this.activeContentModifierClassName);
 
-  showContent() {
-    this.content.classList.remove(this.hiddenContentModifierClassName);
+        return;
+      }
+      
+      item.classList.add(this.activeContentModifierClassName);
+    })
   }
 
   setActiveTab(tab) {
@@ -140,31 +195,13 @@ class Tabs {
 
     this.activeTabBtn = tab;
 
-    this.hideContent();
-  }
+    this.startTransition();
 
-  setActiveContent() {
-    if (!this.isContentHidden()) {
+    setTimeout(() => {
+      this.setActiveContent();
+
       this.endTransition();
-
-      return;
-    }
-
-    const key = this.activeTabBtn.getAttribute(this.keyAttributeName);
-
-    this.contentItems.forEach((item) => {
-      const itemKey = item.getAttribute(this.keyAttributeName);
-
-      if (itemKey !== key) {
-        item.classList.remove(this.activeContentModifierClassName);
-
-        return;
-      }
-      
-      item.classList.add(this.activeContentModifierClassName);
-    })
-
-    this.showContent();
+    }, 300)
   }
 
   init() {
@@ -172,10 +209,6 @@ class Tabs {
       item.addEventListener('click', () => {
         this.setActiveTab(item);
       })
-    })
-
-    this.content.addEventListener('transitionend', () => {
-      this.setActiveContent();
     })
   }
 }
@@ -203,6 +236,41 @@ function initReviewSwiper(selector) {
       prevEl: '.js-review-swiper-btn-prev',
     },
   })
+}
+
+function initShippingCountriesSwiper(selector) {
+  if (!selector || !document.querySelector(selector)) {
+    return;
+  }
+
+  const breakPoint = 1160;
+
+  const swiperOptions = {
+    slidesPerView: 1,
+    spaceBetween: 16,
+  }
+
+  let swiper;
+
+  window.addEventListener('resize', () => {
+    if (document.documentElement.clientWidth > breakPoint && swiper){
+      swiper.destroy();
+      
+      swiper = null;
+
+      return;
+    }
+      
+    if (document.documentElement.clientWidth <= breakPoint && !swiper){
+      swiper = new Swiper(selector, swiperOptions)
+    }
+  })
+
+  if (document.documentElement.clientWidth > breakPoint) {
+    return;
+  }
+
+  swiper = new Swiper(selector, swiperOptions)
 }
 
 class ModalManager {
@@ -371,6 +439,113 @@ function initYandexMap(id){
   locationMap.controls.remove('routeButtonControl');
 }
 
+class CustomForm {
+  constructor(form, validator, modalManager) {
+    this.form = form;
+    this.validator = validator;
+    this.modalManager = modalManager;
+
+    this.isLoading = false;
+
+    this.formItems = Array.from(form.querySelectorAll('.js-form-item'));
+
+    this.submitBtn = form.querySelector('.js-submit-btn');
+
+    this.isLoadingModifierClassName = 'form_is-loading';
+    this.errorModifierClassName = 'form__item_error';
+
+    this.initHandlers();
+  }
+
+  resetError(item) {
+    item.classList.remove(this.errorModifierClassName);
+  }
+
+  resetForm() {
+    this.form.reset();
+  }
+
+  handleParentModalClosed() {
+    this.resetForm();
+  }
+
+  setError(item) {
+    item.classList.add(this.errorModifierClassName);
+
+    const inputEl = item.querySelector('input');
+
+    inputEl.addEventListener('change', () => {
+      this.resetError(item);
+    }, { once: true });
+  }
+
+  validateField(item) {
+    const validatorKey = item.getAttribute('data-type');
+
+    if (!validatorKey) {
+      return true;
+    }
+
+    const validator = this.validator.getValidator(validatorKey);
+
+    if (!validator) {
+      return false;
+    }
+
+    const isRequired = item.hasAttribute('data-req');
+
+    if (validatorKey === 'checkboxGroup') {
+      const inputElems = Array.from(item.querySelectorAll('input'));
+
+      return !isRequired || validator(inputElems);
+    }
+
+    const inputEl = item.querySelector('input');
+
+    return (!isRequired && !inputEl.value) || validator(inputEl);
+  }
+
+  validateForm() {
+    const itemsWithError = this.formItems.filter((item) => !this.validateField(item));
+
+    itemsWithError.forEach((item) => {
+      this.setError(item);
+    })
+
+    const formIsValid = !itemsWithError.length;
+
+    return formIsValid;
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+
+    const formIsValid = this.validateForm();
+
+    // if (!formIsValid || this.isLoading) {
+    //   return;
+    // }
+
+    // this.isLoading = true;
+
+    // form.classList.add(this.isLoadingModifierClassName);
+  }
+
+  initHandlers() {
+    // phoneInput.addEventListener('input', () => {
+    //   const value = phoneInput.value.replace(/\D+/g, '');
+
+    //   phoneInput.value = formatPhoneNumber(value);
+
+    //   handleFieldTouch(phoneInput);
+    // });
+
+    this.form.addEventListener('submit', (event) => {
+      this.handleSubmit(event);
+    });
+  }
+}
+
 // Faq
 function initFaq() {
   const faqManager = new FaqManager();
@@ -392,6 +567,8 @@ function initTabs() {
 // Свайпер
 function initSwiper() {
   initReviewSwiper('.js-review-swiper');
+
+  initShippingCountriesSwiper('.js-shipping-countries-swiper');
 }
 
 // Модальные окна
@@ -417,26 +594,22 @@ function initModals() {
     // .addModal('error-modal', errorModal);
 }
 
-// // Формы
-// function initForms() {
-//   ['contact-us-form', 'contact-us-form-modal', 'get-demo-form-modal'].forEach((selector) => {
-//     const element = document.getElementById(selector);
+// Формы
+function initForms() {
+  const modalManager = new ModalManager();
 
-//     if (!element) {
-//       return;
-//     }
+  const validator = new Validator()
 
-//     const modalManager = new ModalManager();
+  document.querySelectorAll('.js-form').forEach((item) => {
+    const form = new CustomForm(item, validator, modalManager);
 
-//     const form = initForm(element, modalManager, 'success-modal', 'error-modal');
+    const parentModal = modalManager.getParentModal(item);
 
-//     const parentModal = modalManager.getParentModal(element);
-
-//     if (parentModal) {
-//       parentModal.setNestedForm(form);
-//     }
-//   })
-// }
+    if (parentModal) {
+      parentModal.setNestedForm(form);
+    }
+  })
+}
 
 // Бургер
 function initBurger() {
@@ -469,6 +642,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSwiper();
 
   initModals();
+
+  initForms();
 
   initBurger();
 

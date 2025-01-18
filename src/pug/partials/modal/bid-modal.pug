@@ -14,86 +14,93 @@
 						p Наш менеджер свяжется с&nbsp;вами и&nbsp;ответит на&nbsp;все вопросы
 
 				.bid__form
-					form.form
+					form.form.js-form
 						.form__inner
 							.form__section
 								h4.common__h4.form__section-heading Что вас интересует?
 									span.asterisk *
 
-								.form__cols-2
-									label.checkbox
-										input.checkbox__default(type='checkbox')
+								.form__item.js-form-item(data-req data-type='checkboxGroup')
+									.form__cols-2
+										label.checkbox
+											input.checkbox__default(type='checkbox')
 
-										.checkbox__custom
+											.checkbox__custom
 
-										span.checkbox__label Закупка соков/пюре
+											span.checkbox__label Закупка соков/пюре
 
-									label.checkbox
-										input.checkbox__default(type='checkbox')
+										label.checkbox
+											input.checkbox__default(type='checkbox')
 
-										.checkbox__custom
+											.checkbox__custom
 
-										span.checkbox__label Ингредиенты
+											span.checkbox__label Ингредиенты
 
-									label.checkbox
-										input.checkbox__default(type='checkbox')
+										label.checkbox
+											input.checkbox__default(type='checkbox')
 
-										.checkbox__custom
+											.checkbox__custom
 
-										span.checkbox__label Продажа соков/пюре
+											span.checkbox__label Продажа соков/пюре
 
-									label.checkbox
-										input.checkbox__default(type='checkbox')
+										label.checkbox
+											input.checkbox__default(type='checkbox')
 
-										.checkbox__custom
+											.checkbox__custom
 
-										span.checkbox__label Упаковка
+											span.checkbox__label Упаковка
 
-									label.checkbox
-										input.checkbox__default(type='checkbox')
+										label.checkbox
+											input.checkbox__default(type='checkbox')
 
-										.checkbox__custom
+											.checkbox__custom
 
-										span.checkbox__label Применение продукта
+											span.checkbox__label Применение продукта
 
-									label.checkbox
-										input.checkbox__default(type='checkbox')
+										label.checkbox
+											input.checkbox__default(type='checkbox')
 
-										.checkbox__custom
+											.checkbox__custom
 
-										span.checkbox__label Контрактное производство
+											span.checkbox__label Контрактное производство
 
-									label.checkbox
-										input.checkbox__default(type='checkbox')
+										label.checkbox
+											input.checkbox__default(type='checkbox')
 
-										.checkbox__custom
+											.checkbox__custom
 
-										span.checkbox__label Логистические решения
+											span.checkbox__label Логистические решения
 
-									label.checkbox
-										input.checkbox__default(type='checkbox')
+										label.checkbox
+											input.checkbox__default(type='checkbox')
 
-										.checkbox__custom
+											.checkbox__custom
 
-										span.checkbox__label Другое
+											span.checkbox__label Другое
 
 							.form__section
 								h4.common__h4.form__section-heading Представьтесь, пожалуйста
 
 								.form__cols-2
-									.form__item
+									.form__item.js-form-item(data-req data-type='name')
 										label.label Имя
 											span.asterisk *
 										input.input(type='text')
 
-									.form__item
+										span.error Обязательное поле
+
+									.form__item.js-form-item(data-req data-type='phone')
 										label.label Телефон
 											span.asterisk *
 										input.input(type='text')
 
-									.form__item
+										span.error Обязательное поле
+
+									.form__item.js-form-item(data-type='email')
 										label.label Email
 										input.input(type='text')
+
+										span.error Ошибка
 
 									.form__item
 										label.label Город
@@ -119,11 +126,12 @@
 									span.file-uploader__file-label Файл не выбран
 
 							.form__actions
-								label.checkbox
-									input.checkbox__default(type='checkbox')
+								.form__item.js-form-item(data-req data-type='checkbox')
+									label.checkbox
+										input.checkbox__default(type='checkbox')
 
-									.checkbox__custom
+										.checkbox__custom
 
-									span.checkbox__label Я согласен с #[a.checkbox__link(href='' target='_blank') обработкой персональных данных]
+										span.checkbox__label Я согласен с #[a.checkbox__link(href='' target='_blank') обработкой персональных данных]
 
-								button.common__btn.form__submit-btn Оставить заявку
+								button.common__btn.form__submit-btn.js-submit-btn(type='submit') Оставить заявку
