@@ -55,6 +55,7 @@
     position absolute
     top 32px
     right 32px
+    transform rotate(0)
     display flex
     justify-content center
     align-items center
@@ -63,10 +64,14 @@
     border-radius 50%
     background-color alpha($gray-soft, .6)
     cursor pointer
+    transition transform .5s 0s ease
 
     @media $tablet-portrait-large
       top 16px
       right 16px
+
+    &:hover
+      transform rotate(90deg)
 
     & svg
       display block

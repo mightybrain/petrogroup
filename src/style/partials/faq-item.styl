@@ -37,9 +37,13 @@
     display inline-flex
     align-items center
     min-height 44px
+    transition color .5s 0s ease
 
     @media $tablet-portrait-large
       min-height 40px
+
+    &:hover
+      color $green
 
   &__description-wrapper
     height 0
@@ -57,3 +61,6 @@
   & .faq-item__summary
     &::after
       transform rotate(180deg)
+
+  & .faq-item__heading
+    color $green

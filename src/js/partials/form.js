@@ -17,7 +17,6 @@ class CustomForm {
   }
 
   resetError(item) {
-    console.log(123);
     item.classList.remove(this.errorModifierClassName);
   }
 
@@ -26,7 +25,7 @@ class CustomForm {
   }
 
   handleParentModalClosed() {
-    this.resetForm();
+    // this.resetForm();
   }
 
   setError(item) {

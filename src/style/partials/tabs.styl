@@ -16,13 +16,39 @@
       flex-direction column
       gap 56px
 
+  &__list-wrapper
+    @media $tablet-landscape-medium
+      display flex
+      width 100%
+      padding 0 0 0 40px
+      overflow-x auto
+
+    @media $phone
+      padding 0 0 0 16px
+
+    &::after
+      content ''
+      display none
+
+      @media $tablet-landscape-medium
+        flex-shrink 0
+        display block
+        width 40px
+
+      @media $phone
+        width 16px
+
   &__list
     display flex
+    flex-wrap wrap
     padding 2px
     gap 2px
     border 2px solid $white
     border-radius 16px
     background-color $gray-soft
+
+    @media $tablet-landscape-medium
+      flex-wrap nowrap
 
   &__btn
     display flex
@@ -38,10 +64,13 @@
     border-radius 12px
     background-color $gray-soft
     cursor pointer
+    white-space nowrap
     transition background-color .5s 0s ease, color .5s 0s ease
 
     @media $tablet-landscape-large
       padding 10px 24px
+      font-size 20px
+      line-height 26px
 
     @media $tablet-landscape-medium
       padding 8px 24px
@@ -72,6 +101,12 @@
     opacity 1
     transition opacity .3s 0s ease
 
+    @media $tablet-landscape-medium
+      padding 0 40px
+    
+    @media $phone
+      padding 0 16px
+
     &_in-transition
       opacity 0
 
@@ -82,12 +117,10 @@
         display block
 
 .tabs_sidebar
-  & .tabs__list
+  & .tabs__list-wrapper
     position sticky
     top 0
     left 0
-    flex-direction column
-    flex-shrink 0
     width 382px
 
     @media $tablet-landscape-large
@@ -95,16 +128,26 @@
 
     @media $tablet-landscape-medium
       position static
+      width 100%
+
+  & .tabs__list
+    flex-direction column
+    flex-shrink 0
+
+    @media $tablet-landscape-medium
       flex-direction row
       width auto
 
   & .tabs__btn
     justify-content flex-end
     width 100%
+    text-align left
     min-width auto
+    white-space normal
 
     @media $tablet-landscape-medium
       width auto
+      white-space nowrap
 
 .tabs__btn
   &:hover,

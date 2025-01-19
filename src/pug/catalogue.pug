@@ -20,19 +20,20 @@ html(lang="ru")
 							.intro__inner
 								h1.common__h1.intro__heading Соки и&nbsp;концентрированные соки
 
-				.container.container_narrow
+				.container.container_narrow.catalogue__container
 					.catalogue__inner
 
 						.catalogue__tabs
 							.tabs.js-tabs
-								ul.tabs__list
-									li.tabs__item
-										button.tabs__btn.tabs__btn_active.js-tab-btn(data-key="fruit") Фруктовые
-											include ../../build/images/icons/icon-fruit-40.svg
+								.tabs__list-wrapper
+									ul.tabs__list
+										li.tabs__item
+											button.tabs__btn.tabs__btn_active.js-tab-btn(data-key="fruit") Фруктовые
+												include ../../build/images/icons/icon-fruit-40.svg
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="berry") Ягодные
-											include ../../build/images/icons/icon-berry-40.svg
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="berry") Ягодные
+												include ../../build/images/icons/icon-berry-40.svg
 
 								.tabs__content.js-tab-content
 									.tabs__content-item.tabs__content-item_active.js-tab-content-item(data-key="fruit")

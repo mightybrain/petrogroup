@@ -26,47 +26,49 @@ html(lang="ru")
 
 				.container.vacancy__container
 					.vacancy__inner
+
 						.vacancy__tabs
 							.tabs.tabs_sidebar.js-tabs
-								ul.tabs__list
-									li.tabs__item
-										button.tabs__btn.tabs__btn_active.js-tab-btn(data-key="management") Управление заводом
+								.tabs__list-wrapper
+									ul.tabs__list
+										li.tabs__item
+											button.tabs__btn.tabs__btn_active.js-tab-btn(data-key="management") Управление заводом
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="production") Производство
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="production") Производство
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="innovation") Разработка новых продуктов
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="innovation") Разработка новых продуктов
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="quality") Контроль качества продукции
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="quality") Контроль качества продукции
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="purchase") Закупки
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="purchase") Закупки
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="sales") Продажи
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="sales") Продажи
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="merketing") Маркетинг
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="merketing") Маркетинг
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="logostic") Логистика
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="logostic") Логистика
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="analytics") Контроль и аналитика
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="analytics") Контроль и аналитика
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="accounting") Бухгалтерия
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="accounting") Бухгалтерия
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="it") Информационные технологии
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="it") Информационные технологии
 
-									li.tabs__item
-										button.tabs__btn.js-tab-btn(data-key="hr") Кадровые ресурсы
+										li.tabs__item
+											button.tabs__btn.js-tab-btn(data-key="hr") Кадровые ресурсы
 
 								.tabs__content.js-tab-content
-									.tabs__content-item.tabs__content-item_active.vacancy__list.js-tab-content-item(data-key="management")
+									.tabs__content-item.tabs__content-item_active.js-tab-content-item(data-key="management")
 										ul.vacancy__list
 											li.vacancy__item 
 												//= partials/vacancy-preview.pug

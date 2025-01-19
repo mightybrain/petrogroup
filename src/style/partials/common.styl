@@ -184,6 +184,7 @@
     border-radius 22px
     background-color $orange
     cursor pointer
+    transition background-color .5s 0s ease
 
     @media $tablet-landscape-large
       padding 9px 24px 8px
@@ -200,12 +201,21 @@
       padding 8px 24px 10px
       border-radius 19.5px
 
+    &:not([disabled]):hover
+      background-color $orange-deep
+
     &_green
       background-color $green
+
+      &:not([disabled]):hover
+        background-color $green-dark
 
     &_gray
       color $asphalt
       background-color alpha($gray-soft, .6)
+
+      &:not([disabled]):hover
+        background-color alpha($gray-soft, .6)
 
     &_small
       padding 4px 16px
@@ -216,7 +226,7 @@
     font-size 13px
     line-height 16px
     font-weight 400
-    color $green-deep
+    color $green
     border-radius 4px
     background-color alpha($green-toxic, .3)
 
