@@ -10,17 +10,17 @@ html(lang="ru")
 
 	body
 		//= partials/header.pug
-					
+
 		main.main
 			.projects
 				.projects__intro
-					.container.projects__intro-container
+					.container.container_narrow
 						.intro.intro_no-bg
 
 							.intro__inner
 								h1.common__h1.intro__heading Проекты
 
-				.container.projects__container
+				.container.container_narrow
 					.projects__inner
 
 						.projects__tabs
@@ -60,8 +60,10 @@ html(lang="ru")
 
 											button.common__btn.common__btn_gray.projects__show-all-btn Показать еще
 
+				.common__line
+
 				.projects__about-production
-					.container.projects__about-production-container
+					.container.container_narrow
 						.cards
 							h2.common__h2.cards__heading Контрактное производство
 
@@ -91,9 +93,10 @@ html(lang="ru")
 
 									img.cards__item-image(src="images/decor-07.jpg" alt="")
 
+				.common__line
+
 				.projects__benefits
-					.container
-						//= partials/benefits-no-bg.pug
+					//= partials/benefits-no-bg.pug
 
 				.projects__faq
 					.container

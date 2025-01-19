@@ -12,14 +12,6 @@
     padding 56px 0 8px
     gap 56px
 
-  &__intro-container,
-  &__container
-    max-width 1600px
-    width calc(100% - 80px)
-
-    @media $phone
-      width calc(100% - 32px)
-
   &__inner
     display grid
     grid-template-columns repeat(2, 1fr)
@@ -57,10 +49,7 @@
 
     &_wide
       grid-column-start 1
-      grid-column-end 3
-
-      @media $phone
-        grid-column-end 2
+      grid-column-end -1
 
   &__list
     display flex

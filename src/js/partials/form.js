@@ -17,6 +17,7 @@ class CustomForm {
   }
 
   resetError(item) {
+    console.log(123);
     item.classList.remove(this.errorModifierClassName);
   }
 
@@ -31,11 +32,19 @@ class CustomForm {
   setError(item) {
     item.classList.add(this.errorModifierClassName);
 
-    const inputEl = item.querySelector('input');
+    const inputElems = item.querySelectorAll('input');
 
-    inputEl.addEventListener('change', () => {
+    const resetError = () => {
       this.resetError(item);
-    }, { once: true });
+
+      inputElems.forEach((inputEl) => {
+        inputEl.removeEventListener('change', resetError);
+      })
+    }
+
+    inputElems.forEach((inputEl) => {
+      inputEl.addEventListener('change', resetError);
+    })
   }
 
   validateField(item) {

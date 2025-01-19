@@ -14,13 +14,13 @@ html(lang="ru")
 		main.main
 			.catalogue
 				.catalogue__intro
-					.container.catalogue__intro-container
+					.container.container_narrow
 						.intro.intro_no-bg
 
 							.intro__inner
 								h1.common__h1.intro__heading Соки и&nbsp;концентрированные соки
 
-				.container.catalogue__container
+				.container.container_narrow
 					.catalogue__inner
 
 						.catalogue__tabs
@@ -62,10 +62,11 @@ html(lang="ru")
 
 												li.catalogue__item
 													//= partials/product-preview.pug
-														
+
+				.common__line
+
 				.catalogue__benefits
-					.container.catalogue__benefits-container
-						//= partials/benefits-no-bg.pug
+					//= partials/benefits-no-bg.pug
 
 				.catalogue__faq
 					.container

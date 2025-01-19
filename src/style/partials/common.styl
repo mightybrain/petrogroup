@@ -161,6 +161,18 @@
           border-radius 1px
           background-color $green-poison
 
+  &__line
+    width calc(100% - 320px)
+    max-width 1600px
+    margin 0 auto
+    border-top 1px solid $gray-light
+
+    @media $tablet-landscape-medium
+      width calc(100% - 80px)
+
+    @media $phone
+      width calc(100% - 32px)
+
   &__btn
     display inline-block
     padding 9px 24px 11px

@@ -55,6 +55,20 @@ button
 	@media $tablet-portrait-large
 		width calc(100% - 16px)
 
+	&_narrow
+		width calc(100% - 80px)
+		max-width 1600px
+
+		@media $phone
+			width calc(100% - 32px)
+
+	&_narrow-mobile
+		@media $tablet-landscape-medium
+			width calc(100% - 80px)
+
+		@media $phone
+			width calc(100% - 32px)
+
 @import 'partials/header.styl'
 @import 'partials/footer.styl'
 @import 'partials/index-intro.styl'

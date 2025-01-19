@@ -8,19 +8,10 @@
   @media $tablet-landscape-large
     padding 113px 0 8px
 
-  &__intro-container,
-  &__container
-    max-width 1600px
-    width calc(100% - 80px)
-
   &__benefits,
   &__intro
     position relative
     z-index 1
-
-  &__benefits
-    &-container
-      width 100%
 
   &__inner
     display grid
@@ -32,7 +23,7 @@
     position relative
     z-index 1
     grid-column-start 1
-    grid-column-end 5
+    grid-column-end -1
     color $graphite
 
   &__map
@@ -168,7 +159,3 @@
   &__about-production
     position relative
     z-index 1
-
-    &-container
-      max-width 1600px
-      width calc(100% - 80px) 
