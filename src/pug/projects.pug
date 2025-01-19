@@ -45,19 +45,20 @@ html(lang="ru")
 										button.tabs__btn.js-tab-btn(data-key="sertification") Сертификация
 
 								.tabs__content.js-tab-content
-									.tabs__content-item.tabs__content-item_active.projects__group.js-tab-content-item(data-key="all")
-										ul.projects__list
-											li.projects__item
-												a.project-preview(href='')
-													img.project-preview__image(src='images/projects/project-01.jpg' alt='')
+									.tabs__content-item.tabs__content-item_active.js-tab-content-item(data-key="all")
+										.projects__group
+											ul.projects__list
+												li.projects__item
+													a.project-preview(href='')
+														img.project-preview__image(src='images/projects/project-01.jpg' alt='')
 
-													.project-preview__info
-														ul.project-preview__tags
-															li.project-preview__tag Хранение
+														.project-preview__info
+															ul.project-preview__tags
+																li.project-preview__tag Хранение
 
-														h5.common__h5.project-preview__heading Организация стабильных поставок апельсинов из Марокко для производства соков и пюре
+															h5.common__h5.project-preview__heading Организация стабильных поставок апельсинов из Марокко для производства соков и пюре
 
-										button.common__btn.common__btn_gray.projects__show-all-btn Показать еще
+											button.common__btn.common__btn_gray.projects__show-all-btn Показать еще
 
 				.projects__about-production
 					.container.projects__about-production-container

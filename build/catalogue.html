@@ -596,20 +596,20 @@
               </div>
             </div>
             <div class="cv__form">
-              <form class="form">
+              <form class="form js-form">
                 <div class="form__inner">
                   <div class="form__section">
                     <h4 class="common__h4 form__section-heading">Представьтесь, пожалуйста</h4>
                     <div class="form__cols-2">
-                      <div class="form__item">
+                      <div class="form__item js-form-item" data-req data-type="name">
                         <label class="label">Имя<span class="asterisk">*</span></label>
                         <input class="input" type="text">
                       </div>
-                      <div class="form__item">
+                      <div class="form__item js-form-item" data-req data-type="phone">
                         <label class="label">Телефон<span class="asterisk">*</span></label>
                         <input class="input" type="text">
                       </div>
-                      <div class="form__item">
+                      <div class="form__item js-form-item" data-type="email">
                         <label class="label">Email</label>
                         <input class="input" type="text">
                       </div>
@@ -630,11 +630,13 @@
                     </label>
                   </div>
                   <div class="form__actions">
-                    <label class="checkbox">
-                      <input class="checkbox__default" type="checkbox">
-                      <div class="checkbox__custom"></div><span class="checkbox__label">Я согласен с <a class="checkbox__link" href="" target="_blank">обработкой персональных данных</a></span>
-                    </label>
-                    <button class="common__btn form__submit-btn">Отправить резюме</button>
+                    <div class="form__item js-form-item" data-req data-type="checkbox">
+                      <label class="checkbox">
+                        <input class="checkbox__default" type="checkbox">
+                        <div class="checkbox__custom"></div><span class="checkbox__label">Я согласен с <a class="checkbox__link" href="" target="_blank">обработкой персональных данных</a></span>
+                      </label>
+                    </div>
+                    <button class="common__btn form__submit-btn js-submit-btn" type="submit">Отправить резюме</button>
                   </div>
                 </div>
               </form>

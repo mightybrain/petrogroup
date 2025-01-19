@@ -7,7 +7,23 @@
     gap 82px
 
   @media $tablet-landscape-medium
+    gap 24px
+
+  @media $tablet-landscape-medium
     gap 32px
+
+  &_inline
+    display grid
+    grid-template-columns repeat(4, 1fr)
+    gap 8px
+
+    @media $tablet-landscape-large
+      display flex
+      flex-direction column
+      gap 82px
+
+    @media $tablet-landscape-medium
+      gap 24px
 
   &__heading
     color $graphite
@@ -39,6 +55,12 @@
     @media $phone
       padding 0 0 0 16px
 
+    &_cols-3
+      grid-template-columns repeat(3, 1fr)
+
+      @media $tablet-landscape-medium
+        display flex
+
     &_cols-4
       grid-template-columns repeat(4, 1fr)
 
@@ -60,7 +82,7 @@
   &__item
     display flex
     flex-direction column
-    min-height 340px
+    min-height 420px
     padding 16px 24px 24px
     gap 17px
     background-color $white
@@ -74,6 +96,7 @@
       flex-shrink 0
       width 296px
       min-height 300px
+      padding 19px 24px 25px
       gap 8px
 
     @media $phone
@@ -97,6 +120,12 @@
       @media $tablet-landscape-medium
         margin 0
 
+    &-heading
+      @media $tablet-landscape-medium
+        margin 4px 0 0
+        font-size 20px
+        line-height 26px
+
     &-description
       margin -5px 0 0
 
@@ -105,6 +134,18 @@
 
       @media $tablet-landscape-medium
         margin 0
+        line-height 23px
+
+      & ul:not([class])
+        gap 0
+
+        & li:not([class])
+          padding 0 0 0 24px
+
+          &::before
+            left 11px
+            width 2px
+            background-color $graphite
 
   &__index
     font-size 100px
@@ -119,3 +160,8 @@
     @media $tablet-landscape-medium
       font-size 56px
       line-height 50px
+
+.steps_inline
+  & .steps__list-wrapper
+    grid-column-start 2
+    grid-column-end -1

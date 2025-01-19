@@ -5,10 +5,12 @@
   align-items flex-end
   row-gap 80px
 
+  @media $tablet-landscape-medium
+    row-gap 32px
+
   @media $phone
     flex-direction column
     align-items flex-start
-    gap 24px
 
   &__heading
     width calc(50% - 4px)
@@ -31,6 +33,7 @@
 
     @media $phone
       width 100%
+      margin -9px 0 0
 
     & p:not([class])
       max-width 340px

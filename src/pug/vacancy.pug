@@ -66,22 +66,24 @@ html(lang="ru")
 									//- 	button.tabs__btn.js-tab-btn(data-key="hr") Кадровые ресурсы
 
 								.tabs__content.js-tab-content
-									ul.tabs__content-item.tabs__content-item_active.vacancy__list.js-tab-content-item(data-key="management")
-										li.vacancy__item 
-											//= partials/vacancy-preview.pug
+									.tabs__content-item.tabs__content-item_active.vacancy__list.js-tab-content-item(data-key="management")
+										ul.vacancy__list
+											li.vacancy__item 
+												//= partials/vacancy-preview.pug
 
-										li.vacancy__item 
-											//= partials/vacancy-preview.pug
+											li.vacancy__item 
+												//= partials/vacancy-preview.pug
 
-										li.vacancy__item 
-											//= partials/vacancy-preview.pug
+											li.vacancy__item 
+												//= partials/vacancy-preview.pug
 
-									ul.tabs__content-item.vacancy__list.js-tab-content-item(data-key="production")
-										li.vacancy__item 
-											//= partials/vacancy-preview.pug
+									.tabs__content-item.js-tab-content-item(data-key="production")
+										ul.vacancy__list
+											li.vacancy__item 
+												//= partials/vacancy-preview.pug
 
-										li.vacancy__item 
-											//= partials/vacancy-preview.pug
+											li.vacancy__item 
+												//= partials/vacancy-preview.pug
 														
 				.vacancy__benefits
 					.container.vacancy__benefits-container

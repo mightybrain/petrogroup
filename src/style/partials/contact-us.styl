@@ -1,20 +1,65 @@
 .contact-us
-  padding 80px 40px
+  position relative
+  padding 80px 32px
   background linear-gradient(302.9deg, #056C45 27.11%, #099F67 90.69%)
   border-radius 16px
+  overflow hidden
+
+  @media $tablet-landscape-medium
+    padding 32px
+
+  @media $phone
+    padding 32px 8px
+
+  & > svg
+    position absolute
+    bottom -22px
+    left -22px
+    display block
+    width 900px
+    height 900px
+    stroke-width 12px
+    stroke $white
+    opacity .05
+
+    @media $tablet-landscape-large
+      top 0
+      bottom auto
+
+    @media $tablet-landscape-medium
+      width 282px
+      height 282px
 
   &__inner
+    position relative
     display grid
     grid-template-columns repeat(2, 1fr)
     max-width 1600px
     margin 0 auto
     gap 24px
 
+    @media $tablet-landscape-large
+      grid-template-columns 100%
+      max-width 796px
+      gap 51px
+
+    @media $tablet-landscape-medium
+      gap 25px
+
   &__info
     display flex
     flex-direction column
     padding 16px 0 0
     gap 40px
+
+    @media $tablet-landscape-large
+      padding 0
+
+    @media $tablet-landscape-medium
+      gap 16px
+
+    @media $phone
+      padding 0 8px
 
     & svg
       display block
@@ -23,11 +68,38 @@
       stroke-width 8px
       stroke $green-poison
 
+      @media $tablet-landscape-medium
+        width 100px
+        height 100px
+
   &__heading,
   &__description
     color $white
+
+  &__description
+    margin -3px 0 0
+
+    @media $tablet-landscape-large
+      font-size 32px
+      line-height 42px
+
+    @media $tablet-landscape-medium
+      margin -1px 0 0
+      font-size 18px
+      line-height 23px
+
+    & p:not([class]) + p:not([class])
+      @media $tablet-landscape-large
+        margin 42px 0 0
+
+      @media $tablet-landscape-medium
+        margin 23px 0 0
 
   &__bid
     padding 80px
     border-radius 16px
     background-color $white
+
+    @media $tablet-landscape-medium
+      padding 32px 16px
+      border-radius 12px
