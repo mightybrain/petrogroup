@@ -29,7 +29,7 @@ html(lang="ru")
 										.benefits__icon
 											include ../../build/images/icons/icon-quality-40.svg
 
-										span.common__text.common__text_mediumn.benefits__label Доставка по всей России
+										span.common__text.common__text_medium.benefits__label Доставка по всей России
 
 										p.common__text.benefits__description Отгрузки осуществляются либо сразу с завода, либо с одного из 7 складов автотранспортом (20 тонн) или Ж/Д контейнерами
 
@@ -37,7 +37,7 @@ html(lang="ru")
 										.benefits__icon
 											include ../../build/images/icons/icon-availability-40.svg
 
-										span.common__text.common__text_mediumn.benefits__label Поставки из других стран
+										span.common__text.common__text_medium.benefits__label Поставки из других стран
 
 										p.common__text.benefits__description Возможны прямые поставки от производителей с других стран (например, доставка апельсинов из Бразилии)
 
@@ -45,7 +45,7 @@ html(lang="ru")
 										.benefits__icon
 											// include ../../build/images/icons/icon-microscope-40.svg
 
-										span.common__text.common__text_mediumn.benefits__label Быстрые поставки
+										span.common__text.common__text_medium.benefits__label Быстрые поставки
 
 										p.common__text.benefits__description Формирование складских резервов продукции для быстрого закрытия клиентских потребностей в удобном для него регионе
 
@@ -53,7 +53,7 @@ html(lang="ru")
 										.benefits__icon
 											include ../../build/images/icons/icon-payment-40.svg
 
-										span.common__text.common__text_mediumn.benefits__label Таможенное оформление
+										span.common__text.common__text_medium.benefits__label Таможенное оформление
 
 										p.common__text.benefits__description Наш логистический отдел возьмет на себя решение всех логистических вопросов (в том числе таможенное оформление) 
 
@@ -61,21 +61,21 @@ html(lang="ru")
 
 				.container.logistics__container
 					.logistics__inner
-
 						h2.common__h2.logistics__heading Филиалы
 
-						.logistics__map
-							include ../../build/images/world.svg
+						.logistics__map.js-logistics-map
+							img.logistics__map-image.js-logistics-map-image(src="images/world.svg" alt="")
 
-							ul.logistics__pins-list
-								li.logistics__pins-item.logistics__pins-item_accent г. Санкт-Петербург
-								li.logistics__pins-item.logistics__pins-item_top-left Москва
-								li.logistics__pins-item Ярославль
-								li.logistics__pins-item Нижний Новгород
-								li.logistics__pins-item Казань
-								li.logistics__pins-item Уфа
-								li.logistics__pins-item Екатеринбург
-								li.logistics__pins-item Новосибирск
+							.logistics__pins.js-logistics-pins
+								ul.logistics__pins-list
+									li.logistics__pins-item.logistics__pins-item_accent г. Санкт-Петербург
+									li.logistics__pins-item.logistics__pins-item_top-left Москва
+									li.logistics__pins-item Ярославль
+									li.logistics__pins-item Нижний Новгород
+									li.logistics__pins-item Казань
+									li.logistics__pins-item Уфа
+									li.logistics__pins-item Екатеринбург
+									li.logistics__pins-item Новосибирск
 
 						.logistics__info
 							include ../../build/images/icons/icon-map-40.svg

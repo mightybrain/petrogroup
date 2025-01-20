@@ -554,6 +554,77 @@ class CustomForm {
   }
 }
 
+class VacancyPreview {
+  constructor(element) {
+    this.element = element;
+    this.container = element.querySelector('.js-hidden-content-container');
+    this.content = element.querySelector('.js-hidden-content');
+    this.toggleBtn = element.querySelector('.js-toggle-btn');
+
+    this.vacancyPreviewOpenedClassName = 'vacancy-preview_opened';
+
+    this.initHandlers();
+  }
+
+  isOpened() {
+    return this.element.classList.contains(this.vacancyPreviewOpenedClassName);
+  }
+
+  open() {
+    this.element.classList.add(this.vacancyPreviewOpenedClassName);
+
+    this.container.style.height = this.content.clientHeight + 'px';
+
+    this.toggleBtn.innerText = 'Скрыть';
+  }
+
+  close() {
+    this.container.style.removeProperty('height');
+
+    this.element.classList.remove(this.vacancyPreviewOpenedClassName);
+  
+    this.toggleBtn.innerText = 'Подробнее';
+  }
+
+  initHandlers() {
+    this.toggleBtn.addEventListener('click', () => {
+      if (this.isOpened()) {
+        this.close();
+
+        return;
+      }
+
+      this.open();
+    });
+
+    window.addEventListener('resize', () => {
+      if (this.isOpened()) {
+        this.container.style.height = this.content.clientHeight + 'px';
+      }
+    })
+  }
+}
+
+class Logistics {
+  constructor(element) {
+    this.element = element;
+    this.mapImage = element.querySelector('.js-logistics-map-image');
+    this.pins = element.querySelector('.js-logistics-pins');
+
+    this.init();
+  }
+
+  updateMapImagePosition(event) {
+    this.mapImage.style.transform = `translateX(-${event.target.scrollLeft}px)`;
+  }
+
+  init() {
+    this.pins.addEventListener('scroll', (event) => {
+      this.updateMapImagePosition(event);
+    })
+  }
+}
+
 // Faq
 function initFaq() {
   const faqManager = new FaqManager();
@@ -636,6 +707,18 @@ function initLangMenu() {
   })
 }
 
+function initVacancyPreview() {
+  document.querySelectorAll('.js-vacancy-preview').forEach((item) => {
+    new VacancyPreview(item);
+  })
+}
+
+function initLogistics() {
+  if (document.querySelector('.js-logistics-map')) {
+    new Logistics(document.querySelector('.js-logistics-map'))
+  }
+}
+
 if(document.getElementById('map')){
   ymaps.ready(() => {
     initYandexMap('map')
@@ -656,4 +739,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initBurger();
 
   initLangMenu();
+
+  initVacancyPreview();
+
+  initLogistics();
 });

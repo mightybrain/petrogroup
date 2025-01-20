@@ -14,6 +14,10 @@
 
 //= partials/form.js
 
+//= partials/vacancy-preview.js
+
+//= partials/logistics.js
+
 // Faq
 function initFaq() {
   const faqManager = new FaqManager();
@@ -96,6 +100,18 @@ function initLangMenu() {
   })
 }
 
+function initVacancyPreview() {
+  document.querySelectorAll('.js-vacancy-preview').forEach((item) => {
+    new VacancyPreview(item);
+  })
+}
+
+function initLogistics() {
+  if (document.querySelector('.js-logistics-map')) {
+    new Logistics(document.querySelector('.js-logistics-map'))
+  }
+}
+
 if(document.getElementById('map')){
   ymaps.ready(() => {
     initYandexMap('map')
@@ -116,4 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initBurger();
 
   initLangMenu();
+
+  initVacancyPreview();
+
+  initLogistics();
 });
