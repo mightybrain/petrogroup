@@ -25,7 +25,7 @@ html(lang="ru")
 									p У клиента есть потребность в продукте на основе концентрированного сока, а также фруктового и овощного пюре, но нет производственных мощностей для этого. В этом случае он обращается за контратным производством в ООО «Петрогрупп»
 
 				.project__steps
-					.container.container_narrow
+					.container.container_desktop-only
 						section.steps
 							h2.common__h2.steps__heading Этапы взаимодействия с клиентом
 
@@ -116,10 +116,11 @@ html(lang="ru")
 				.common__line
 
 				.project__benefits
-					//= partials/benefits-no-bg.pug
+					.container.container_desktop-only
+						//= partials/benefits-no-bg.pug
 
 				.project__partners
-					.container.container_narrow-mobile
+					.container.container_alternate
 						//= partials/partners.pug
 
 				.project__faq

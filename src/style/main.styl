@@ -55,6 +55,10 @@ button
 	@media $tablet-landscape-medium
 		width calc(100% - 16px)
 
+	&_alternate
+		@media $tablet-landscape-medium
+			width calc(100% - 32px)
+
 	&_narrow
 		width calc(100% - 80px)
 		max-width 1600px
@@ -68,6 +72,13 @@ button
 
 		@media $phone
 			width calc(100% - 32px)
+
+	&_desktop-only
+		width calc(100% - 80px)
+		max-width 1600px
+
+		@media $tablet-landscape-medium
+			width 100%
 
 @import 'partials/header.styl'
 @import 'partials/footer.styl'

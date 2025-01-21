@@ -60,6 +60,10 @@
         @media $tablet-landscape-medium
           order -2
 
+  &__logo
+    display flex
+    align-items center
+
   &__credits
     display flex
     align-items center
@@ -67,17 +71,6 @@
 
     @media $tablet-landscape-medium
       display none
-
-  &__logo
-    &-image
-      display block
-      width 170px
-
-      @media $tablet-landscape-large
-        width 142px
-
-      @media $tablet-landscape-medium
-        width 114px
 
   &__slogan
     max-width 426px
@@ -375,6 +368,39 @@
       opacity 1
       visibility visible
       transition opacity .5s 0s ease, visibility 0s 0s linear
+
+.logo
+  position relative
+  display inline-block
+
+  &__image
+    display block
+    width 170px
+
+    @media $tablet-landscape-large
+      width 142px
+
+    @media $tablet-landscape-medium
+      width 114px
+
+  &__leaf-image
+    position absolute
+    top -7px
+    left 35px
+    display block
+    width 14px
+    height 11px
+
+    @media $tablet-landscape-large
+      left 29px
+      width 11px
+      height 9px
+
+    @media $tablet-landscape-medium
+      top -6px
+      left 23px
+      width 9px
+      height 7px
 
 body.burger-opened
   @media $tablet-landscape-medium

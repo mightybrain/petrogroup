@@ -5,17 +5,13 @@ function initReviewSwiper(selector) {
 
   new Swiper(selector, {
     speed: 1200,
-    // slidesPerView: 1,
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 16,
-    loop: false,
-    // autoHeight: true,
-    direction: 'horizontal',
-    // breakpoints: {
-    //   1480: {
-    //     slidesPerView: 2,
-    //   },
-    // },
+    breakpoints: {
+      661: {
+        slidesPerView: 2,
+      },
+    },
     navigation: {
       nextEl: '.js-review-swiper-btn-next',
       prevEl: '.js-review-swiper-btn-prev',

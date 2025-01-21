@@ -7,20 +7,16 @@
   background-position center
 
   @media $tablet-landscape-medium
+    padding 80px 0 32px
     overflow hidden
-
-  @media $tablet-portrait-large
-    padding 80px 32px 32px
-
+    
   @media $phone
-    padding 80px 16px 32px
+    padding 80px 0 32px
 
   &_no-bg
-    padding 0 40px
+    padding 0
     background none
-
-    @media $phone
-      padding 0 16px
+    border-radius 0
 
   &__inner
     display flex
@@ -29,15 +25,19 @@
     margin 0 auto
     gap 80px
 
-    @media $tablet-portrait-large
+    @media $tablet-landscape-medium
       gap 32px
 
   &__heading
     width calc(50% - 4px)
     color $white
 
+    @media $tablet-landscape-medium
+      padding 0 0 0 32px
+
     @media $phone
       width 100%
+      padding 0 0 0 16px
 
   &__list-wrapper
     width 100%
@@ -49,31 +49,7 @@
       display none
 
     @media $tablet-landscape-medium
-      width calc(100% + 48px)
-      margin 0 0 0 -24px
-
-    @media $tablet-portrait-large
-      width calc(100% + 64px)
-      margin 0 0 0 -32px
-
-    @media $phone
-      width calc(100% + 32px)
-      margin 0 0 0 -16px
-
-  &__list
-    display grid
-    grid-template-columns repeat(4, 1fr)
-    gap 8px
-
-    @media $tablet-landscape-medium
       display flex
-      padding 0 0 0 24px
-    
-    @media $tablet-portrait-large
-      padding 0 0 0 32px
-
-    @media $phone
-      padding 0 0 0 16px
 
     &::after
       content ''
@@ -82,25 +58,32 @@
       @media $tablet-landscape-medium
         flex-shrink 0
         display block
-        width 16px
-
-      @media $tablet-portrait-large
-        width 24px
+        width 32px
 
       @media $phone
-        width 8px
+        width 16px
+
+  &__list
+    display grid
+    grid-template-columns repeat(4, 1fr)
+    gap 8px
+
+    @media $tablet-landscape-medium
+      display flex
+      padding 0 0 0 32px
+
+    @media $phone
+      padding 0 0 0 16px
 
   &__item
     display flex
     flex-direction column
-    min-height 276px
     padding 24px
     gap 12px
     border-radius 16px
     background-color rgba(255, 255, 255, .9)
 
     @media $tablet-landscape-large
-      min-height 253px
       padding 24px 24px 25px
       gap 11px
 
@@ -108,9 +91,6 @@
       flex-shrink 0
       width 296px
       min-width auto
-
-    @media $tablet-portrait-large
-      min-height 224px
       padding 16px
 
   &__icon
@@ -132,14 +112,19 @@
   & .benefits__heading
     color $graphite
 
-  & .benefits__list-wrapper
     @media $tablet-landscape-medium
-      width calc(100% + 80px)
-      margin 0 0 0 -40px
+      padding 0 0 0 40px
 
     @media $phone
-      width calc(100% + 32px)
-      margin 0 0 0 -16px
+      padding 0 0 0 16px
+
+  & .benefits__list-wrapper
+    &::after
+      @media $tablet-landscape-medium
+        width 40px
+
+      @media $phone
+        width 16px
 
   & .benefits__list
     @media $tablet-landscape-medium
