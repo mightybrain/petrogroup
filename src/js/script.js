@@ -18,6 +18,8 @@
 
 //= partials/logistics.js
 
+//= partials/shipping.js
+
 // Faq
 function initFaq() {
   const faqManager = new FaqManager();
@@ -112,6 +114,12 @@ function initLogistics() {
   }
 }
 
+function initShipping() {
+  if (document.querySelector('.js-shipping')) {
+    new Shipping(document.querySelector('.js-shipping'));
+  }
+}
+
 if(document.getElementById('map')){
   ymaps.ready(() => {
     initYandexMap('map')
@@ -136,4 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initVacancyPreview();
 
   initLogistics();
+
+  initShipping();
 });

@@ -18,9 +18,7 @@ class Validator {
   }
   
   validatePhone(inputEl) {
-    const phonePattern = /^\+?[\d\s\-()]+$/;
-    
-    return phonePattern.test(inputEl.value) && inputEl.value.length === 18; // с учетом маски 11 цифр + 7 элементов маски
+    return inputEl.value.length === 11 && !inputEl.value.replace(/\d+/g, '').length;
   }
   
   validateEmail(inputEl) {
@@ -37,6 +35,11 @@ class Validator {
     return checkboxElems.some((item) => item.checked);
   }
 
+  validateFile(fileInput) {
+    // Валидировать файл тут
+    return true
+  }
+
   init() {
     this.validators = {
       name: this.validateName,
@@ -44,6 +47,7 @@ class Validator {
       email: this.validateEmail,
       checkbox: this.validateCheckbox,
       checkboxGroup: this.validateCheckboxGroup,
+      file: this.validateFile,
     }
   }
 

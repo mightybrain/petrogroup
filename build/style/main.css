@@ -1570,6 +1570,132 @@ body.burger-opened .header__burger-line {
   display: block;
   width: 1684px;
 }
+@media (max-width: 1160px) {
+  .shipping__map {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    -webkit-transition: -webkit-transform 0.5s 0s ease;
+    transition: -webkit-transform 0.5s 0s ease;
+    transition: transform 0.5s 0s ease;
+    transition: transform 0.5s 0s ease, -webkit-transform 0.5s 0s ease;
+  }
+}
+.shipping__map > svg {
+  width: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+.shipping__map > svg path {
+  stroke-width: 2px;
+  stroke: rgba(255,255,255,0);
+  -webkit-transition: stroke 0.5s 0s ease;
+  transition: stroke 0.5s 0s ease;
+}
+.shipping__pin {
+  position: absolute;
+  -webkit-transform: translate(-12px, -13px);
+  transform: translate(-12px, -13px);
+}
+.shipping__pin[data-country=russia] {
+  top: 34%;
+  left: 74%;
+}
+.shipping__pin[data-country=morocco] {
+  top: 57%;
+  left: 45%;
+}
+.shipping__pin[data-country=thailand] {
+  top: 64%;
+  left: 75%;
+}
+.shipping__pin[data-country=armenia] {
+  top: 52%;
+  left: 59%;
+}
+.shipping__pin[data-country=azerbaijan] {
+  top: 52%;
+  left: 60%;
+}
+.shipping__pin[data-country=china] {
+  top: 55%;
+  left: 75%;
+}
+.shipping__pin[data-country=iran] {
+  top: 56%;
+  left: 62%;
+}
+.shipping__pin[data-country=italy] {
+  top: 50%;
+  left: 51%;
+}
+.shipping__pin > svg {
+  display: block;
+  width: 24px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+.shipping__pin > svg .outer-pin {
+  fill: #fff;
+  -webkit-transition: fill 0.5s 0s ease;
+  transition: fill 0.5s 0s ease;
+}
+.shipping__pin > svg .inner-pin {
+  fill: #ff5e14;
+  -webkit-transition: fill 0.5s 0s ease;
+  transition: fill 0.5s 0s ease;
+}
+.shipping__pin:hover > svg .outer-pin {
+  fill: #ff5e14;
+}
+.shipping__pin:hover > svg .inner-pin {
+  fill: #fff;
+}
+.shipping__pin-popover {
+  position: absolute;
+  bottom: calc(150% + 2px);
+  right: 150%;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 16px 32px -4px rgba(0,0,0,0.1);
+  box-shadow: 0 16px 32px -4px rgba(0,0,0,0.1);
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s 0s ease;
+  transition: opacity 0.5s 0s ease;
+}
+@media (max-width: 1160px) {
+  .shipping__pin-popover {
+    display: none;
+  }
+}
+.shipping__pin-label {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #056c45;
+}
+.shipping__pin-value {
+  font-family: 'Stolzl';
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 400;
+  color: #151515;
+  white-space: nowrap;
+}
+.shipping__pin-value span:not([class]) {
+  margin: 0 0 0 4px;
+  font-family: 'MabryPro';
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #151515;
+}
 .shipping__heading {
   position: relative;
   max-width: 406px;
@@ -1646,6 +1772,12 @@ body.burger-opened .header__burger-line {
   color: #151515;
   border-radius: 8px;
   background-color: #fff;
+  -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  -webkit-transition: -webkit-box-shadow 0.5s 0s ease;
+  transition: -webkit-box-shadow 0.5s 0s ease;
+  transition: box-shadow 0.5s 0s ease;
+  transition: box-shadow 0.5s 0s ease, -webkit-box-shadow 0.5s 0s ease;
 }
 @media (max-width: 1160px) {
   .shipping__countries-btn {
@@ -1653,9 +1785,109 @@ body.burger-opened .header__burger-line {
     min-width: auto;
   }
 }
+.shipping__countries-btn:hover {
+  -webkit-box-shadow: 0 16px 32px -4px rgba(0,0,0,0.1);
+  box-shadow: 0 16px 32px -4px rgba(0,0,0,0.1);
+}
 .shipping__countries-flag {
   display: block;
   width: 50px;
+}
+.shipping[data-country=russia] .russia {
+  stroke: #fff;
+}
+.shipping[data-country=russia] .shipping__pin[data-country=russia] .shipping__pin-popover {
+  opacity: 1;
+}
+@media (max-width: 1160px) {
+  .shipping[data-country=russia] .shipping__map {
+    -webkit-transform: translate(-74%, -34%);
+    transform: translate(-74%, -34%);
+  }
+}
+.shipping[data-country=morocco] .morocco {
+  stroke: #fff;
+}
+.shipping[data-country=morocco] .shipping__pin[data-country=morocco] .shipping__pin-popover {
+  opacity: 1;
+}
+@media (max-width: 1160px) {
+  .shipping[data-country=morocco] .shipping__map {
+    -webkit-transform: translate(-45%, -57%);
+    transform: translate(-45%, -57%);
+  }
+}
+.shipping[data-country=thailand] .thailand {
+  stroke: #fff;
+}
+.shipping[data-country=thailand] .shipping__pin[data-country=thailand] .shipping__pin-popover {
+  opacity: 1;
+}
+@media (max-width: 1160px) {
+  .shipping[data-country=thailand] .shipping__map {
+    -webkit-transform: translate(-75%, -64%);
+    transform: translate(-75%, -64%);
+  }
+}
+.shipping[data-country=armenia] .armenia {
+  stroke: #fff;
+}
+.shipping[data-country=armenia] .shipping__pin[data-country=armenia] .shipping__pin-popover {
+  opacity: 1;
+}
+@media (max-width: 1160px) {
+  .shipping[data-country=armenia] .shipping__map {
+    -webkit-transform: translate(-59%, -52%);
+    transform: translate(-59%, -52%);
+  }
+}
+.shipping[data-country=azerbaijan] .azerbaijan {
+  stroke: #fff;
+}
+.shipping[data-country=azerbaijan] .shipping__pin[data-country=azerbaijan] .shipping__pin-popover {
+  opacity: 1;
+}
+@media (max-width: 1160px) {
+  .shipping[data-country=azerbaijan] .shipping__map {
+    -webkit-transform: translate(-60%, -52%);
+    transform: translate(-60%, -52%);
+  }
+}
+.shipping[data-country=china] .china {
+  stroke: #fff;
+}
+.shipping[data-country=china] .shipping__pin[data-country=china] .shipping__pin-popover {
+  opacity: 1;
+}
+@media (max-width: 1160px) {
+  .shipping[data-country=china] .shipping__map {
+    -webkit-transform: translate(-75%, -55%);
+    transform: translate(-75%, -55%);
+  }
+}
+.shipping[data-country=iran] .iran {
+  stroke: #fff;
+}
+.shipping[data-country=iran] .shipping__pin[data-country=iran] .shipping__pin-popover {
+  opacity: 1;
+}
+@media (max-width: 1160px) {
+  .shipping[data-country=iran] .shipping__map {
+    -webkit-transform: translate(-62%, -56%);
+    transform: translate(-62%, -56%);
+  }
+}
+.shipping[data-country=italy] .italy {
+  stroke: #fff;
+}
+.shipping[data-country=italy] .shipping__pin[data-country=italy] .shipping__pin-popover {
+  opacity: 1;
+}
+@media (max-width: 1160px) {
+  .shipping[data-country=italy] .shipping__map {
+    -webkit-transform: translate(-51%, -50%);
+    transform: translate(-51%, -50%);
+  }
 }
 .benefits {
   position: relative;
@@ -3863,12 +4095,19 @@ body.modal-opened {
   opacity: 0;
   pointer-events: none;
 }
+.file-uploader__custom {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
 .file-uploader__file-label {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   color: #8e8e8e;
+  white-space: nowrap;
   pointer-events: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media (max-width: 1160px) {
   .file-uploader__file-label {
@@ -3925,6 +4164,7 @@ body.modal-opened {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 100%;
   gap: 4px;
 }
 .form__actions {

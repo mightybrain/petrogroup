@@ -1,76 +1,141 @@
-section.shipping
-	img.shipping__map(src="images/map.svg" alt="")
+section.shipping.js-shipping
+	.shipping__map
+		include ../../build/images/map.svg
+
+		.shipping__pin.js-pin(data-country='russia')
+			include ../../build/images/pin.svg
+
+			.shipping__pin-popover
+				span.shipping__pin-label Россия
+				span.shipping__pin-value 1200
+					span тонн/год
+
+		.shipping__pin.js-pin(data-country='morocco')
+			include ../../build/images/pin.svg
+
+			.shipping__pin-popover
+				span.shipping__pin-label Марокко
+				span.shipping__pin-value 1200
+					span тонн/год
+
+		.shipping__pin.js-pin(data-country='thailand')
+			include ../../build/images/pin.svg
+
+			.shipping__pin-popover
+				span.shipping__pin-label Тайланд
+				span.shipping__pin-value 1200
+					span тонн/год
+
+		.shipping__pin.js-pin(data-country='armenia')
+			include ../../build/images/pin.svg
+
+			.shipping__pin-popover
+				span.shipping__pin-label Армения
+				span.shipping__pin-value 1200
+					span тонн/год
+
+		.shipping__pin.js-pin(data-country='azerbaijan')
+			include ../../build/images/pin.svg
+
+			.shipping__pin-popover
+				span.shipping__pin-label Азербайджан
+				span.shipping__pin-value 1200
+					span тонн/год
+
+		.shipping__pin.js-pin(data-country='china')
+			include ../../build/images/pin.svg
+
+			.shipping__pin-popover
+				span.shipping__pin-label Китай
+				span.shipping__pin-value 1200
+					span тонн/год
+
+		.shipping__pin.js-pin(data-country='iran')
+			include ../../build/images/pin.svg
+
+			.shipping__pin-popover
+				span.shipping__pin-label Иран
+				span.shipping__pin-value 1200
+					span тонн/год
+
+		.shipping__pin.js-pin(data-country='italy')
+			include ../../build/images/pin.svg
+
+			.shipping__pin-popover
+				span.shipping__pin-label Италия
+				span.shipping__pin-value 1200
+					span тонн/год
 
 	h2.common__h2.shipping__heading Откуда импортируем сырье
 
 	.shipping__countries-slider.swiper-container.js-shipping-countries-swiper
 		ul.shipping__countries-list.swiper-wrapper
 			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Россия
+				button.shipping__countries-btn.js-country-btn(data-country='russia') Россия
 
 					img.shipping__countries-flag(src="images/flags/flag-01.svg" alt="")
 
 			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Тайланд
+				button.shipping__countries-btn.js-country-btn(data-country='thailand') Тайланд
 
 					img.shipping__countries-flag(src="images/flags/flag-02.svg" alt="")
 		
 			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Китай
+				button.shipping__countries-btn.js-country-btn(data-country='china') Китай
 
 					img.shipping__countries-flag(src="images/flags/flag-03.svg" alt="")
 
 			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Иран
+				button.shipping__countries-btn.js-country-btn(data-country='iran') Иран
 
 					img.shipping__countries-flag(src="images/flags/flag-04.svg" alt="")
 
 			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Азербайджан
+				button.shipping__countries-btn.js-country-btn(data-country='azerbaijan') Азербайджан
 
 					img.shipping__countries-flag(src="images/flags/flag-05.svg" alt="")
 
 			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Марокко
+				button.shipping__countries-btn.js-country-btn(data-country='morocco') Марокко
 
 					img.shipping__countries-flag(src="images/flags/flag-06.svg" alt="")
 
 			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Армения
+				button.shipping__countries-btn.js-country-btn(data-country='armenia') Армения
 
 					img.shipping__countries-flag(src="images/flags/flag-07.svg" alt="")
 
 			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Италия
+				button.shipping__countries-btn.js-country-btn(data-country='italy') Италия
 
 					img.shipping__countries-flag(src="images/flags/flag-08.svg" alt="")
 
-			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Узбекистан
+			//- li.shipping__countries-item.swiper-slide
+			//- 	button.shipping__countries-btn Узбекистан
 
-					img.shipping__countries-flag(src="images/flags/flag-09.svg" alt="")
+			//- 		img.shipping__countries-flag(src="images/flags/flag-09.svg" alt="")
 		
-			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Мексика
+			//- li.shipping__countries-item.swiper-slide
+			//- 	button.shipping__countries-btn Мексика
 
-					img.shipping__countries-flag(src="images/flags/flag-10.svg" alt="")
+			//- 		img.shipping__countries-flag(src="images/flags/flag-10.svg" alt="")
 
-			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Вьетнам
+			//- li.shipping__countries-item.swiper-slide
+			//- 	button.shipping__countries-btn Вьетнам
 
-					img.shipping__countries-flag(src="images/flags/flag-11.svg" alt="")
+			//- 		img.shipping__countries-flag(src="images/flags/flag-11.svg" alt="")
 
-			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Бразилия
+			//- li.shipping__countries-item.swiper-slide
+			//- 	button.shipping__countries-btn Бразилия
 
-					img.shipping__countries-flag(src="images/flags/flag-12.svg" alt="")
+			//- 		img.shipping__countries-flag(src="images/flags/flag-12.svg" alt="")
 
-			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Индия
+			//- li.shipping__countries-item.swiper-slide
+			//- 	button.shipping__countries-btn Индия
 
-					img.shipping__countries-flag(src="images/flags/flag-13.svg" alt="")
+			//- 		img.shipping__countries-flag(src="images/flags/flag-13.svg" alt="")
 
-			li.shipping__countries-item.swiper-slide
-				button.shipping__countries-btn Аргентина
+			//- li.shipping__countries-item.swiper-slide
+			//- 	button.shipping__countries-btn Аргентина
 
-					img.shipping__countries-flag(src="images/flags/flag-14.svg" alt="")
+			//- 		img.shipping__countries-flag(src="images/flags/flag-14.svg" alt="")

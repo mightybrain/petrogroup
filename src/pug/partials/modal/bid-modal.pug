@@ -23,56 +23,56 @@
 								.form__item.js-form-item(data-req data-type='checkboxGroup')
 									.form__cols-2
 										label.checkbox
-											input.checkbox__default(type='checkbox')
+											input.checkbox__default(type='checkbox' name='juice-purchase')
 
 											.checkbox__custom
 
 											span.checkbox__label Закупка соков/пюре
 
 										label.checkbox
-											input.checkbox__default(type='checkbox')
+											input.checkbox__default(type='checkbox' name='ingredients')
 
 											.checkbox__custom
 
 											span.checkbox__label Ингредиенты
 
 										label.checkbox
-											input.checkbox__default(type='checkbox')
+											input.checkbox__default(type='checkbox' name='juice-sale')
 
 											.checkbox__custom
 
 											span.checkbox__label Продажа соков/пюре
 
 										label.checkbox
-											input.checkbox__default(type='checkbox')
+											input.checkbox__default(type='checkbox' name='package')
 
 											.checkbox__custom
 
 											span.checkbox__label Упаковка
 
 										label.checkbox
-											input.checkbox__default(type='checkbox')
+											input.checkbox__default(type='checkbox' name='product')
 
 											.checkbox__custom
 
 											span.checkbox__label Применение продукта
 
 										label.checkbox
-											input.checkbox__default(type='checkbox')
+											input.checkbox__default(type='checkbox' name='production')
 
 											.checkbox__custom
 
 											span.checkbox__label Контрактное производство
 
 										label.checkbox
-											input.checkbox__default(type='checkbox')
+											input.checkbox__default(type='checkbox' name='logistics')
 
 											.checkbox__custom
 
 											span.checkbox__label Логистические решения
 
 										label.checkbox
-											input.checkbox__default(type='checkbox')
+											input.checkbox__default(type='checkbox' name='other')
 
 											.checkbox__custom
 
@@ -85,50 +85,52 @@
 									.form__item.js-form-item(data-req data-type='name')
 										label.label Имя
 											span.asterisk *
-										input.input(type='text')
+										input.input(type='text' name='name')
 
 										span.error Обязательное поле
 
 									.form__item.js-form-item(data-req data-type='phone')
 										label.label Телефон
 											span.asterisk *
-										input.input(type='text')
+										input.input(type='text' name='phone')
 
 										span.error Обязательное поле
 
 									.form__item.js-form-item(data-type='email')
 										label.label Email
-										input.input(type='text')
+										input.input(type='text' name='email')
 
 										span.error Ошибка
 
-									.form__item
+									.form__item.js-form-item
 										label.label Город
-										input.input(type='text')
+										input.input(type='text' name='city')
 
-								.form__item
+								.form__item.js-form-item
 									label.label Название компании
-									input.input(type='text')
+									input.input(type='text' name='company')
 
 							.form__section
 								h4.common__h4.form__section-heading Комментарий
 
-								textarea.textarea
+								.form__item.js-form-item
+									textarea.textarea(name='comment')
 
 							.form__section
 								h4.common__h4.form__section-heading Прикрепите файл
 
-								label.file-uploader
-									input.file-uploader__default(type='file')
+								.form__item.js-form-item(data-type='file')
+									label.file-uploader
+										input.file-uploader__default(type='file' name='file')
 
-									span.common__btn.common__btn_gray.common__btn_small.file-uploader__custom Выберите файл
+										span.common__btn.common__btn_gray.common__btn_small.file-uploader__custom Выберите файл
 
-									span.file-uploader__file-label Файл не выбран
+										span.file-uploader__file-label.js-file-label Файл не выбран
 
 							.form__actions
 								.form__item.js-form-item(data-req data-type='checkbox')
 									label.checkbox
-										input.checkbox__default(type='checkbox')
+										input.checkbox__default(type='checkbox' name='agreement')
 
 										.checkbox__custom
 

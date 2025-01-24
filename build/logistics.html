@@ -391,35 +391,35 @@
                     <div class="form__item js-form-item" data-req data-type="checkboxGroup">
                       <div class="form__cols-2">
                         <label class="checkbox">
-                          <input class="checkbox__default" type="checkbox">
+                          <input class="checkbox__default" type="checkbox" name="juice-purchase">
                           <div class="checkbox__custom"></div><span class="checkbox__label">Закупка соков/пюре</span>
                         </label>
                         <label class="checkbox">
-                          <input class="checkbox__default" type="checkbox">
+                          <input class="checkbox__default" type="checkbox" name="ingredients">
                           <div class="checkbox__custom"></div><span class="checkbox__label">Ингредиенты</span>
                         </label>
                         <label class="checkbox">
-                          <input class="checkbox__default" type="checkbox">
+                          <input class="checkbox__default" type="checkbox" name="juice-sale">
                           <div class="checkbox__custom"></div><span class="checkbox__label">Продажа соков/пюре</span>
                         </label>
                         <label class="checkbox">
-                          <input class="checkbox__default" type="checkbox">
+                          <input class="checkbox__default" type="checkbox" name="package">
                           <div class="checkbox__custom"></div><span class="checkbox__label">Упаковка</span>
                         </label>
                         <label class="checkbox">
-                          <input class="checkbox__default" type="checkbox">
+                          <input class="checkbox__default" type="checkbox" name="product">
                           <div class="checkbox__custom"></div><span class="checkbox__label">Применение продукта</span>
                         </label>
                         <label class="checkbox">
-                          <input class="checkbox__default" type="checkbox">
+                          <input class="checkbox__default" type="checkbox" name="production">
                           <div class="checkbox__custom"></div><span class="checkbox__label">Контрактное производство</span>
                         </label>
                         <label class="checkbox">
-                          <input class="checkbox__default" type="checkbox">
+                          <input class="checkbox__default" type="checkbox" name="logistics">
                           <div class="checkbox__custom"></div><span class="checkbox__label">Логистические решения</span>
                         </label>
                         <label class="checkbox">
-                          <input class="checkbox__default" type="checkbox">
+                          <input class="checkbox__default" type="checkbox" name="other">
                           <div class="checkbox__custom"></div><span class="checkbox__label">Другое</span>
                         </label>
                       </div>
@@ -430,40 +430,44 @@
                     <div class="form__cols-2">
                       <div class="form__item js-form-item" data-req data-type="name">
                         <label class="label">Имя<span class="asterisk">*</span></label>
-                        <input class="input" type="text"><span class="error">Обязательное поле</span>
+                        <input class="input" type="text" name="name"><span class="error">Обязательное поле</span>
                       </div>
                       <div class="form__item js-form-item" data-req data-type="phone">
                         <label class="label">Телефон<span class="asterisk">*</span></label>
-                        <input class="input" type="text"><span class="error">Обязательное поле</span>
+                        <input class="input" type="text" name="phone"><span class="error">Обязательное поле</span>
                       </div>
                       <div class="form__item js-form-item" data-type="email">
                         <label class="label">Email</label>
-                        <input class="input" type="text"><span class="error">Ошибка</span>
+                        <input class="input" type="text" name="email"><span class="error">Ошибка</span>
                       </div>
-                      <div class="form__item">
+                      <div class="form__item js-form-item">
                         <label class="label">Город</label>
-                        <input class="input" type="text">
+                        <input class="input" type="text" name="city">
                       </div>
                     </div>
-                    <div class="form__item">
+                    <div class="form__item js-form-item">
                       <label class="label">Название компании</label>
-                      <input class="input" type="text">
+                      <input class="input" type="text" name="company">
                     </div>
                   </div>
                   <div class="form__section">
                     <h4 class="common__h4 form__section-heading">Комментарий</h4>
-                    <textarea class="textarea"></textarea>
+                    <div class="form__item js-form-item">
+                      <textarea class="textarea" name="comment"></textarea>
+                    </div>
                   </div>
                   <div class="form__section">
                     <h4 class="common__h4 form__section-heading">Прикрепите файл</h4>
-                    <label class="file-uploader">
-                      <input class="file-uploader__default" type="file"><span class="common__btn common__btn_gray common__btn_small file-uploader__custom">Выберите файл</span><span class="file-uploader__file-label">Файл не выбран</span>
-                    </label>
+                    <div class="form__item js-form-item" data-type="file">
+                      <label class="file-uploader">
+                        <input class="file-uploader__default" type="file" name="file"><span class="common__btn common__btn_gray common__btn_small file-uploader__custom">Выберите файл</span><span class="file-uploader__file-label js-file-label">Файл не выбран</span>
+                      </label>
+                    </div>
                   </div>
                   <div class="form__actions">
                     <div class="form__item js-form-item" data-req data-type="checkbox">
                       <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
+                        <input class="checkbox__default" type="checkbox" name="agreement">
                         <div class="checkbox__custom"></div><span class="checkbox__label">Я согласен с <a class="checkbox__link" href="" target="_blank">обработкой персональных данных</a></span>
                       </label>
                     </div>
@@ -500,36 +504,40 @@
                     <div class="form__cols-2">
                       <div class="form__item js-form-item" data-req data-type="name">
                         <label class="label">Имя<span class="asterisk">*</span></label>
-                        <input class="input" type="text">
+                        <input class="input" type="text" name="name">
                       </div>
                       <div class="form__item js-form-item" data-req data-type="phone">
                         <label class="label">Телефон<span class="asterisk">*</span></label>
-                        <input class="input" type="text">
+                        <input class="input" type="text" name="phone">
                       </div>
                       <div class="form__item js-form-item" data-type="email">
                         <label class="label">Email</label>
-                        <input class="input" type="text">
+                        <input class="input" type="text" name="email">
                       </div>
-                      <div class="form__item">
+                      <div class="form__item js-form-item">
                         <label class="label">Город</label>
-                        <input class="input" type="text">
+                        <input class="input" type="text" name="city">
                       </div>
                     </div>
                   </div>
                   <div class="form__section">
                     <h4 class="common__h4 form__section-heading">Сообщение</h4>
-                    <textarea class="textarea"></textarea>
+                    <div class="form__item js-form-item">
+                      <textarea class="textarea" name="message"></textarea>
+                    </div>
                   </div>
                   <div class="form__section">
                     <h4 class="common__h4 form__section-heading">Прикрепите резюме</h4>
-                    <label class="file-uploader">
-                      <input class="file-uploader__default" type="file"><span class="common__btn common__btn_gray common__btn_small file-uploader__custom">Выберите файл</span><span class="file-uploader__file-label">Файл не выбран</span>
-                    </label>
+                    <div class="form__item js-form-item" data-type="file">
+                      <label class="file-uploader">
+                        <input class="file-uploader__default" type="file" name="resume"><span class="common__btn common__btn_gray common__btn_small file-uploader__custom">Выберите файл</span><span class="file-uploader__file-label js-file-label">Файл не выбран</span>
+                      </label>
+                    </div>
                   </div>
                   <div class="form__actions">
                     <div class="form__item js-form-item" data-req data-type="checkbox">
                       <label class="checkbox">
-                        <input class="checkbox__default" type="checkbox">
+                        <input class="checkbox__default" type="checkbox" name="agreement">
                         <div class="checkbox__custom"></div><span class="checkbox__label">Я согласен с <a class="checkbox__link" href="" target="_blank">обработкой персональных данных</a></span>
                       </label>
                     </div>

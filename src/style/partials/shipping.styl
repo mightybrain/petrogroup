@@ -10,6 +10,116 @@
     display block
     width 1684px
 
+    @media $tablet-landscape-medium
+      top 50%
+      left 50%
+      transform translate(0, 0)
+      transition transform .5s 0s ease
+
+    & > svg
+      width 100%
+      height min-content
+
+      & path
+        stroke-width 2px
+        stroke alpha($white, 0)
+        transition stroke .5s 0s ease
+
+  &__pin
+    position absolute
+    transform translate(-12px, -13px)
+
+    &[data-country=russia]
+      top 34%
+      left 74%
+
+    &[data-country=morocco]
+      top 57%
+      left 45%
+
+    &[data-country=thailand]
+      top 64%
+      left 75%
+
+    &[data-country=armenia]
+      top 52%
+      left 59%
+
+    &[data-country=azerbaijan]
+      top 52%
+      left 60%
+
+    &[data-country=china]
+      top 55%
+      left 75%
+
+    &[data-country=iran]
+      top 56%
+      left 62%
+
+    &[data-country=italy]
+      top 50%
+      left 51%
+
+    & > svg
+      display block
+      width 24px
+      height min-content
+
+      & .outer-pin
+        fill $white
+        transition fill .5s 0s ease
+
+      & .inner-pin
+        fill $orange
+        transition fill .5s 0s ease
+
+    &:hover
+      & > svg
+        & .outer-pin
+          fill $orange
+
+        & .inner-pin
+          fill $white
+
+    &-popover
+      position absolute
+      bottom calc(150% + 2px)
+      right 150%
+      padding 8px
+      border-radius 8px
+      background-color $white
+      box-shadow 0 16px 32px -4px alpha($black, .1)
+      pointer-events none
+      opacity 0
+      transition opacity .5s 0s ease
+
+      @media $tablet-landscape-medium
+        display none
+
+    &-label
+      display block
+      font-size 16px
+      line-height 24px
+      font-weight 400
+      color $green
+
+    &-value
+      font-family $stlz
+      font-size 40px
+      line-height 44px
+      font-weight 400
+      color $graphite
+      white-space nowrap
+
+      & span:not([class])
+        margin 0 0 0 4px
+        font-family $mbp
+        font-size 13px
+        line-height 16px
+        font-weight 400
+        color $graphite
+
   &__heading
     position relative
     max-width 406px
@@ -63,11 +173,112 @@
       color $graphite
       border-radius 8px
       background-color $white
+      box-shadow 0 0 0 0 alpha($black, 0)
+      transition box-shadow .5s 0s ease
 
       @media $tablet-landscape-medium
         width 100%
         min-width auto
 
+      &:hover
+        box-shadow 0 16px 32px -4px alpha($black, .1)
+
     &-flag
       display block
       width 50px
+
+.shipping[data-country=russia]
+  & .russia
+    stroke alpha($white, 1)
+
+  & .shipping__pin[data-country=russia]
+    & .shipping__pin-popover
+      opacity 1
+
+  & .shipping__map
+    @media $tablet-landscape-medium
+      transform translate(-74%, -34%)
+
+.shipping[data-country=morocco]
+  & .morocco
+    stroke alpha($white, 1)
+
+  & .shipping__pin[data-country=morocco]
+    & .shipping__pin-popover
+      opacity 1
+
+  & .shipping__map
+    @media $tablet-landscape-medium
+      transform translate(-45%, -57%)
+
+.shipping[data-country=thailand]
+  & .thailand
+    stroke alpha($white, 1)
+
+  & .shipping__pin[data-country=thailand]
+    & .shipping__pin-popover
+      opacity 1
+
+  & .shipping__map
+    @media $tablet-landscape-medium
+      transform translate(-75%, -64%)
+
+.shipping[data-country=armenia]
+  & .armenia
+    stroke alpha($white, 1)
+
+  & .shipping__pin[data-country=armenia]
+    & .shipping__pin-popover
+      opacity 1
+
+  & .shipping__map
+    @media $tablet-landscape-medium
+      transform translate(-59%, -52%)
+
+.shipping[data-country=azerbaijan]
+  & .azerbaijan
+    stroke alpha($white, 1)
+
+  & .shipping__pin[data-country=azerbaijan]
+    & .shipping__pin-popover
+      opacity 1
+
+  & .shipping__map
+    @media $tablet-landscape-medium
+      transform translate(-60%, -52%)
+
+.shipping[data-country=china]
+  & .china
+    stroke alpha($white, 1)
+
+  & .shipping__pin[data-country=china]
+    & .shipping__pin-popover
+      opacity 1
+
+  & .shipping__map
+    @media $tablet-landscape-medium
+      transform translate(-75%, -55%)
+
+.shipping[data-country=iran]
+  & .iran
+    stroke alpha($white, 1)
+
+  & .shipping__pin[data-country=iran]
+    & .shipping__pin-popover
+      opacity 1
+
+  & .shipping__map
+    @media $tablet-landscape-medium
+      transform translate(-62%, -56%)
+
+.shipping[data-country=italy]
+  & .italy
+    stroke alpha($white, 1)
+
+  & .shipping__pin[data-country=italy]
+    & .shipping__pin-popover
+      opacity 1
+
+  & .shipping__map
+    @media $tablet-landscape-medium
+      transform translate(-51%, -50%)

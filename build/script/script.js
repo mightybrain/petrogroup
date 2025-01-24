@@ -18,9 +18,7 @@ class Validator {
   }
   
   validatePhone(inputEl) {
-    const phonePattern = /^\+?[\d\s\-()]+$/;
-    
-    return phonePattern.test(inputEl.value) && inputEl.value.length === 18; // с учетом маски 11 цифр + 7 элементов маски
+    return inputEl.value.length === 11 && !inputEl.value.replace(/\d+/g, '').length;
   }
   
   validateEmail(inputEl) {
@@ -37,6 +35,11 @@ class Validator {
     return checkboxElems.some((item) => item.checked);
   }
 
+  validateFile(fileInput) {
+    // Валидировать файл тут
+    return true
+  }
+
   init() {
     this.validators = {
       name: this.validateName,
@@ -44,6 +47,7 @@ class Validator {
       email: this.validateEmail,
       checkbox: this.validateCheckbox,
       checkboxGroup: this.validateCheckboxGroup,
+      file: this.validateFile,
     }
   }
 
@@ -435,6 +439,34 @@ function initYandexMap(id){
   locationMap.controls.remove('routeButtonControl');
 }
 
+class FileUploader {
+  constructor(formItemElement) {
+    this.element = formItemElement;
+    this.input = formItemElement.querySelector('input');
+    this.fileLabel = formItemElement.querySelector('.js-file-label');
+
+    this.defaultFileLabel = 'Файл не выбран';
+
+    this.file = null;
+
+    this.init();
+  }
+
+  init() {
+    this.input.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      
+      if (file) {
+        this.fileLabel.textContent = file.name;
+
+        return;
+      }
+
+      this.fileLabel.textContent = this.defaultFileLabel;
+    })
+  }
+}
+
 class CustomForm {
   constructor(form, validator, modalManager) {
     this.form = form;
@@ -450,7 +482,7 @@ class CustomForm {
     this.isLoadingModifierClassName = 'form_is-loading';
     this.errorModifierClassName = 'form__item_error';
 
-    this.initHandlers();
+    this.init();
   }
 
   resetError(item) {
@@ -526,23 +558,37 @@ class CustomForm {
 
     const formIsValid = this.validateForm();
 
-    // if (!formIsValid || this.isLoading) {
-    //   return;
-    // }
+    if (!formIsValid || this.isLoading) {
+      return;
+    }
+
+    const formData = new FormData(event.target);
+
+    console.log(Object.fromEntries(formData.entries()))
 
     // this.isLoading = true;
 
     // form.classList.add(this.isLoadingModifierClassName);
   }
 
-  initHandlers() {
-    // phoneInput.addEventListener('input', () => {
-    //   const value = phoneInput.value.replace(/\D+/g, '');
+  init() {
+    this.formItems.forEach((item) => {
+      const type = item.getAttribute('data-type');
 
-    //   phoneInput.value = formatPhoneNumber(value);
+      if (type === 'phone') {
+        const input = item.querySelector('input')
 
-    //   handleFieldTouch(phoneInput);
-    // });
+        input.addEventListener('input', (event) => {
+          const value = event.target.value.replace(/\D+/g, '');
+  
+          event.target.value = value.slice(0, 11);
+        })
+      }
+
+      if (type === 'file') {
+        new FileUploader(item)
+      }
+    })
 
     this.form.addEventListener('submit', (event) => {
       this.handleSubmit(event);
@@ -617,6 +663,49 @@ class Logistics {
   init() {
     this.pins.addEventListener('scroll', (event) => {
       this.updateMapImagePosition(event);
+    })
+  }
+}
+
+class Shipping {
+  instance = null;
+
+  constructor(element) {
+    if (!Shipping.instance) {
+      this.element = element;
+      this.pins = element.querySelectorAll('.js-pin');
+      this.btns = element.querySelectorAll('.js-country-btn');
+  
+      this.init()
+
+      Shipping.instance = this;
+    }
+
+    return Shipping.instance
+  }
+
+  setActiveCountry(activeCountry) {
+    if (!activeCountry) {
+      this.element.removeAttribute('data-country');
+
+      return
+    }
+
+
+    this.element.setAttribute('data-country', activeCountry);
+  }
+
+  init() {
+    this.pins.forEach((item) => {
+      item.addEventListener('click', () => {
+        this.setActiveCountry(item.getAttribute('data-country'));
+      })
+    })
+
+    this.btns.forEach((item) => {
+      item.addEventListener('click', () => {
+        this.setActiveCountry(item.getAttribute('data-country'));
+      })
     })
   }
 }
@@ -715,6 +804,12 @@ function initLogistics() {
   }
 }
 
+function initShipping() {
+  if (document.querySelector('.js-shipping')) {
+    new Shipping(document.querySelector('.js-shipping'));
+  }
+}
+
 if(document.getElementById('map')){
   ymaps.ready(() => {
     initYandexMap('map')
@@ -739,4 +834,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initVacancyPreview();
 
   initLogistics();
+
+  initShipping();
 });

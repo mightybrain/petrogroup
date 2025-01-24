@@ -1,3 +1,31 @@
+class FileUploader {
+  constructor(formItemElement) {
+    this.element = formItemElement;
+    this.input = formItemElement.querySelector('input');
+    this.fileLabel = formItemElement.querySelector('.js-file-label');
+
+    this.defaultFileLabel = 'Файл не выбран';
+
+    this.file = null;
+
+    this.init();
+  }
+
+  init() {
+    this.input.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      
+      if (file) {
+        this.fileLabel.textContent = file.name;
+
+        return;
+      }
+
+      this.fileLabel.textContent = this.defaultFileLabel;
+    })
+  }
+}
+
 class CustomForm {
   constructor(form, validator, modalManager) {
     this.form = form;
@@ -13,7 +41,7 @@ class CustomForm {
     this.isLoadingModifierClassName = 'form_is-loading';
     this.errorModifierClassName = 'form__item_error';
 
-    this.initHandlers();
+    this.init();
   }
 
   resetError(item) {
@@ -89,23 +117,37 @@ class CustomForm {
 
     const formIsValid = this.validateForm();
 
-    // if (!formIsValid || this.isLoading) {
-    //   return;
-    // }
+    if (!formIsValid || this.isLoading) {
+      return;
+    }
+
+    const formData = new FormData(event.target);
+
+    console.log(Object.fromEntries(formData.entries()))
 
     // this.isLoading = true;
 
     // form.classList.add(this.isLoadingModifierClassName);
   }
 
-  initHandlers() {
-    // phoneInput.addEventListener('input', () => {
-    //   const value = phoneInput.value.replace(/\D+/g, '');
+  init() {
+    this.formItems.forEach((item) => {
+      const type = item.getAttribute('data-type');
 
-    //   phoneInput.value = formatPhoneNumber(value);
+      if (type === 'phone') {
+        const input = item.querySelector('input')
 
-    //   handleFieldTouch(phoneInput);
-    // });
+        input.addEventListener('input', (event) => {
+          const value = event.target.value.replace(/\D+/g, '');
+  
+          event.target.value = value.slice(0, 11);
+        })
+      }
+
+      if (type === 'file') {
+        new FileUploader(item)
+      }
+    })
 
     this.form.addEventListener('submit', (event) => {
       this.handleSubmit(event);
