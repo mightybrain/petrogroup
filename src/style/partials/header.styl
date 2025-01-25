@@ -91,7 +91,7 @@
       & svg
         display block
         width 24px
-        height 24px
+        height min-content
         stroke-width 2px
         stroke $graphite
 
@@ -122,7 +122,7 @@
       & svg
         display block
         width 24px
-        height 24px
+        height min-content
         stroke-width 2px
         stroke $graphite
 
@@ -349,6 +349,7 @@
       background-color $white
       border-radius 16px
       text-decoration none
+      transition color .5s 0s ease, background-color .5s 0s ease
 
       @media $tablet-landscape-large
         padding 4px 16px
@@ -361,6 +362,11 @@
         font-size 14px
         line-height 21px
         border-radius 22.5px
+
+      &_active,
+      &:hover
+        color $green
+        background-color alpha($green-toxic, .3)
 
 .header__lang:hover
   & .header__lang-list-wrapper

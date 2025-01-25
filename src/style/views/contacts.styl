@@ -1,128 +1,153 @@
 .contacts
-  display flex
-  flex-direction column
-  padding 112px 0 8px
-  gap 112px
+	position relative
+	display flex
+	flex-direction column
+	padding 112px 0 8px
+	gap 112px
+	overflow hidden
 
-  @media $tablet-landscape-large
-    padding 121px 0 8px
-    gap 120px
+	@media $tablet-landscape-large
+		padding 121px 0 8px
+		gap 120px
 
-  @media $tablet-landscape-medium
-    padding 56px 0 8px
-    gap 56px
+	@media $tablet-landscape-medium
+		padding 56px 0 8px
+		gap 56px
 
-  &__inner
-    display grid
-    grid-template-columns repeat(2, 1fr)
-    gap 8px
+	& > svg
+		position absolute
+		top 25px
+		right -257px
+		display block
+		width 1099px
+		height min-content
+		opacity .5
+		stroke $green-ease
 
-    @media $tablet-landscape-medium
-      grid-template-columns 100%
+		@media $tablet-landscape-large
+			top 34px
+			right -297px
 
-  &__info
-    display grid
-    grid-template-columns repeat(2, 1fr)
-    padding 79px 80px 139px
-    column-gap 24px
-    row-gap 80px
-    background-color $white
-    border-radius 16px
+		@media $tablet-landscape-medium
+			top 6px
+			right -224px
+			width 590px
 
-    @media $tablet-landscape-large
-      padding 79px 80px 151px
+		@media $phone
+			top 33px
+			right -248px
 
-    @media $tablet-landscape-medium
-      padding 23px 24px 24px
-      column-gap 16px
-      row-gap 32px
+	&__inner
+		display grid
+		grid-template-columns repeat(2, 1fr)
+		gap 8px
 
-    @media $phone
-      grid-template-columns 100%
-      gap 24px
+		@media $tablet-landscape-medium
+			grid-template-columns 100%
 
-  &__group
-    display flex
-    flex-direction column
-    height min-content
-    gap 16px
+	&__info
+		display grid
+		grid-template-columns repeat(2, 1fr)
+		padding 79px 80px 139px
+		column-gap 24px
+		row-gap 80px
+		background-color $white
+		border-radius 16px
 
-    &_wide
-      grid-column-start 1
-      grid-column-end -1
+		@media $tablet-landscape-large
+			padding 79px 80px 151px
 
-  &__list
-    display flex
-    flex-direction column
-    gap 12px
+		@media $tablet-landscape-medium
+			padding 23px 24px 24px
+			column-gap 16px
+			row-gap 32px
 
-  &__item
-    display flex
-    align-items center
-    gap 16px
-    font-size 16px
-    line-height 24px
-    font-weight 400
-    color $graphite
+		@media $phone
+			grid-template-columns 100%
+			gap 24px
 
-    @media $tablet-landscape-large
-      font-size 15px
-      line-height 23px
+	&__group
+		display flex
+		flex-direction column
+		height min-content
+		gap 16px
 
-    @media $tablet-landscape-medium
-      font-size 18px
+		&_wide
+			grid-column-start 1
+			grid-column-end -1
 
-    & svg
-      display block
-      width 24px
-      height 24px
-      stroke $green
-      stroke-width 2px
+	&__list
+		display flex
+		flex-direction column
+		gap 12px
 
-  &__link
-    color inherit
-    text-decoration none
+	&__item
+		display flex
+		align-items center
+		gap 16px
+		font-size 16px
+		line-height 24px
+		font-weight 400
+		color $graphite
 
-  &__description
-    display flex
-    flex-direction column
-    gap 16px
-    color $green
+		@media $tablet-landscape-large
+			font-size 15px
+			line-height 23px
 
-    @media $tablet-landscape-medium
-      flex-direction row
-      align-items baseline
+		@media $tablet-landscape-medium
+			font-size 18px
 
-    @media $phone
-      color $graphite
+		& svg
+			display block
+			width 24px
+			height min-content
+			stroke $green
+			stroke-width 2px
 
-    & svg
-      flex-shrink 0
-      display block
-      width 40px
-      height 40px
-      stroke $green
-      stroke-width 2px
+	&__link
+		color inherit
+		text-decoration none
 
-      @media $tablet-landscape-medium
-        position relative
-        top 4px
-        width 24px
-        height 24px
-        stroke-width 3px
+	&__description
+		display flex
+		flex-direction column
+		gap 16px
+		color $green
 
-  &__map
-    border-radius 16px
-    overflow hidden
+		@media $tablet-landscape-medium
+			flex-direction row
+			align-items baseline
 
-    @media $tablet-landscape-medium
-      height 360px
+		@media $phone
+			color $graphite
 
-  &__faq
-    margin 32px 0 0
+		& svg
+			flex-shrink 0
+			display block
+			width 40px
+			height min-content
+			stroke $green
+			stroke-width 2px
 
-    @media $tablet-landscape-large
-      margin 24px 0 0
+			@media $tablet-landscape-medium
+				position relative
+				top 4px
+				width 24px
+				stroke-width 3px
 
-    @media $tablet-landscape-medium
-      margin 16px 0 0
+	&__map
+		border-radius 16px
+		overflow hidden
+
+		@media $tablet-landscape-medium
+			height 360px
+
+	&__faq
+		position relative
+		margin 32px 0 0
+
+		@media $tablet-landscape-large
+			margin 24px 0 0
+
+		@media $tablet-landscape-medium
+			margin 16px 0 0

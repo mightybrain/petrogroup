@@ -347,9 +347,29 @@ button {
   background: none;
 }
 .main {
+  position: relative;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+.main > svg {
+  position: absolute;
+  top: -62px;
+  left: -473px;
+  display: block;
+  width: 1093px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  opacity: 0.5;
+  stroke: #daebe5;
+}
+@media (max-width: 1160px) {
+  .main > svg {
+    top: 23px;
+    left: -267px;
+    width: 589px;
+  }
 }
 .container {
   width: calc(100% - 32px);
@@ -531,7 +551,9 @@ button {
 .header__contact-us-link svg {
   display: block;
   width: 24px;
-  height: 24px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 2px;
   stroke: #151515;
 }
@@ -580,7 +602,9 @@ button {
 .header__contacts-item svg {
   display: block;
   width: 24px;
-  height: 24px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 2px;
   stroke: #151515;
 }
@@ -866,6 +890,8 @@ button {
   background-color: #fff;
   border-radius: 16px;
   text-decoration: none;
+  -webkit-transition: color 0.5s 0s ease, background-color 0.5s 0s ease;
+  transition: color 0.5s 0s ease, background-color 0.5s 0s ease;
 }
 @media (max-width: 1300px) {
   .header__nav-link {
@@ -882,6 +908,11 @@ button {
     line-height: 21px;
     border-radius: 22.5px;
   }
+}
+.header__nav-link_active,
+.header__nav-link:hover {
+  color: #056c45;
+  background-color: rgba(3,206,129,0.3);
 }
 @media (min-width: 1161px) {
   .header__lang:hover .header__lang-list-wrapper {
@@ -1007,7 +1038,9 @@ body.burger-opened .header__burger-line {
   position: absolute;
   display: block;
   width: 910px;
-  height: 974px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   bottom: -52px;
   left: -436px;
   opacity: 0.05;
@@ -1024,7 +1057,6 @@ body.burger-opened .header__burger-line {
     bottom: 258px;
     left: -260px;
     width: 663px;
-    height: 710px;
   }
 }
 @media (max-width: 660px) {
@@ -1190,7 +1222,9 @@ body.burger-opened .header__burger-line {
 .footer__contacts-item svg {
   display: block;
   width: 24px;
-  height: 24px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 2px;
   stroke: #03eb93;
 }
@@ -1392,11 +1426,48 @@ body.burger-opened .header__burger-line {
   display: block;
   width: 100%;
   max-width: 651px;
+  pointer-events: none;
 }
 @media (max-width: 1160px) {
   .index-intro__logo {
     max-width: 228px;
   }
+}
+.index-intro__play-btn {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  pointer-events: none;
+}
+.index-intro__play-btn > svg {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 1px);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 24px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+.index-intro__play-btn-indicator > svg {
+  display: block;
+  width: 50px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  stroke-width: 2px;
+  stroke: #03eb93;
+  stroke-dasharray: 154px;
+  stroke-dashoffset: 154px;
+  -webkit-transition: stroke-dashoffset 1s 0s ease;
+  transition: stroke-dashoffset 1s 0s ease;
+}
+.index-intro__demo:hover .index-intro__play-btn-indicator > svg {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 5s 0s ease;
+  transition: stroke-dashoffset 5s 0s ease;
 }
 .catalogue-preview {
   display: -webkit-box;
@@ -2027,7 +2098,9 @@ body.burger-opened .header__burger-line {
 .benefits__icon svg {
   display: block;
   width: 40px;
-  height: 40px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 2px;
   stroke: #056c45;
 }
@@ -2288,7 +2361,9 @@ body.burger-opened .header__burger-line {
   right: -186px;
   display: block;
   width: 455px;
-  height: 487px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   opacity: 0.05;
   stroke: #daebe5;
 }
@@ -2297,7 +2372,6 @@ body.burger-opened .header__burger-line {
     top: -108px;
     right: -103px;
     width: 274px;
-    height: 293px;
   }
 }
 .faq__ask-question-heading,
@@ -2318,7 +2392,9 @@ body.burger-opened .header__burger-line {
 .faq__ask-question-heading svg {
   display: block;
   width: 40px;
-  height: 40px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   margin: -5px 0 0;
   stroke-width: 2px;
   stroke: #03eb93;
@@ -2774,14 +2850,15 @@ body.burger-opened .header__burger-line {
 .tabs__btn svg {
   display: block;
   width: 40px;
-  height: 40px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 2px;
   stroke: #151515;
 }
 @media (max-width: 1160px) {
   .tabs__btn svg {
     width: 32px;
-    height: 32px;
   }
 }
 .tabs__content {
@@ -3366,6 +3443,7 @@ body.burger-opened .header__burger-line {
   }
 }
 .cards__item-info {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3381,6 +3459,7 @@ body.burger-opened .header__burger-line {
   gap: 38px;
   border-radius: 16px;
   background-color: #fff;
+  overflow: hidden;
 }
 @media (max-width: 1300px) {
   .cards__item-info {
@@ -3393,6 +3472,29 @@ body.burger-opened .header__burger-line {
     width: 100%;
     padding: 24px;
     gap: 24px;
+  }
+}
+.cards__item-info > svg {
+  position: absolute;
+  right: -498px;
+  bottom: -456px;
+  width: 910px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  opacity: 0.5;
+  stroke: #daebe5;
+}
+@media (max-width: 1300px) {
+  .cards__item-info > svg {
+    right: -514px;
+  }
+}
+@media (max-width: 1160px) {
+  .cards__item-info > svg {
+    right: -305px;
+    bottom: 291px;
+    width: 546px;
   }
 }
 .cards__item-heading,
@@ -3706,7 +3808,9 @@ body.burger-opened .header__burger-line {
 .review__pagination-btn svg {
   display: block;
   width: 16px;
-  height: 16px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 2px;
   stroke: #454545;
 }
@@ -3874,7 +3978,9 @@ body.burger-opened .header__burger-line {
 .modal__close-btn svg {
   display: block;
   width: 16px;
-  height: 16px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 2px;
   stroke: #454545;
 }
@@ -4522,7 +4628,9 @@ body.modal-opened {
   left: -22px;
   display: block;
   width: 900px;
-  height: 900px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 12px;
   stroke: #fff;
   opacity: 0.05;
@@ -4536,7 +4644,6 @@ body.modal-opened {
 @media (max-width: 1160px) {
   .contact-us > svg {
     width: 282px;
-    height: 282px;
   }
 }
 .contact-us__inner {
@@ -4588,7 +4695,9 @@ body.modal-opened {
 .contact-us__info svg {
   display: block;
   width: 160px;
-  height: 160px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 8px;
   stroke: #03eb93;
 }
@@ -4739,7 +4848,9 @@ body.modal-opened {
   left: -227px;
   display: block;
   width: 676px;
-  height: 722px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   opacity: 0.05;
   stroke: #daebe5;
 }
@@ -4822,7 +4933,9 @@ body.modal-opened {
   right: -380px;
   display: block;
   width: 1093px;
-  height: 1170px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   opacity: 0.5;
   stroke: #daebe5;
 }
@@ -4837,7 +4950,6 @@ body.modal-opened {
     top: 5px;
     right: -224px;
     width: 588px;
-    height: 631px;
   }
 }
 @media (max-width: 660px) {
@@ -4905,6 +5017,7 @@ body.modal-opened {
   }
 }
 .catalogue {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5049,6 +5162,7 @@ body.modal-opened {
   }
 }
 .vacancy__benefits {
+  position: relative;
   margin: -29px 0 0;
 }
 @media (max-width: 1160px) {
@@ -5247,6 +5361,7 @@ body.modal-opened {
   }
 }
 .projects {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5339,6 +5454,7 @@ body.modal-opened {
   }
 }
 .contacts {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5348,6 +5464,7 @@ body.modal-opened {
   flex-direction: column;
   padding: 112px 0 8px;
   gap: 112px;
+  overflow: hidden;
 }
 @media (max-width: 1300px) {
   .contacts {
@@ -5359,6 +5476,37 @@ body.modal-opened {
   .contacts {
     padding: 56px 0 8px;
     gap: 56px;
+  }
+}
+.contacts > svg {
+  position: absolute;
+  top: 25px;
+  right: -257px;
+  display: block;
+  width: 1099px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  opacity: 0.5;
+  stroke: #daebe5;
+}
+@media (max-width: 1300px) {
+  .contacts > svg {
+    top: 34px;
+    right: -297px;
+  }
+}
+@media (max-width: 1160px) {
+  .contacts > svg {
+    top: 6px;
+    right: -224px;
+    width: 590px;
+  }
+}
+@media (max-width: 660px) {
+  .contacts > svg {
+    top: 33px;
+    right: -248px;
   }
 }
 .contacts__inner {
@@ -5456,7 +5604,9 @@ body.modal-opened {
 .contacts__item svg {
   display: block;
   width: 24px;
-  height: 24px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke: #056c45;
   stroke-width: 2px;
 }
@@ -5496,7 +5646,9 @@ body.modal-opened {
   flex-shrink: 0;
   display: block;
   width: 40px;
-  height: 40px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke: #056c45;
   stroke-width: 2px;
 }
@@ -5505,7 +5657,6 @@ body.modal-opened {
     position: relative;
     top: 4px;
     width: 24px;
-    height: 24px;
     stroke-width: 3px;
   }
 }
@@ -5519,6 +5670,7 @@ body.modal-opened {
   }
 }
 .contacts__faq {
+  position: relative;
   margin: 32px 0 0;
 }
 @media (max-width: 1300px) {
@@ -5757,7 +5909,9 @@ body.modal-opened {
 .logistics__info svg {
   display: block;
   width: 40px;
-  height: 40px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   stroke-width: 2px;
   stroke: #056c45;
 }

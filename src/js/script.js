@@ -20,6 +20,8 @@
 
 //= partials/shipping.js
 
+//= partials/video.js
+
 // Faq
 function initFaq() {
   const faqManager = new FaqManager();
@@ -120,6 +122,12 @@ function initShipping() {
   }
 }
 
+function initCustomVideo() {
+  if (document.querySelector('.js-video')) {
+    new CustomVideo(document.querySelector('.js-video'));
+  }
+}
+
 if(document.getElementById('map')){
   ymaps.ready(() => {
     initYandexMap('map')
@@ -146,4 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initLogistics();
 
   initShipping();
+
+  initCustomVideo();
 });

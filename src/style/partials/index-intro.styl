@@ -69,6 +69,39 @@
     display block
     width 100%
     max-width 651px
+    pointer-events none
 
     @media $tablet-landscape-medium
       max-width 228px
+
+  &__play-btn
+    position absolute
+    bottom 32px
+    right 32px
+    pointer-events none
+
+    & > svg
+      position absolute
+      top 50%
+      left calc(50% + 1px)
+      transform translate(-50%, -50%)
+      display block
+      width 24px
+      height min-content
+
+    &-indicator
+      & > svg
+        display block
+        width 50px
+        height min-content
+        stroke-width 2px
+        stroke $green-poison
+        stroke-dasharray 154px
+        stroke-dashoffset 154px
+        transition stroke-dashoffset 1s 0s ease
+
+.index-intro__demo:hover
+  & .index-intro__play-btn-indicator
+    & > svg
+      stroke-dashoffset 0
+      transition stroke-dashoffset 5s 0s ease

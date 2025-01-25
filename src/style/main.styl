@@ -45,7 +45,23 @@ button
 	background none
 
 .main
+	position relative
 	flex-grow 1
+
+	& > svg
+		position absolute
+		top -62px
+		left -473px
+		display block
+		width 1093px
+		height min-content
+		opacity .5
+		stroke $green-ease
+
+		@media $tablet-landscape-medium
+			top 23px
+			left -267px
+			width 589px
 
 .container
 	width calc(100% - 32px)

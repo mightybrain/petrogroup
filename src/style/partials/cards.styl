@@ -68,6 +68,7 @@
         min-height auto
 
     &-info
+      position relative
       display flex
       flex-direction column
       align-items center
@@ -76,6 +77,7 @@
       gap 38px
       border-radius 16px
       background-color $white
+      overflow hidden
 
       @media $tablet-landscape-large
         padding 41px 40px 41px
@@ -85,6 +87,23 @@
         width 100%
         padding 24px
         gap 24px
+
+      & > svg
+        position absolute
+        right -498px
+        bottom -456px
+        width 910px
+        height min-content
+        opacity .5
+        stroke $green-ease
+
+        @media $tablet-landscape-large
+          right -514px
+
+        @media $tablet-landscape-medium
+          right -305px
+          bottom 291px
+          width 546px
 
     &-heading,
     &-description

@@ -6,7 +6,13 @@ section.index-intro
 			img.index-intro__decor-image(src="images/decor-01.png" alt="")
 			|Оптовые продажи для бизнеса от&nbsp;ведущих российских и&nbsp;зарубежных производителей
 
-	.index-intro__demo
-		video.index-intro__demo-video(src="video/video.mp4")
+	.index-intro__demo.js-video
+		video.index-intro__demo-video(src="video/video.mp4" loop)
+
+		button.index-intro__play-btn.js-play-btn
+			.index-intro__play-btn-indicator
+				include ../../build/images/circle.svg
+
+			include ../../build/images/icons/icon-play-24.svg
 
 		img.index-intro__logo(src="images/logo-petrogroup-white.svg" alt="")
