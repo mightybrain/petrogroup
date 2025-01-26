@@ -10,7 +10,7 @@ function initYandexMap(id){
       balloonContent:'',
     }, {
       iconLayout: 'default#image',
-      iconImageHref: '../images/pin.png',
+      iconImageHref: '../images/logo-pin.svg',
       iconImageSize: [40, 47],
       iconImageOffset: [-20, -23],
     })

@@ -60,6 +60,7 @@
     &-video
       display block
       width 100%
+      cursor pointer
 
   &__logo
     position absolute
@@ -79,6 +80,8 @@
     bottom 32px
     right 32px
     pointer-events none
+    opacity 1
+    transition opacity .5s 0s ease
 
     & > svg
       position absolute
@@ -105,3 +108,12 @@
     & > svg
       stroke-dashoffset 0
       transition stroke-dashoffset 5s 0s ease
+
+.index-intro__demo-video[data-played]
+  & + .index-intro__play-btn
+    opacity 0
+
+    &-indicator
+      & > svg
+        stroke-dashoffset 0
+        transition stroke-dashoffset 5s 0s ease

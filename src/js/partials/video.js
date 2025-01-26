@@ -9,10 +9,22 @@ class CustomVideo {
     this.timeout = null;
   }
 
+  playVideo() {
+    this.videoFrame.play()
+
+    this.videoFrame.setAttribute('data-played', '');
+  }
+
+  pauseVideo() {
+    this.videoFrame.pause();
+
+    this.videoFrame.removeAttribute('data-played');
+  }
+
   init() {
     this.element.addEventListener('mouseenter', () => {
       this.timeout = setTimeout(() => {
-        this.videoFrame.play()
+        this.playVideo()
       }, 5000)
     })
 
@@ -22,12 +34,12 @@ class CustomVideo {
 
     this.videoFrame.addEventListener('click', () => {
       if (this.videoFrame.paused) {
-        this.videoFrame.play();
+        this.playVideo();
 
         return;
       }
 
-      this.videoFrame.pause();
+      this.pauseVideo();
     })
   }
 }

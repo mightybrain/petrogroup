@@ -423,7 +423,7 @@ function initYandexMap(id){
       balloonContent:'',
     }, {
       iconLayout: 'default#image',
-      iconImageHref: '../images/pin.png',
+      iconImageHref: '../images/logo-pin.svg',
       iconImageSize: [40, 47],
       iconImageOffset: [-20, -23],
     })
@@ -684,13 +684,18 @@ class Shipping {
     return Shipping.instance
   }
 
-  setActiveCountry(activeCountry) {
+  toggleActiveCountry(activeCountry) {
     if (!activeCountry) {
+      return
+    }
+
+    const currentActiveCountry = this.element.getAttribute('data-country');
+
+    if (currentActiveCountry === activeCountry) {
       this.element.removeAttribute('data-country');
 
       return
     }
-
 
     this.element.setAttribute('data-country', activeCountry);
   }
@@ -698,13 +703,13 @@ class Shipping {
   init() {
     this.pins.forEach((item) => {
       item.addEventListener('click', () => {
-        this.setActiveCountry(item.getAttribute('data-country'));
+        this.toggleActiveCountry(item.getAttribute('data-country'));
       })
     })
 
     this.btns.forEach((item) => {
       item.addEventListener('click', () => {
-        this.setActiveCountry(item.getAttribute('data-country'));
+        this.toggleActiveCountry(item.getAttribute('data-country'));
       })
     })
   }
@@ -721,10 +726,22 @@ class CustomVideo {
     this.timeout = null;
   }
 
+  playVideo() {
+    this.videoFrame.play()
+
+    this.videoFrame.setAttribute('data-played', '');
+  }
+
+  pauseVideo() {
+    this.videoFrame.pause();
+
+    this.videoFrame.removeAttribute('data-played');
+  }
+
   init() {
     this.element.addEventListener('mouseenter', () => {
       this.timeout = setTimeout(() => {
-        this.videoFrame.play()
+        this.playVideo()
       }, 5000)
     })
 
@@ -734,12 +751,12 @@ class CustomVideo {
 
     this.videoFrame.addEventListener('click', () => {
       if (this.videoFrame.paused) {
-        this.videoFrame.play();
+        this.playVideo();
 
         return;
       }
 
-      this.videoFrame.pause();
+      this.pauseVideo();
     })
   }
 }

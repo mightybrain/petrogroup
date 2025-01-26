@@ -25,6 +25,13 @@
         stroke alpha($white, 0)
         transition stroke .5s 0s ease
 
+  &__logo-pin
+    position absolute
+    top 393px
+    left 946px
+    display block
+    width 40px
+
   &__pin
     position absolute
     transform translate(-12px, -13px)
@@ -65,6 +72,7 @@
       display block
       width 24px
       height min-content
+      cursor pointer
 
       & .outer-pin
         fill $white
@@ -84,8 +92,8 @@
 
     &-popover
       position absolute
-      bottom calc(150% + 2px)
-      right 150%
+      bottom calc(100% + 2px)
+      right 100%
       padding 8px
       border-radius 8px
       background-color $white
@@ -113,12 +121,10 @@
       white-space nowrap
 
       & span:not([class])
-        margin 0 0 0 4px
+        margin 0 0 0 8px
         font-family $mbp
         font-size 13px
         line-height 16px
-        font-weight 400
-        color $graphite
 
   &__heading
     position relative
@@ -141,7 +147,7 @@
 
       @media $tablet-landscape-medium
         align-self center
-        width 160px
+        width 190px
         margin 0
         overflow visible
 
@@ -157,16 +163,21 @@
 
     &-item
       @media $tablet-landscape-medium
-        padding 377px 0 0
+        display flex
+        align-items flex-end
+        height 429px
 
     &-btn
+      position relative
+      transform translateY(0)
       display flex
+      flex-wrap wrap
       flex-direction row-reverse
       justify-content flex-end
       align-items center
       min-width 187px
       padding 8px
-      gap 12px
+      column-gap 12px
       font-size 13px
       line-height 16px
       font-weight 400
@@ -174,7 +185,8 @@
       border-radius 8px
       background-color $white
       box-shadow 0 0 0 0 alpha($black, 0)
-      transition box-shadow .5s 0s ease
+      transition box-shadow .5s 0s ease, transform .5s 0s ease
+      cursor pointer
 
       @media $tablet-landscape-medium
         width 100%
@@ -183,13 +195,44 @@
       &:hover
         box-shadow 0 16px 32px -4px alpha($black, .1)
 
-    &-flag
-      display block
-      width 50px
+      &-flag
+        display block
+        width 50px
+
+      &-hint
+        display none
+
+        @media $tablet-landscape-medium
+          display block
+          margin -32px 0 0
+          font-size 36px
+          line-height 32px
+          font-weight 400
+          color $graphite
+          white-space nowrap
+          pointer-events none
+          opacity 0
+          transition margin .5s 0s ease, opacity .5s 0s ease
+
+        & span:not([class])
+          margin 0 0 0 8px
+          font-size 12px
+          line-height 14px
 
 .shipping[data-country=russia]
   & .russia
     stroke alpha($white, 1)
+
+  & .shipping__countries-btn[data-country=russia]
+    box-shadow 0 16px 32px -4px alpha($black, .1)
+
+    @media $tablet-landscape-medium
+      transform translateY(22px)
+
+    & .shipping__countries-btn-hint
+      @media $tablet-landscape-medium
+        margin 12px 0 0
+        opacity 1
 
   & .shipping__pin[data-country=russia]
     & .shipping__pin-popover
@@ -203,6 +246,17 @@
   & .morocco
     stroke alpha($white, 1)
 
+  & .shipping__countries-btn[data-country=morocco]
+    box-shadow 0 16px 32px -4px alpha($black, .1)
+
+    @media $tablet-landscape-medium
+      transform translateY(22px)
+
+    & .shipping__countries-btn-hint
+      @media $tablet-landscape-medium
+        margin 12px 0 0
+        opacity 1
+
   & .shipping__pin[data-country=morocco]
     & .shipping__pin-popover
       opacity 1
@@ -214,6 +268,17 @@
 .shipping[data-country=thailand]
   & .thailand
     stroke alpha($white, 1)
+
+  & .shipping__countries-btn[data-country=thailand]
+    box-shadow 0 16px 32px -4px alpha($black, .1)
+
+    @media $tablet-landscape-medium
+      transform translateY(22px)
+
+    & .shipping__countries-btn-hint
+      @media $tablet-landscape-medium
+        margin 12px 0 0
+        opacity 1
 
   & .shipping__pin[data-country=thailand]
     & .shipping__pin-popover
@@ -227,6 +292,17 @@
   & .armenia
     stroke alpha($white, 1)
 
+  & .shipping__countries-btn[data-country=armenia]
+    box-shadow 0 16px 32px -4px alpha($black, .1)
+
+    @media $tablet-landscape-medium
+      transform translateY(22px)
+
+    & .shipping__countries-btn-hint
+      @media $tablet-landscape-medium
+        margin 12px 0 0
+        opacity 1
+
   & .shipping__pin[data-country=armenia]
     & .shipping__pin-popover
       opacity 1
@@ -238,6 +314,17 @@
 .shipping[data-country=azerbaijan]
   & .azerbaijan
     stroke alpha($white, 1)
+
+  & .shipping__countries-btn[data-country=azerbaijan]
+    box-shadow 0 16px 32px -4px alpha($black, .1)
+
+    @media $tablet-landscape-medium
+      transform translateY(22px)
+
+    & .shipping__countries-btn-hint
+      @media $tablet-landscape-medium
+        margin 12px 0 0
+        opacity 1
 
   & .shipping__pin[data-country=azerbaijan]
     & .shipping__pin-popover
@@ -251,6 +338,17 @@
   & .china
     stroke alpha($white, 1)
 
+  & .shipping__countries-btn[data-country=china]
+    box-shadow 0 16px 32px -4px alpha($black, .1)
+
+    @media $tablet-landscape-medium
+      transform translateY(22px)
+
+    & .shipping__countries-btn-hint
+      @media $tablet-landscape-medium
+        margin 12px 0 0
+        opacity 1
+
   & .shipping__pin[data-country=china]
     & .shipping__pin-popover
       opacity 1
@@ -263,6 +361,17 @@
   & .iran
     stroke alpha($white, 1)
 
+  & .shipping__countries-btn[data-country=iran]
+    box-shadow 0 16px 32px -4px alpha($black, .1)
+
+    @media $tablet-landscape-medium
+      transform translateY(22px)
+
+    & .shipping__countries-btn-hint
+      @media $tablet-landscape-medium
+        margin 12px 0 0
+        opacity 1
+
   & .shipping__pin[data-country=iran]
     & .shipping__pin-popover
       opacity 1
@@ -274,6 +383,17 @@
 .shipping[data-country=italy]
   & .italy
     stroke alpha($white, 1)
+
+  & .shipping__countries-btn[data-country=italy]
+    box-shadow 0 16px 32px -4px alpha($black, .1)
+
+    @media $tablet-landscape-medium
+      transform translateY(22px)
+
+    & .shipping__countries-btn-hint
+      @media $tablet-landscape-medium
+        margin 12px 0 0
+        opacity 1
 
   & .shipping__pin[data-country=italy]
     & .shipping__pin-popover

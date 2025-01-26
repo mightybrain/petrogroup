@@ -15,13 +15,18 @@ class Shipping {
     return Shipping.instance
   }
 
-  setActiveCountry(activeCountry) {
+  toggleActiveCountry(activeCountry) {
     if (!activeCountry) {
+      return
+    }
+
+    const currentActiveCountry = this.element.getAttribute('data-country');
+
+    if (currentActiveCountry === activeCountry) {
       this.element.removeAttribute('data-country');
 
       return
     }
-
 
     this.element.setAttribute('data-country', activeCountry);
   }
@@ -29,13 +34,13 @@ class Shipping {
   init() {
     this.pins.forEach((item) => {
       item.addEventListener('click', () => {
-        this.setActiveCountry(item.getAttribute('data-country'));
+        this.toggleActiveCountry(item.getAttribute('data-country'));
       })
     })
 
     this.btns.forEach((item) => {
       item.addEventListener('click', () => {
-        this.setActiveCountry(item.getAttribute('data-country'));
+        this.toggleActiveCountry(item.getAttribute('data-country'));
       })
     })
   }
