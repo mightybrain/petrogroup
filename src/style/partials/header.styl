@@ -335,6 +335,8 @@
         gap 8px
 
     &-item
+      position relative
+
       @media $tablet-landscape-medium
         width 100%
 
@@ -349,6 +351,7 @@
       background-color $white
       border-radius 16px
       text-decoration none
+      white-space nowrap
       transition color .5s 0s ease, background-color .5s 0s ease
 
       @media $tablet-landscape-large
@@ -367,6 +370,40 @@
       &:hover
         color $green
         background-color alpha($green-toxic, .3)
+
+    &-sublist
+      position absolute
+      top calc(100% + 4px)
+      left 0
+      display flex
+      flex-direction column
+      padding 8px
+      background-color $white
+      border-radius 8px
+      box-shadow 0 16px 32px -4px alpha($black, .1)
+      opacity 0
+      visibility hidden
+      transition opacity .5s 0s ease, visibility 0s .5s linear
+
+      @media $tablet-landscape-medium
+        display none
+
+.header__nav-sublist
+  & .header__nav-link
+    padding 4px 12px
+    text-align left
+    border-radius 4px
+
+    &_active,
+    &:hover
+      background-color alpha($gray-soft, .6)
+
+.header__nav-item:hover
+  & .header__nav-sublist
+    @media $desktop-only
+      opacity 1
+      visibility visible
+      transition opacity .5s 0s ease, visibility 0s 0s linear
 
 .header__lang:hover
   & .header__lang-list-wrapper

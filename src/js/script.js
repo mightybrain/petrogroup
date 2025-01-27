@@ -4,6 +4,8 @@
 
 //= partials/tabs.js
 
+//= partials/scroll-tabs.js
+
 //= partials/review-swiper.js
 
 //= partials/shipping-countries-swiper.js
@@ -37,6 +39,12 @@ function initFaq() {
 function initTabs() {
   document.querySelectorAll('.js-tabs').forEach((element) => {
     new Tabs(element);
+  })
+}
+
+function initScrollTabs() {
+  document.querySelectorAll('.js-scroll-tabs').forEach((element) => {
+    new ScrollTabs(element);
   })
 }
 
@@ -138,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaq();
 
   initTabs();
+
+  initScrollTabs();
 
   initSwiper();
 

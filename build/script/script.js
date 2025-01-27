@@ -217,6 +217,38 @@ class Tabs {
   }
 }
 
+class ScrollTabs {
+  constructor(tabsContainer) {
+    this.tabsContainer = tabsContainer;
+
+    this.buttons = tabsContainer.querySelectorAll('.js-tab-btn');
+
+    this.keyAttributeName = 'data-key';
+
+    this.init();
+  }
+
+  scrollToTabContent(tab) {
+    const key = tab.getAttribute(this.keyAttributeName);
+
+    const content = document.querySelector(`#${key}`)
+
+    if (content) {
+      content.scrollIntoView({
+        behavior: 'smooth',
+      })
+    }
+  }
+
+  init() {
+    this.buttons.forEach((item) => {
+      item.addEventListener('click', () => {
+        this.scrollToTabContent(item);
+      })
+    })
+  }
+}
+
 function initReviewSwiper(selector) {
   if (!selector || !document.querySelector(selector)) {
     return;
@@ -779,6 +811,12 @@ function initTabs() {
   })
 }
 
+function initScrollTabs() {
+  document.querySelectorAll('.js-scroll-tabs').forEach((element) => {
+    new ScrollTabs(element);
+  })
+}
+
 // Свайпер
 function initSwiper() {
   initReviewSwiper('.js-review-swiper');
@@ -877,6 +915,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaq();
 
   initTabs();
+
+  initScrollTabs();
 
   initSwiper();
 
