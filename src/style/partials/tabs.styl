@@ -17,6 +17,11 @@
       gap 56px
 
   &__list-wrapper
+    -ms-overflow-style none
+    scrollbar-width none
+    &::-webkit-scrollbar
+      display none
+
     @media $tablet-landscape-medium
       display flex
       width 100%
@@ -80,6 +85,9 @@
     @media $phone
       padding 8px 12px
 
+    @media $phone-small
+      gap 8px
+
     &:hover,
     &_active
       color $green
@@ -94,6 +102,9 @@
 
       @media $tablet-landscape-medium
         width 32px
+
+      @media $phone-small
+        width 24px
 
   &__content
     width 100%

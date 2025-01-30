@@ -27,7 +27,12 @@
     gap 40px
 
     @media $tablet-landscape-medium
+      width calc(100% - 80px)
+      margin 0 auto
       gap 32px
+
+    @media $phone
+      width calc(100% - 32px)
 
     &-heading
       color $graphite
@@ -66,3 +71,9 @@
     @media $tablet-landscape-medium
       width 100%
       min-width auto
+
+.catalogue__intro
+  & .intro__heading
+    @media $phone-small
+      font-size 24px
+      line-height 27px

@@ -185,7 +185,7 @@
       border-radius 8px
       background-color $white
       box-shadow 0 0 0 0 alpha($black, 0)
-      transition box-shadow .5s 0s ease, transform .5s 0s ease
+      transition box-shadow .5s 0s ease, transform .5s 0s ease, background-color .5s 0s ease, color .5s 0s ease
       cursor pointer
 
       @media $tablet-landscape-medium
@@ -193,6 +193,8 @@
         min-width auto
 
       &:hover
+        color $white
+        background-color $green
         box-shadow 0 16px 32px -4px alpha($black, .1)
 
       &-flag
@@ -208,7 +210,7 @@
           font-size 36px
           line-height 32px
           font-weight 400
-          color $graphite
+          color inherit
           white-space nowrap
           pointer-events none
           opacity 0
@@ -224,6 +226,8 @@
     stroke alpha($white, 1)
 
   & .shipping__countries-btn[data-country=russia]
+    color $white
+    background-color $green
     box-shadow 0 16px 32px -4px alpha($black, .1)
 
     @media $tablet-landscape-medium
@@ -247,6 +251,8 @@
     stroke alpha($white, 1)
 
   & .shipping__countries-btn[data-country=morocco]
+    color $white
+    background-color $green
     box-shadow 0 16px 32px -4px alpha($black, .1)
 
     @media $tablet-landscape-medium
@@ -270,6 +276,8 @@
     stroke alpha($white, 1)
 
   & .shipping__countries-btn[data-country=thailand]
+    color $white
+    background-color $green
     box-shadow 0 16px 32px -4px alpha($black, .1)
 
     @media $tablet-landscape-medium
@@ -293,6 +301,8 @@
     stroke alpha($white, 1)
 
   & .shipping__countries-btn[data-country=armenia]
+    color $white
+    background-color $green
     box-shadow 0 16px 32px -4px alpha($black, .1)
 
     @media $tablet-landscape-medium
@@ -316,6 +326,8 @@
     stroke alpha($white, 1)
 
   & .shipping__countries-btn[data-country=azerbaijan]
+    color $white
+    background-color $green
     box-shadow 0 16px 32px -4px alpha($black, .1)
 
     @media $tablet-landscape-medium
@@ -339,6 +351,8 @@
     stroke alpha($white, 1)
 
   & .shipping__countries-btn[data-country=china]
+    color $white
+    background-color $green
     box-shadow 0 16px 32px -4px alpha($black, .1)
 
     @media $tablet-landscape-medium
@@ -362,6 +376,8 @@
     stroke alpha($white, 1)
 
   & .shipping__countries-btn[data-country=iran]
+    color $white
+    background-color $green
     box-shadow 0 16px 32px -4px alpha($black, .1)
 
     @media $tablet-landscape-medium
@@ -385,6 +401,8 @@
     stroke alpha($white, 1)
 
   & .shipping__countries-btn[data-country=italy]
+    color $white
+    background-color $green
     box-shadow 0 16px 32px -4px alpha($black, .1)
 
     @media $tablet-landscape-medium

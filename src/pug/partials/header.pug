@@ -63,9 +63,7 @@ header.header
 
 			nav.header__nav
 				ul.header__nav-list
-					li.header__nav-item
-						a.header__nav-link.header__nav-link_active(href="/") Каталог
-
+					li.header__nav-item.header__nav-item_with-sublist
 						ul.header__nav-sublist
 							li.header__nav-item
 								a.header__nav-link(href="/") Соки
@@ -76,9 +74,9 @@ header.header
 							li.header__nav-item
 								a.header__nav-link(href="/") Томатная паста
 
-					li.header__nav-item
-						a.header__nav-link(href="/") О&nbsp;компании
+						a.header__nav-link(href="/") Каталог
 
+					li.header__nav-item.header__nav-item_with-sublist
 						ul.header__nav-sublist
 							li.header__nav-item
 								a.header__nav-link(href="/") Производство
@@ -86,8 +84,10 @@ header.header
 							li.header__nav-item
 								a.header__nav-link(href="/") Карьера
 
+						a.header__nav-link(href="/") О&nbsp;компании
+
 					li.header__nav-item
-						a.header__nav-link(href="") Сотрудничество
+						a.header__nav-link.header__nav-link_active(href="") Сотрудничество
 
 					li.header__nav-item
 						a.header__nav-link(href="") Логические решения
