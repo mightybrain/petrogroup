@@ -731,8 +731,6 @@ class Shipping {
     const currentActiveCountry = this.element.getAttribute('data-country');
 
     if (currentActiveCountry === activeCountry) {
-      this.element.removeAttribute('data-country');
-
       return
     }
 
